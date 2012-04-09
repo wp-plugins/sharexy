@@ -21,10 +21,10 @@ Money making opportunity, Widget placement customizing (floating and static), Co
 * Effective and attracting as much social network traffic as possible
 
 
-Looks like there’s nothing else to add to this list? **Well there is!**
+Looks like there's nothing else to add to this list? **Well there is!**
 
 
-- Social sharing and bookmark widget should **bring you money** and it’s made possible at last!
+- Social sharing and bookmark widget should **bring you money** and it's made possible at last!
 
 
 Sharexy widget has got it all. 
@@ -42,16 +42,16 @@ Sharexy is the first social bookmarking and sharing tool that brings you money!
 
 **How it works:**
 
-It’s simple: we broadcast ads using the widget and you earn with every click!
+It's simple: we broadcast ads using the widget and you earn with every click!
 
-Display of a relevant pay per click advertising using the sharexy widget does not annoy visitors, distract their attention from the content and require additional space on the website. So, if you are using the “old standard” social sharing buttons, simply replace them with the new Sharexy widget and start earning money immediately!
+Display of a relevant pay per click advertising using the sharexy widget does not annoy visitors, distract their attention from the content and require additional space on the website. So, if you are using the "old standard" social sharing buttons, simply replace them with the new Sharexy widget and start earning money immediately!
 
 While selecting ads, we apply powerful contextual technology, which ensures relevant advertising, suitable and attractive offers for your visitors, and a hefty income source  for you.
 
 
-You’ve got three options of when to translate ads to the visitors:
+You've got three options of when to translate ads to the visitors:
 
-**display ads at all times** – visitors will see the ad next to the first widget on the page as soon as they open the page. For instance, if you have a blog and the sharing buttons are placed next to each topic on the main page, ad will only appear next to the first topic. Visitors will also see the ad when sharing a link or hovering a cursor over the Sharexy button."
+**display ads at all times** - visitors will see the ad next to the first widget on the page as soon as they open the page. For instance, if you have a blog and the sharing buttons are placed next to each topic on the main page, ad will only appear next to the first topic. Visitors will also see the ad when sharing a link or hovering a cursor over the Sharexy button."
 
 **Display ads when visitors share the link** - A visitors clicks on of the social network buttons in the widget and most likely they are will temporarily leave your webpage. Having shared the link they get back to your website and see the ad next to the widget.
 
@@ -61,16 +61,16 @@ You’ve got three options of when to translate ads to the visitors:
 *You can always turn off the ads broadcasting and use only social sharing features.*
 
 
-It’s all in your hands and it’s up to you whether you want to earn money advertising with the help of our new widget or to just use social sharing features.
+It's all in your hands and it's up to you whether you want to earn money advertising with the help of our new widget or to just use social sharing features.
 
-*Learn more in [“How it works”](http://sharexy.com/how_it_work) section at [Sharexy.com](http://sharexy.com)*
+*Learn more in ["How it works"](http://sharexy.com/how_it_work) section at [Sharexy.com](http://sharexy.com)*
 
 
 ***Design and easy setup***
 
-The best designers from all over the world have already taken care of you to create awesome and very cool styles, one of which is exactly what you’ve been looking for.
+The best designers from all over the world have already taken care of you to create awesome and very cool styles, one of which is exactly what you've been looking for.
 
-You don’t have to go on surfing blogs and forums looking for the right design of sharing buttons having to constantly edit the code and sort out the documentation. 
+You don't have to go on surfing blogs and forums looking for the right design of sharing buttons having to constantly edit the code and sort out the documentation.
 
 Just a few seconds and a few clicks, and it's all set to your taste!
 
@@ -79,7 +79,7 @@ Chose the buttons design to perfectly go with your website from the constantly u
 
 ***Placement***
 
-It’s a good idea to place sharing and bookmarking buttons in the page areas easily found by your blog visitors. 
+It's a good idea to place sharing and bookmarking buttons in the page areas easily found by your blog visitors.
 
 With Sharexy you can customize the look of your widget with sharing and bookmarking buttons as well as choose the placement type!
 
