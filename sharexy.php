@@ -9,7 +9,7 @@
     Plugin URI: http://wordpress.org/extend/plugins/sharexy/
     Description: Sharexy social buttons.
     Author: Sharexy.com
-    Version: 0.1
+    Version: 1.0.1
     Author URI: http://sharexy.com/
     License: GPLv2 or later
 */
