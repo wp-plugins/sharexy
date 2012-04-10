@@ -1,4 +1,4 @@
-(function (window) {
+﻿(function (window) {
     if (!window.jQuery) {
         console.log('jQuery undefined');
         return;
@@ -33,7 +33,7 @@
                 if (jQuery(element).attr('type') === 'radio') {
                     if (name && typeof val !== 'undefined' && jQuery(element).attr('checked')) {
                         if (jQuery(element).closest("table").parent().css("display") == "none") {
-                            console.log(name);
+                            
                             styleData[name] = '0';
                         } else {
                             styleData[name] = val;
@@ -53,7 +53,7 @@
                     }
                 }
             });
-            //console.dir(styleData);
+            
             submitBtn.attr('value', 'Please wait...');
             jQuery.post('admin.php?page=sharexy-menu', styleData, function () {
                 submitBtn.attr('value', 'Saved!');
@@ -928,7 +928,7 @@
         });
     };
     function PreviewChangeCounters() {
-        //console.log(jQuery("#preview_float_float .cnt").css("display"));
+        
         var placements = ['top', 'bottom','top_post','bottom_post'], i, count = placements.length;
         for (i = 0; i < count; i++) {
             if (jQuery('.size_static_' + placements[i]).val() == '55') {

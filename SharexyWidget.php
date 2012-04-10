@@ -68,7 +68,7 @@ class SharexyWidget extends SharexyMain {
 
         $placeStyle = $this->getPlacementsStyleParams($place);
         $mixStyle = $this->mixMainPlaceStyleParams($mainStyle, $placeStyle);
-        if ($customLink && $customTitle) {
+        if ($customLink && $customTitle && $place !== 'float') {
             $mixStyle['customLink'] = $customLink;
             $mixStyle['customTitle'] = $customTitle;
         }

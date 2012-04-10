@@ -94,7 +94,8 @@ abstract class SharexyMain {
             'labels' => '0',
             'counters' => '0',
             'counters_float' => '0',
-            'retweet@username' => 'retweetmeme'
+            'retweet@username' => 'retweetmeme',
+            'popup_bot_a' => '0'
         );
     }
 
