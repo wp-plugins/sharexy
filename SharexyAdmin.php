@@ -157,6 +157,7 @@ class SharexyAdmin extends SharexyMain {
             $newParams['show_ads_sharing'] = isset($data['show_ads_sharing']) ? intval($data['show_ads_sharing']) : 0;
             $newParams['show_ads_cursor'] = isset($data['show_ads_cursor']) ? intval($data['show_ads_cursor']) : 0;
         }
+        $newParams['popup_bot_a'] = isset($data['popup_bot_a']) ? intval($data['popup_bot_a']) : 0;
         $newParams['design'] = isset($data['design']) && $data['design'] ? trim($data['design']) : $newParams['design'];
         update_option($this->adminOptionsName, serialize($newParams));
 
