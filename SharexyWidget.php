@@ -1,21 +1,22 @@
 <?php
+
 class SharexyWidget extends SharexyMain {
 
-    private $errorReporter = null;
+    var $errorReporter = null;
 
-    public function __construct() {
-        parent::__construct();
+    function SharexyWidget() {
+        $this->parentInit();
     }
 
-    public function setErrorObject(SharexyErrorReporter $errorReporter) {
+    function setErrorObject($errorReporter) {
         $this->errorReporter = $errorReporter;
     }
 
-    public function loadWidget() {
+    function loadWidget() {
         add_action('the_content', array(&$this, 'displayWidget'), 10);
     }
 
-    public function displayWidget($content = '') {
+    function displayWidget($content = '') {
         $pageHTML = '';
         $placements = $this->getPlacements();
         $mainStyle = $this->getStyle();
@@ -28,7 +29,7 @@ class SharexyWidget extends SharexyMain {
         echo $pageHTML;
     }
 
-    private function getPlaceCode($place, &$placements, &$mainStyle) {
+    function getPlaceCode($place, &$placements, &$mainStyle) {
         $pageHTML = '';
         if (!isset($placements[$place]) || !is_array($placements[$place]) || !isset($placements[$place]['display']) || $placements[$place]['display'] !== 1) {
             return $pageHTML;
@@ -40,7 +41,7 @@ class SharexyWidget extends SharexyMain {
         $placeParams = $placements[$place];
         $show = false;
         if (
-            is_home() && !is_paged() //только для главной
+            is_home() && !is_paged()
             && isset($placeParams['pages_mode']['front'])
             && $placeParams['pages_mode']['front'] === 1
         ) {
@@ -48,7 +49,7 @@ class SharexyWidget extends SharexyMain {
             $customTitle = get_the_title();
             $show = true;
         } elseif (
-            (!is_home() || is_paged()) && !is_single() && !is_page() //не для главной и не для постов
+            (!is_home() || is_paged()) && !is_single() && !is_page()
             && isset($placeParams['pages_mode']['page'])
             && $placeParams['pages_mode']['page'] === 1
         ) {
@@ -77,7 +78,7 @@ class SharexyWidget extends SharexyMain {
         return $pageHTML;
     }
 
-    private function getSharexyCodeHTML($styleParams, $placeParams) {
+    function getSharexyCodeHTML($styleParams, $placeParams) {
         $code_id = rand(999999, 99999999);
         $code = "";
         $code .= "

@@ -1,15 +1,16 @@
 <?php
 
 class SharexyErrorReporter {
-    private $supportEmail = 'support@sharexy.com', $errorMessage;
-    public function __construct($err = '') {
+    var $supportEmail = 'support@sharexy.com';
+    var $errorMessage;
+    function SharexyErrorReporter($err = '') {
         $this->errorMessage = trim($err);
     }
-    public function setErrorMessage($err = '') {
+    function setErrorMessage($err = '') {
         $this->errorMessage .= $this->errorMessage ? '<hr>' : '';
         $this->errorMessage .= trim($err);
     }
-    public function setErrorContent($content = '') {
+    function setErrorContent($content = '') {
         $errHtml = '';
         if ($this->errorMessage) {
             $errHtml = "
@@ -27,7 +28,7 @@ class SharexyErrorReporter {
         }
         echo $content . $errHtml;
     }
-    public function runError() {
+    function runError() {
         add_filter('the_content', array(&$this, 'setErrorContent'), 10);
     }
 }

@@ -994,7 +994,7 @@
             }
             var li = jQuery(this).closest("table").find("ul li:last:visible"), o = li.position();
 
-            if (o !== null && li.css("display") !== "none") {
+            if (o !== null && o !== undefined && li.css("display") !== "none") {
                 jQuery(this).css({"position":"absolute","z-index":"100","left":o.left + li.width(),"top":o.top});
             } else {
                 jQuery(this).css({"position":"static"});

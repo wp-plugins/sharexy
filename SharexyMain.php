@@ -1,12 +1,12 @@
 <?php
-abstract class SharexyMain {
-    protected $params;
-    protected $adminOptionsName;
-    protected  $defaultWidgetParams;
-    protected  $defaultPlacements;
-    protected  $defaultPlacementsStyleParams;
+class SharexyMain {
+    var $params;
+    var $adminOptionsName;
+    var $defaultWidgetParams;
+    var $defaultPlacements;
+    var $defaultPlacementsStyleParams;
 
-    public function __construct() {
+    function parentInit() {
         $this->adminOptionsName = 'SharexyPluginAdminDisplayMode';
         $this->params = array(
             'server' => array(
@@ -99,7 +99,7 @@ abstract class SharexyMain {
         );
     }
 
-    protected function getPlacements() {
+    function getPlacements() {
         $defaultPlacements = $this->defaultPlacements;
         $placements = get_option( $this->adminOptionsName . '_placements' );
         if (!$placements) {
@@ -119,7 +119,7 @@ abstract class SharexyMain {
         return $resultPlacements;
     }
 
-    protected function getStyle() {
+    function getStyle() {
         $resultParams = $this->defaultWidgetParams;
         $savedParams = get_option( $this->adminOptionsName );
         if ( !$savedParams ) {
@@ -135,7 +135,7 @@ abstract class SharexyMain {
     }
 
 
-    protected function getPlacementsStyleParams($place) {
+    function getPlacementsStyleParams($place) {
         $defaultStyleParams = isset($this->defaultPlacementsStyleParams[$place]) ? $this->defaultPlacementsStyleParams[$place] : array();
         $placeStyleParams = get_option( $this->adminOptionsName . '_placement_' . $place . '_style' );
         $placeStyleParams = $placeStyleParams ? unserialize( $placeStyleParams ) : array();
@@ -151,7 +151,7 @@ abstract class SharexyMain {
         return $placeStyleParams;
     }
 
-    protected function mixMainPlaceStyleParams(array $mainParams, array $placeParams) {
+    function mixMainPlaceStyleParams($mainParams, $placeParams) {
         if (empty($mainParams) || empty($placeParams)) {
             return $mainParams;
         }
@@ -161,7 +161,7 @@ abstract class SharexyMain {
         return $mainParams;
     }
 
-    protected function validateWebmasterId($webmasterId) {
+    function validateWebmasterId($webmasterId) {
         $fail = 0;
         if (is_string($webmasterId) && $webmasterId && strlen(trim($webmasterId)) > 0) {
             $webmasterId = trim($webmasterId);

@@ -4,7 +4,7 @@ Donate link: http://sharexy.com
 Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Money making opportunity, Widget placement customizing (floating and static), Continual updated design collection, Analysis tools
 
@@ -126,6 +126,16 @@ Learn how users are sharing and engaging with your content.
 *Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.*
 
 
+== Frequently Asked Questions ==
+
+= Is Sharexy free? =
+
+Yes!
+
+= I have some questions (need help, have an idea), how can I contact you? =
+
+Feel free to contact us through our [community forum](http://community.sharexy.com/).
+
 
 == Installation ==
 
@@ -154,10 +164,25 @@ To upload the plugin through WordPress, instead of FTP:
 5. Floating widget customization section.
 6. Previewing how your options look.
 
+== PHP Version ==
+
+PHP 5.3 is preferred; PHP 4 is supported.
+
 == Changelog ==
 
 = 1.0.1 =
 
 * First public release
 
+= 1.0.2 =
+
+* Added support for php versions 4.7.7- 5.3
+* Bug Fixes
+
+
 == Upgrade Notice ==
+
+= 1.0.1 =
+
+Added support for php versions 4.7.7- 5.3. Bug Fixes.
+

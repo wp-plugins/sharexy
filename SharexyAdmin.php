@@ -1,10 +1,10 @@
 <?php
 class SharexyAdmin extends SharexyMain {
-    private $adminMenu;
-    private $errorReporter = null;
+    var $adminMenu;
+    var $errorReporter = null;
 
-    public function __construct() {
-        parent::__construct();
+    function SharexyAdmin() {
+        $this->parentInit();
         $this->adminMenu = array(
             array(
                 'top' => array(
@@ -17,34 +17,15 @@ class SharexyAdmin extends SharexyMain {
                     "icon_url" => $this->params['logo']['small_img'] ? $this->params['logo']['path'] . $this->params['logo']['small_img'] : '',
                     "position" => NULL
                 )
-//                ,'sub' => array(
-//                    array(
-//                        "parent_slug" => "sharexy-menu" ,
-//                        "page_title" => "",
-//                        "menu_title" => "",
-//                        "capability" => "manage_options",
-//                        "menu_slug" => "sharexy-menu-something",
-//                        "function" => array(&$this, 'constructorMainTpl')
-//                    ),
-//                    array(
-//                        "parent_slug" => "sharexy-menu" ,
-//                        "page_title" => "",
-//                        "menu_title" => "",
-//                        "capability" => "manage_options",
-//                        "menu_slug" => "sharexy-menu-something",
-//                        "function" => array(&$this, 'constructorMainTpl')
-//                    )
-//                )
             )
         );
-
     }
 
-    public function setErrorObject(SharexyErrorReporter $errorReporter) {
+    function setErrorObject($errorReporter) {
         $this->errorReporter = $errorReporter;
     }
 
-    public function composeMenuBar() {
+    function composeMenuBar() {
         if (!is_array($this->adminMenu) || !(count($this->adminMenu) > 0)) {
             return;
         }
@@ -87,35 +68,15 @@ class SharexyAdmin extends SharexyMain {
         }
     }
 
-    public function initMenu() {
+    function initMenu() {
         add_action('admin_menu', array(&$this, 'composeMenuBar'), 1);
+    }
 
+    function registerAdminScripts() {}
 
-    }
-    public function registerAdminScripts() {
-       /* wp_register_script('sharexy_plugin_nicecheckbox_js', WP_PLUGIN_URL . '/sharexy/js/nicecheckbox.js');
-        wp_register_script('sharexy_plugin_niceradio_js', WP_PLUGIN_URL . '/sharexy/js/niceradio.js');
-        wp_register_script('sharexy_plugin_constructor_js', WP_PLUGIN_URL . '/sharexy/js/constructor.js');
-        wp_register_script('sharexy_plugin_tipsy_js', WP_PLUGIN_URL . '/sharexy/js/tipsy/jquery.tipsy.js');
-        wp_register_script('sharexy_plugin_tool-man_core_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/core.js');
-        wp_register_script('sharexy_plugin_tool-man_events_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/events.js');
-        wp_register_script('sharexy_plugin_tool-man_css_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/css.js');
-        wp_register_script('sharexy_plugin_tool-man_coordinates_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/coordinates.js');
-        wp_register_script('sharexy_plugin_tool-man_drag_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/drag.js');
-        wp_register_script('sharexy_plugin_tool-man_dragsort_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/dragsort.js');
-        wp_register_script('sharexy_plugin_tool-man_cookies_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/cookies.js');
-        wp_register_script('sharexy_plugin_tool-man_index_js', WP_PLUGIN_URL . '/sharexy/js/tool-man/index.js');
-        wp_register_script('sharexy_plugin_farbtastic_js', WP_PLUGIN_URL . '/sharexy/js/farbtastic/farbtastic.js');
-        wp_register_script('sharexy_plugin_buzz_js', WP_PLUGIN_URL . '/sharexy/js/buzz.js');
-*/
-    }
-    public function registerAdminCSS() {
-  /*      wp_register_style('sharexy_plugin_constructor_css_farbtastic', WP_PLUGIN_URL . '/sharexy/js/farbtastic/farbtastic.css');
-        wp_register_style('sharexy_plugin_constructor_css_tipsy', WP_PLUGIN_URL . '/sharexy/css/tipsy.css');
-        wp_register_style('sharexy_plugin_constructor_css', WP_PLUGIN_URL . '/sharexy/css/constructor.css');
-*/
-    }
-    public function buttonsSettings() {
+    function registerAdminCSS() {}
+
+    function buttonsSettings() {
         if (!is_user_logged_in() || !is_admin() ) {
             wp_die('hacking??');
             return;
@@ -128,7 +89,8 @@ class SharexyAdmin extends SharexyMain {
             $this->constructorMainTpl();
         }
     }
-    private function validateServicesList($list) {
+
+    function validateServicesList($list) {
         $servicesArr = array();
         if (strlen( trim( $list ) ) > 0) {
             $servicesTmpArr = explode(',', $list);
@@ -142,7 +104,7 @@ class SharexyAdmin extends SharexyMain {
         return $servicesArr;
     }
 
-    private function saveParams($data) {
+    function saveParams($data) {
         if (!is_array($data) || !(count($data) > 0) ) {
             return;
         }
@@ -229,28 +191,8 @@ class SharexyAdmin extends SharexyMain {
         update_option($this->adminOptionsName . '_placements', serialize($placementsParams));
     }
 
-    private function constructorMainTpl() {
-       /* not work in wordpress 3.0!!
-        *  wp_enqueue_script('jquery');
-        wp_enqueue_script('sharexy_plugin_tipsy_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_core_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_events_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_css_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_coordinates_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_drag_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_dragsort_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_cookies_js');
-        wp_enqueue_script('sharexy_plugin_tool-man_index_js');
-        wp_enqueue_script('sharexy_plugin_farbtastic_js');
-        wp_enqueue_script('sharexy_plugin_nicecheckbox_js');
-        wp_enqueue_script('sharexy_plugin_niceradio_js');
-        wp_enqueue_script('sharexy_plugin_buzz_js');
-        wp_enqueue_style('sharexy_plugin_constructor_css_farbtastic');
-        wp_enqueue_style('sharexy_plugin_constructor_css_tipsy');
-
-        wp_enqueue_script('sharexy_plugin_constructor_js');
-        wp_enqueue_style('sharexy_plugin_constructor_css');
-       */ $designs = $this->getDesignNames();
+    function constructorMainTpl() {
+        $designs = $this->getDesignNames();
         $socSources = $this->getSocialSourcesNames();
         $placements = $this->getPlacements();
         $styleParams = $this->getStyle();
@@ -268,23 +210,39 @@ class SharexyAdmin extends SharexyMain {
         include "templates/constructor.phtml";
     }
 
-    private function getSocialSourcesNames() {
+    function getSocialSourcesNames() {
         $sources = array();
         $response = wp_remote_get( $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT']  );
         if ( !is_wp_error( $response ) ) {
-            $sources = isset($response['body']) ? json_decode( $response['body'] ) : $sources;
+            $responseStr = isset($response['body']) ? $response['body'] : '';
+            if (!$responseStr) {
+                return $sources;
+            }
+            if (function_exists('json_decode')) {
+                $sources = json_decode($responseStr);
+            } else {
+                $json = new SharexyJson();
+                $sources = $json->decode($responseStr);
+            }
         }
         return $sources;
     }
 
-    private function getDesignNames() {
+    function getDesignNames() {
         $designs = array();
         $response = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['stylesTXT'];
         $initInfo  = file_get_contents($response);
-        $initInfo  = json_decode($initInfo);
+        if (function_exists('json_decode')) {
+            $initResult = json_decode($initInfo);
+        } else {
+            $json = new SharexyJson();
+            $initResult = $json->decode($initInfo);
+        }
+        if (empty($initResult)) {
+            return $designs;
+        }
         $iteration = 0;
-        foreach($initInfo as $entry=>$init)
-        {
+        foreach($initResult as $entry=>$init) {
               $designs[$iteration] = array(
                 'id' => $entry,
                 'name' => ucwords($entry),

@@ -1,15 +1,10 @@
 <?php
-/**
- * @package Sharexy
- * @version 1.0.1
- * @author Anton Merkulov
- */
 /*
     Plugin Name: Sharexy
     Plugin URI: http://wordpress.org/extend/plugins/sharexy/
     Description: Sharexy social buttons.
     Author: Sharexy.com
-    Version: 1.0.1
+    Version: 1.0.2
     Author URI: http://sharexy.com/
     License: GPLv2 or later
 */
@@ -33,20 +28,22 @@
 */
 
 if (class_exists("SharexyErrorReporter") || class_exists("SharexyMain") || class_exists("SharexyWidget") || class_exists("SharexyAdmnin") || class_exists("SharexyView")) {
-    add_action('the_content', function($content = '') {
-        echo $content;
-        echo <<<EOF
-            <div style='background: none repeat scroll 0 0 #FFFFE4;border: 1px solid #FFBC9F;color: #646974;font-size: 12px;line-height: 20px;margin-bottom: 20px;padding: 3px 7px;text-align: center;'>
-                Sharexy plugin conflict namespace. Class SharexyErrorReporter, SharexyWidget, SharexyAdmnin, SharexyMain is all ready exists.
+    $sharexyErrorCallbackFunction = create_function('$content = ""', '
+        echo  $content;
+        echo "
+            <div style=\"background: none repeat scroll 0 0 #FFFFE4;border: 1px solid #FFBC9F;color: #646974;font-size: 12px;line-height: 20px;margin-bottom: 20px;padding: 3px 7px;text-align: center;\">
+                    Sharexy plugin conflict namespace. Class SharexyErrorReporter, SharexyWidget, SharexyAdmnin, SharexyMain is all ready exists.
             </div>
-EOF;
-    });
+        ";
+    ');
+    add_action('the_content', $sharexyErrorCallbackFunction);
 } else {
     require_once "SharexyError.php";
     require_once "SharexyMain.php";
     require_once "SharexyWidget.php";
     require_once "SharexyAdmin.php";
     require_once "SharexyView.php";
+    require_once "SharexyJson.php";
     $sharexy = new SharexyView(new SharexyWidget(), new SharexyAdmin(), new SharexyErrorReporter());
     $sharexy->initWidget();
     $sharexy->initAdmin();

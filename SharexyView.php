@@ -1,21 +1,20 @@
 <?php
-
 class SharexyView extends SharexyMain {
-    private $widget, $admin, $errorReporter;
-    public function __construct(SharexyWidget &$widget, SharexyAdmin &$admin, SharexyErrorReporter &$errorReporter) {
+    var $widget, $admin, $errorReporter;
+    function SharexyView(&$widget, &$admin, &$errorReporter) {
         $this->widget = $widget;
         $this->admin = $admin;
         $this->errorReporter = $errorReporter;
         $this->admin->setErrorObject($this->errorReporter);
         $this->widget->setErrorObject($this->errorReporter);
-        parent::__construct();
+        $this->parentInit();
     }
 
-    public function initWidget() {
+    function initWidget() {
         $this->widget->loadWidget();
     }
 
-    public function initAdmin() {
+    function initAdmin() {
         $this->admin->initMenu();
         $this->admin->registerAdminScripts();
         $this->admin->registerAdminCSS();
