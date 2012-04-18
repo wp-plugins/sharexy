@@ -215,15 +215,15 @@
         <div align="right"><img style="cursor: pointer" alt="close" src='<?php echo $imgPath;?>close.png'
                                 onclick='$("#popup_design_settings").fadeOut("normal")'></div>
         <p style="padding: 0 0 10px 7px; margin: 0;font-size: 18px;" class="blue">Styles:</p>
-        <table cellspacing="5">
+        <table cellspacing="5" style="display: table !important; position: static !important">
             <tr>
                 <?php for ($i = 0; $i < count($designs); $i++) : ?>
                 <?php if ($i % 3 == 0) echo "</tr><tr>" ?>
-                <td>
+                <td style="display: table-cell !important; position: static !important">
                     <div name="{$designs[$i]}" id='<?php echo trim($designs[$i]['id']) ?>'
                          class="sharexy_design sharexy_settings_icon  <?php if (trim($styleParams['design']) == trim($designs[$i]['id'])) {
                              echo "sharexy_settings_icon_hover";
-                         } ?>">
+                         } ?>" style="display: block !important; position: static !important;">
                         <p class="viol">&nbsp;Name: <span
                                 class="sharexy_span"><?php echo $designs[$i]['name']; ?></span>
 

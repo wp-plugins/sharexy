@@ -164,11 +164,7 @@ class SharexyMain {
     function validateWebmasterId($webmasterId) {
         $fail = 0;
         if (is_string($webmasterId) && $webmasterId && strlen(trim($webmasterId)) > 0) {
-            $webmasterId = trim($webmasterId);
-            $wmArr = explode('-', $webmasterId);
-            if (count($wmArr) !== 2 || strlen($wmArr[0]) !== 3 || !(intval($wmArr[1]) >= 0) ) {
-                $webmasterId = $fail;
-            }
+            $webmasterId = preg_match('/^\w{3}-\d{5}$/', trim($webmasterId)) ? strtolower(trim($webmasterId)) : $fail;
         } else {
             $webmasterId = $fail;
         }
