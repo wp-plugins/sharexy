@@ -2,7 +2,7 @@
 
 class SharexyWidget extends SharexyMain {
     var $errorReporter = null,
-        $codeType = array("lite" => false, "full" => true),
+        $codeType = array("lite" => false, "full" => false),
         $noindexClassName = 'sharexyWidgetNoindexUniqueClassName',
         $priority = 16,
         $defaultPriority = 10;
