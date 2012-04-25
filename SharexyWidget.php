@@ -2,7 +2,7 @@
 
 class SharexyWidget extends SharexyMain {
     var $errorReporter = null,
-        $codeType = array("lite" => false, "full" => false),
+        $codeType = array("lite" => false, "full" => true),
         $noindexClassName = 'sharexyWidgetNoindexUniqueClassName',
         $priority = 16,
         $defaultPriority = 10;
@@ -18,6 +18,7 @@ class SharexyWidget extends SharexyMain {
     function loadWidget() {
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
+        add_action('wp_footer', array(&$this, 'displayFloatWidget'), $this->priority);
     }
 
     function displayWidgetExcerpt($content = '') {
@@ -59,12 +60,17 @@ class SharexyWidget extends SharexyMain {
         $pageHTML .= $content;
         $pageHTML .= $this->getPlaceCode('bottom', $placements, $mainStyle);
         $pageHTML .= $this->getPlaceCode('bottom_post', $placements, $mainStyle);
-        $pageHTML .= $this->getPlaceCode('float', $placements, $mainStyle);
         if ($filtered === true) {
             add_filter('wp_trim_excerpt', array(&$this, 'removeTag'), $this->priority, 2);
         }
-        add_action('wp_footer', array(&$this, 'footLoader'), $this->priority + 1);
+        add_action('wp_footer', array(&$this, 'footLoader'), $this->priority);
         return $pageHTML;
+    }
+
+    function displayFloatWidget() {
+        $placements = $this->getPlacements();
+        $mainStyle = $this->getStyle();
+        echo $this->getPlaceCode('float', $placements, $mainStyle);
     }
 
     function getPlaceCode($place, &$placements, &$mainStyle) {
@@ -143,7 +149,7 @@ class SharexyWidget extends SharexyMain {
                         if (!w.jQuery) {
                             return;
                         }
-                        var jQuery = window.jQuery;
+                        var jQuery = w.jQuery;
                         jQuery('.{$this->noindexClassName}').each(function (n, element) {
                             var content = jQuery(element).html();
                             jQuery(element).html('<noindex>' + content + '</noindex>');
