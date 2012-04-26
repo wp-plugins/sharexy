@@ -1,6 +1,6 @@
 #wpcontent {
     font-family: sans-serif;
-    min-width: 990px;
+    min-width: 1473px;
     background: #91a1c2 url('../img/bg.png') repeat-x 0 28px
 }
 
@@ -37,7 +37,7 @@ a:hover {
 
 .sharexy_content {
     margin: 3px 5px;
-    min-width: 944px;
+    min-width: 	1443px;
     background: #fff url('../img/ar.png') no-repeat top right;
     padding: 20px 0;
 
@@ -207,6 +207,16 @@ a:hover {
 .sharexy_feedback .sharexy_promo_text {
     color: #586d99;
     padding: 4px 0;
+}
+.yepty_banner {
+    width: 278px;
+    height: 40px !important;
+    background: #fff url('../img/yepty.png') no-repeat 0 0 !important;
+    color: #202020;
+    font-size: 12px;
+    text-shadow: 1px 0px 0px #fff;
+    padding: 20px 5px 0 135px;
+    cursor: pointer;
 }
 
 #user_id {

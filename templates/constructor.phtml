@@ -109,6 +109,10 @@
             </div>
             <!---end -Ask a question, leave feedback or share your ideas-->
         </td>
+        <td>
+            <div class="yepty_banner bt" onclick="window.open('http://yepty.com')">
+            </div>
+        </td>
 
 
     </tr>
@@ -187,15 +191,18 @@
 </div>
 <div style="padding: 25px 20px 0;">
 
-            <h4 style="margin-bottom: 0;">
+    <h4 style="margin-bottom: 0;">
                 <span class="niceCheck"><input type='checkbox' id='translation_popup_bot_a'
-                                                                        class='ads_translation_settings'
-                                                                        id="popup_bot_a"
-                                                                        name='popup_bot_a' <?php echo (int)$styleParams['popup_bot_a'] == 1  ? "value='1' checked='true'" : " value='0' ";?>></span>
-                <a class="tips" style="text-decoration: none; border-bottom: 1px dotted #C7531F !important; color: #C7531F !important;"><label
-                        for="translation_popup_bot_a" >Help other good people find our website by displaying Sharexy link at additional sharing options</label></a>
-            </h4></div>
+                                               class='ads_translation_settings'
+                                               id="popup_bot_a"
+                                               name='popup_bot_a' <?php echo (int)$styleParams['popup_bot_a'] == 1 ? "value='1' checked='true'" : " value='0' ";?>></span>
+        <a class="tips"
+           style="text-decoration: none; border-bottom: 1px dotted #C7531F !important; color: #C7531F !important;"><label
+                for="translation_popup_bot_a">Help other good people find our website by displaying Sharexy link at
+            additional sharing options</label></a>
+    </h4></div>
 <br>
+
 <div class="sel_design">
     <h3 class="sharexy_h3 text_sh">Choose design of your buttons.</h3>
 
@@ -848,7 +855,8 @@
                              style='<?php echo isset($counter_tpl) && ($size_tpl == '55' || $size_tpl == '32') && $counter_tpl == '1' ? " display: inline-block " : ""; ?>'>
                             <?php echo rand(1, 100);?>
                         </div>
-                        <img name="sharexy" src='<?php echo $scriptPath . 'design/' . $styleParams['design'] . '/sharexy/' . $size_tpl; ?>.png'
+                        <img name="sharexy"
+                             src='<?php echo $scriptPath . 'design/' . $styleParams['design'] . '/sharexy/' . $size_tpl; ?>.png'
                              class='sharexy_icon' align='top'></div>
                 </td>
             </tr>

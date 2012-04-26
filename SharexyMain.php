@@ -102,10 +102,12 @@ class SharexyMain {
     function getPlacements() {
         $defaultPlacements = $this->defaultPlacements;
         $placements = get_option( $this->adminOptionsName . '_placements' );
-        if (!$placements) {
+        if ($placements && is_string($placements)) {
+            $placements = @unserialize( $placements );
+        } elseif (!$placements || !is_array($placements) || empty($placements)) {
             return $defaultPlacements;
         }
-        $placements = unserialize($placements);
+
         $resultPlacements = array();
         foreach ($defaultPlacements as $place => $params) {
             $resultPlacements[$place] = array();
@@ -122,10 +124,11 @@ class SharexyMain {
     function getStyle() {
         $resultParams = $this->defaultWidgetParams;
         $savedParams = get_option( $this->adminOptionsName );
-        if ( !$savedParams ) {
+        if ($savedParams && is_string($savedParams)) {
+            $savedParams = @unserialize( $savedParams );
+        } elseif (!$savedParams || !is_array($savedParams) || empty($savedParams)) {
             return $resultParams;
         }
-        $savedParams = unserialize( $savedParams );
         foreach ($resultParams as $key => $value) {
             if ( isset($savedParams[$key]) ) {
                 $resultParams[$key] = $savedParams[$key];
@@ -138,12 +141,10 @@ class SharexyMain {
     function getPlacementsStyleParams($place) {
         $defaultStyleParams = isset($this->defaultPlacementsStyleParams[$place]) ? $this->defaultPlacementsStyleParams[$place] : array();
         $placeStyleParams = get_option( $this->adminOptionsName . '_placement_' . $place . '_style' );
-        $placeStyleParams = $placeStyleParams ? unserialize( $placeStyleParams ) : array();
-        if ( empty( $placeStyleParams ) ) {
+        if ($placeStyleParams && is_string($placeStyleParams)) {
+            $placeStyleParams = @unserialize( $placeStyleParams );
+        } elseif (!$placeStyleParams || !is_array($placeStyleParams) || empty($placeStyleParams)) {
             return $defaultStyleParams;
-        }
-        if ( empty( $defaultStyleParams ) ) {
-            return $placeStyleParams;
         }
         foreach ($defaultStyleParams as $key => $value) {
             $placeStyleParams[$key] = isset($placeStyleParams[$key]) ? $placeStyleParams[$key] : $value;

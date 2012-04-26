@@ -2,13 +2,16 @@
 
 class SharexyWidget extends SharexyMain {
     var $errorReporter = null,
-        $codeType = array("lite" => false, "full" => true),
+        $codeType = array("lite" => false, "full" => false),
         $noindexClassName = 'sharexyWidgetNoindexUniqueClassName',
         $priority = 16,
-        $defaultPriority = 10;
+        $defaultPriority = 10,
+        $placeIds, $dataScripts;
 
     function SharexyWidget() {
         $this->parentInit();
+        $this->dataScripts = array();
+        $this->placeIds = array();
     }
 
     function setErrorObject($errorReporter) {
@@ -19,6 +22,9 @@ class SharexyWidget extends SharexyMain {
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
         add_action('wp_footer', array(&$this, 'displayFloatWidget'), $this->priority);
+
+        add_action('wp_footer', array(&$this, 'dataScriptsLoader'), $this->priority + 1);
+        add_action('wp_footer', array(&$this, 'footLoader'), $this->priority + 2);
     }
 
     function displayWidgetExcerpt($content = '') {
@@ -52,7 +58,6 @@ class SharexyWidget extends SharexyMain {
     function displayWidget($content = '', $filtered = true) {
         $pageHTML = '';
         remove_filter('wp_trim_excerpt', array(&$this, 'removeTag'), $this->defaultPriority - 1, 2);
-        remove_action('wp_footer', array(&$this, 'footLoader'), $this->defaultPriority - 1);
         $placements = $this->getPlacements();
         $mainStyle = $this->getStyle();
         $pageHTML .= $this->getPlaceCode('top', $placements, $mainStyle);
@@ -63,7 +68,6 @@ class SharexyWidget extends SharexyMain {
         if ($filtered === true) {
             add_filter('wp_trim_excerpt', array(&$this, 'removeTag'), $this->priority, 2);
         }
-        add_action('wp_footer', array(&$this, 'footLoader'), $this->priority);
         return $pageHTML;
     }
 
@@ -108,43 +112,68 @@ class SharexyWidget extends SharexyMain {
         if (!$show) {
             return $pageHTML;
         }
+
         $placeStyle = $this->getPlacementsStyleParams($place);
         $mixStyle = $this->mixMainPlaceStyleParams($mainStyle, $placeStyle);
         if ($customLink && $customTitle && $place !== 'float') {
             $mixStyle['customLink'] = $customLink;
             $mixStyle['customTitle'] = $customTitle;
         }
-        return $this->getSharexyCodeHTML($mixStyle, $placeParams);
+        return $this->getSharexyCodeHTML($place, $mixStyle, $placeParams);
     }
 
-    function getSharexyCodeHTML($styleParams, $placeParams) {
-        $code_id = rand(999999, 99999999);
+    function getSharexyCodeHTML($place, $styleParams, $placeParams) {
+        global $post;
+        $key = isset($post) && $post && isset($post->ID) ? md5($place . $post->ID) : md5($place);
+        $debugInfo = isset($post) && $post && isset($post->ID) ? $place . " " . $post->ID : $place;
+        $this->placeIds[$key] = isset($this->placeIds[$key]) ? $this->placeIds[$key] : rand(999999, 99999999);
+        $code_id = $this->placeIds[$key];
+
         $this->codeType['lite'] = isset($styleParams['user_id']) && $this->validateWebmasterId($styleParams['user_id'])? false : true;
         $this->codeType['full'] = isset($styleParams['user_id']) && $this->validateWebmasterId($styleParams['user_id']) ? true : false;
 
         $styleParams['publisher_key'] = isset($styleParams['user_id']) ? $this->validateWebmasterId($styleParams['user_id']) : 0;
         $styleParams['code_id'] = $code_id;
+        $styleParams['d'] = $debugInfo;
         $align = isset($placeParams['align']) ? $placeParams['align'] : "";
-        if (function_exists('json_encode')) {
-            $params = json_encode($styleParams);
-        } else {
-            $json = new SharexyJson();
-            $params = $json->encode($styleParams);
+
+        $this->dataScripts[$code_id] = $styleParams;
+
+        return '<div align="' . $align . '"><div class="' . $this->noindexClassName . '"><div id="shr_' . $code_id . '"></div></div></div>';
+    }
+
+    function dataScriptsLoader() {
+        if (is_array($this->dataScripts) && !empty($this->dataScripts)) {
+            $script = <<<EOF
+                <script type='text/javascript'>/* <![CDATA[ */
+                    (function(w){
+                        if (!w.SharexyWidget) {
+                            w.SharexyWidget = {
+                                Params : {}
+                            };
+                        }
+EOF;
+            foreach ($this->dataScripts as $id => $styleParams) {
+                if (function_exists('json_encode')) {
+                    $params = json_encode($styleParams);
+                } else {
+                    $json = new SharexyJson();
+                    $params = $json->encode($styleParams);
+                }
+                $script .= "w.SharexyWidget.Params['shr_{$id}'] = {$params};\n";
+            }
+            $script .= "})(window);
+                /* ]]> */
+            </script>
+            ";
+            echo $script;
         }
-        $script = "<script type='text/javascript'><!--
-                        (function(w){
-                            if (!w.SharexyWidget) {w.SharexyWidget = {Params : {}};}
-                            w.SharexyWidget.Params['shr_{$code_id}'] = " . $params . ";";
-        $script .= "})(window);
-                        //-->
-                    </script>";
-        return '<div align="' . $align . '"><div class="' . $this->noindexClassName . '"><div id="shr_' . $code_id . '"></div></div><div>' . $script . '</div></div>';
     }
 
     function footLoader() {
         if ($this->codeType['full'] === true || $this->codeType['lite'] === true) {
             echo <<<EOF
-                <script type='text/javascript'><!--
+                <script type='text/javascript'>/* <![CDATA[ */
                     (function (w) {
                         if (!w.jQuery) {
                             return;
@@ -155,8 +184,7 @@ class SharexyWidget extends SharexyMain {
                             jQuery(element).html('<noindex>' + content + '</noindex>');
                         });
                     })(window);
-                    //-->
-                </script>
+                 /* ]]> */</script>
 EOF;
         }
         if ($this->codeType['full'] === true) {
