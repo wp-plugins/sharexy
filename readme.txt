@@ -124,9 +124,9 @@ Learn how users are sharing and engaging with your content.
 * Tumblr
 * Yahoo bookmarks
 
-*Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.*
+**Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.**
 
-*Want to Make More Money from Your Blog?*
+**Want to Make More Money from Your Blog?**
 
 *Skyrocket your Income with our [New Yepty plugin](http://wordpress.org/extend/plugins/yepty/)!*
 
