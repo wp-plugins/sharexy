@@ -265,10 +265,10 @@
             <?php
                         if (!empty($placementsParams)) {
     $titles = array(
-        'top' => 'Display buttons at the top of posts on the pages',
-        'bottom' => 'Display buttons at the bottom of posts on the pages',
-        'bottom_post' => 'Display buttons at the bottom of posts',
-        'top_post' => 'Display buttons at the top of posts',
+        'top' => 'Display buttons in the excerpts(previews) of your posts before the summary',
+        'bottom' => 'Display buttons in the excerpts(previews) of your posts below the summary',
+        'bottom_post' => 'Display buttons at the bottom of full(opened) post',
+        'top_post' => 'Display buttons at the top of full(opened) post',
         'float' => 'Display floating widget'
     );
     foreach ($placementsParams as $place => $placeData) {
@@ -474,11 +474,11 @@
                                                                                                       name="pages_mode_front_<?php echo $place;?>"
                                                                                                       id="pages_mode_front_<?php echo $place;?>"
                 <?php echo isset($params['pages_mode']['front']) && $params['pages_mode']['front'] === 1 ? ' checked="true" value="1" ' : ' value="0" '; ?>
-                    ></span> <label for="pages_mode_front_<?php echo $place;?>">display at the main page</label>&nbsp;&nbsp;&nbsp;
+                    ></span> <label for="pages_mode_front_<?php echo $place;?>">display for posts at the main page</label>&nbsp;&nbsp;&nbsp;
             </td><td><span class="niceCheck"><input type="checkbox" name="pages_mode_page_<?php echo $place;?>"
                                                     id="pages_mode_page_<?php echo $place;?>1"
                 <?php echo isset($params['pages_mode']['page']) && $params['pages_mode']['page'] === 1 ? ' checked="true" value="1" ' : ' value="0" '; ?>
-                    ></span> <label for="pages_mode_page_<?php echo $place;?>1">display at all other pages</label>
+                    ></span> <label for="pages_mode_page_<?php echo $place;?>1">display for posts at all other pages</label>
             <?php } ?></td></tr></table>
 
     <br>

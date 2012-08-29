@@ -33,15 +33,15 @@ class SharexyMain {
                 'align' => 'right',
                 'show_ads' => 1
             ),
-            'top' => array(
-                "display" => 0,
-                'pages_mode' => array('front' => 1, "page" => 1, "post" => 0 ),
-                'align' => 'right',
-                'show_ads' => 1
-            ),
             'bottom_post' => array(
                 "display" => 1,
                 'pages_mode' => array('front' => 0, "page" => 0, "post" => 1 ),
+                'align' => 'right',
+                'show_ads' => 1
+            ),
+            'top' => array(
+                "display" => 0,
+                'pages_mode' => array('front' => 1, "page" => 1, "post" => 0 ),
                 'align' => 'right',
                 'show_ads' => 1
             ),
