@@ -3,8 +3,8 @@ Contributors: Zettalab
 Donate link: http://sharexy.com
 Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin
 Requires at least: 2.8
-Tested up to: 3.3.2
-Stable tag: 1.1.2
+Tested up to: 3.4.1
+Stable tag: 1.2
 
 Money making opportunity, Widget placement customizing (floating and static), Continual updated design collection, Analysis tools
 
@@ -124,11 +124,11 @@ Learn how users are sharing and engaging with your content.
 * Tumblr
 * Yahoo bookmarks
 
-**Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.**
+*Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.*
 
 **Want to Make More Money from Your Blog?**
 
-*Skyrocket your Income with our [New Yepty plugin](http://wordpress.org/extend/plugins/yepty/)!*
+**Skyrocket your Income with our [New Yepty plugin](http://wordpress.org/extend/plugins/yepty/)!**
 
 
 == Frequently Asked Questions ==
@@ -197,6 +197,10 @@ PHP 5.3 is preferred; PHP 4 is supported.
 
 * Bug Fixes.
 
+= 1.2 =
+
+* Bug Fixes.
+
 == Upgrade Notice ==
 
 = 1.0.1 =
@@ -213,5 +217,9 @@ Bug Fixes.
 Pinterest added.
 
 = 1.1.1 =
+
+Bug Fixes.
+
+= 1.1.2 =
 
 Bug Fixes.

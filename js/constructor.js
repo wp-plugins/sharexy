@@ -89,7 +89,7 @@
                 jQuery('.div_show_ads_settings').hide();
             }
         });
-    };
+    }
     function adsTranslationSettings() {
         jQuery('#sharexy_ads_translation_settings .ads_translation_settings').parent().click(function () {
             var isChk = false, el = jQuery(this).find("input");
@@ -129,7 +129,7 @@
                 defineCheck(jQuery(this).parent());
             });
         });
-    };
+    }
     function designSettings() {
         var popupObj = jQuery('#popup_design_settings');
         jQuery('#call_popup_designs,#design_preview').unbind('click').click(function () {
@@ -160,7 +160,6 @@
                         }
                         jQuery(this).attr("src", src);
                     }
-
                 });
             }
             popupObj.hide();
@@ -191,7 +190,7 @@
             });
 
         });
-    };
+    }
     function placementsCheckboxes() {
         jQuery('.placements_checkboxes').parent().click(function () {
             var place, el = jQuery(this).find("input");
@@ -233,7 +232,7 @@
             }
         });
         PreviewChangeCounters();
-    };
+    }
 
     function placementsSettings() {
         var placements = ['top', 'bottom', 'float', 'top_post','bottom_post'],
@@ -310,11 +309,10 @@
                 jQuery('#boxes_' + place).append(jQuery(li));
                 jQuery('#li_' + place + '_' + service).css({"display": "inline-block","position":"relative"});
                 junkdrawer.restoreListOrder("boxes_" + place);
-                dragsort.makeListSortable(document.getElementById("boxes_" + place), function(item) {
-                });
+                dragsort.makeListSortable(document.getElementById("boxes_" + place), function() {});
                 //float preview
                 if (place == "float") {
-                    var li = document.createElement("li");
+                    li = document.createElement("li");
                     li.setAttribute("id", 'li_' + place + '_' + place + '_' + service);
                     li.innerHTML = jQuery('#preview_all_services_' + place + ' #li_all_' + place + '_' + service).html();
                     jQuery('#boxes_float_float').append(jQuery(li));
@@ -375,7 +373,7 @@
         });
     }
 
-    ;
+
 
     function buzzSettings(place) {
         jQuery('.buzz_' + place).unbind('change').change(function () {
@@ -558,7 +556,7 @@
         });
     }
 
-    ;
+
 
     function copyServices(place, copyPlace) {
         var copyServicesStr, copyServicesArr, i;
@@ -577,15 +575,14 @@
             li.innerHTML = jQuery('#preview_all_services_' + place + ' #li_all_' + place + '_' + copyServicesArr[i]).html();
             jQuery('#boxes_' + place).append(jQuery(li));
             junkdrawer.restoreListOrder("boxes_" + place);
-            dragsort.makeListSortable(document.getElementById("boxes_" + place), function(item) {
-            });
+            dragsort.makeListSortable(document.getElementById("boxes_" + place), function() {});
         }
         jQuery("#preview_" + place + " .sharexy_icon").css("margin-top", "0px");
         jQuery("#preview_" + place + " .sharexy_icon").parent().css("width", "auto");
         jQuery('#sharexy_plugin_constructor_form [name="services_' + place + '"]').attr('value', copyServicesStr);
     }
 
-    ;
+
 
     function copyPageMode(place, copyPlace) {
         var front_val, front_chk,
@@ -683,49 +680,49 @@
             jQuery('#preview_' + place + " .sharexy_cnt").removeClass("cnt_top");
         }
         //preview change counters
-        var size = jQuery("select[name=size_static_" + place + "]").attr("value");
+        size = jQuery("select[name=size_static_" + place + "]").attr("value");
         previewCountersVisible(place, size);
 
     }
 
-    ;
+
 
     function copyBuzz(place, copyPlace) {
         var buzz_val, buzz_chk;
         buzz_val = jQuery('[name="buzz_' + copyPlace + '"]').attr("value");
-        if (jQuery('[name="buzz_' + copyPlace + '"]').attr('checked') == true) buzz_chk = true; else buzz_chk = false;
+        buzz_chk = jQuery('[name="buzz_' + copyPlace + '"]').attr('checked') ? true : false;
         jQuery('[name="buzz_' + place + '"]').attr('value', buzz_val);
         jQuery('[name="buzz_' + place + '"]').attr('checked', buzz_chk || false);
         defineCheck(jQuery('[name="buzz_' + place + '"]').parent());
 
     }
 
-    ;
+
 
     function copyShowAds(place, copyPlace) {
         var show_ads_val, show_ads_chk;
         show_ads_val = jQuery('[name="show_ads_' + copyPlace + '"]').val();
-        if (jQuery('[name="show_ads_' + copyPlace + '"]').attr('checked') == true) show_ads_chk = true; else show_ads_chk = false;
+        show_ads_chk = jQuery('[name="show_ads_' + copyPlace + '"]').attr('checked') ? true : false;
         jQuery('[name="show_ads_' + place + '"]').attr('value', show_ads_val);
         jQuery('[name="show_ads_' + place + '"]').attr('checked', show_ads_chk || false);
         defineCheck(jQuery('[name="show_ads_' + place + '"]').parent());
 
     }
 
-    ;
+
 
     function copyRetweet(place, copyPlace) {
         jQuery("#retweet_username_" + place).css("display", jQuery("#retweet_username_" + copyPlace).css("display"));
         jQuery("#retweet_username_" + place + " .username").attr("value", jQuery("#retweet_username_" + copyPlace + " .username").val());
     }
 
-    ;
+
 
     function tipsy() {
         jQuery('.tips').tipsy({gravity: 'sw'});
     }
 
-    ;
+
 
     function PreviewChoosePosition() {
         jQuery('.sharexy_monitor table td,.sharexy_monitor_float table td').click(function() {
@@ -744,7 +741,7 @@
         });
     }
 
-    ;
+
 
     function PreviewChooseSize() {
         jQuery(".sharexy_size").click(function() {
@@ -756,7 +753,7 @@
         });
     }
 
-    ;
+
 
     function initFarbtastic() {
         var picker = jQuery('#picker'), color = jQuery("#color");
@@ -768,7 +765,6 @@
 
         });
         jQuery("#wpwrap").click(function(e) {
-            var el = e.target;
             if (e.target.id == 'color') return false;
             var po = picker.offset(), pw = picker.height(), ph = picker.width();
             if ((e.pageX < po.left) || (e.pageX > po.left + pw) || (e.pageY < po.top) || (e.pageY > po.top + ph)) {
@@ -780,14 +776,14 @@
         });
     }
 
-    ;
+
     function initNiceRadio() {
         jQuery("input.niceRadio").each(function() {
             changeRadioStart(jQuery(this));
         });
     }
 
-    ;
+
     function initFloatWidgetSize(orient, pos) {
         PreviewChangeCounters();
         var el = jQuery("#preview_float_float"), icon_w, icon_h, icon_count, add_w = 0;
@@ -829,7 +825,7 @@
         }
     }
 
-    ;
+
     function initFloatWidgetPosition(pos) {
         var fl_widg, t, l;
         fl_widg = document.getElementById("preview_float_float");
@@ -897,7 +893,7 @@
             fl_widg.style.right = "50px";
         }
 
-    };
+    }
 
     function changeSizePreview(size, obj) {
         jQuery(obj).find("img").each(function() {
@@ -926,7 +922,7 @@
             }
 
         });
-    };
+    }
     function PreviewChangeCounters() {
         
         var placements = ['top', 'bottom','top_post','bottom_post'], i, count = placements.length;
@@ -986,7 +982,7 @@
         });
         PreviewSharexyIconPosition();
 
-    };
+    }
     function PreviewSharexyIconPosition() {
         jQuery(".boxes").next().each(function() {
             if (jQuery(this).prev().attr("id") == "boxes_float_float") {
@@ -1000,7 +996,7 @@
                 jQuery(this).css({"position":"static"});
             }
         });
-    };
+    }
     function previewCountersVisible(place, size) {
         //services counters
         jQuery("#preview_" + place + " .boxes .cnt").parent().css("width", "auto");
@@ -1051,11 +1047,11 @@
 
         }
         PreviewChangeCounters();
-    };
+    }
     function initPreviewSettings(place) {
         //try buzz
         jQuery("#try_buzz_" + place).click(function() {
-            var b = new buzz("preview_" + place, 'h', window);
+            new buzz("preview_" + place, 'h', window);
         });
         //remove_selection
         jQuery("#remove_selection_" + place).click(function() {
@@ -1153,7 +1149,7 @@
             });
 
         }
-    };
+    }
     function ResizeWindow() {
         if (jQuery("#placement_float").attr("value") == "1") {
             initFloatWidgetPosition(jQuery(".sharexy_monitor_float td.hover").attr("name"));
@@ -1163,7 +1159,7 @@
             fuzz.css("width", w.width()).css("height", w.height());
         }
 
-    };
+    }
     function PublisherKey() {
         jQuery("#publisher_key").unbind("hover").hover(function() {
             jQuery("#publisher_key_img").stop(true, true).fadeIn("normal");
@@ -1173,5 +1169,5 @@
         jQuery(".boxes").next().each(function() {
             jQuery(this).css("position", "relative");
         });
-    };
+    }
 })(window);

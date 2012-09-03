@@ -219,15 +219,14 @@
     <br>
 
     <div id='popup_design_settings' style='display:none'>
-        <div align="right"><img style="cursor: pointer" alt="close" src='<?php echo $imgPath;?>close.png'
-                                onclick='$("#popup_design_settings").fadeOut("normal")'></div>
+        <div align="right"><img style="cursor: pointer" alt="close" src='<?php echo $imgPath;?>close.png' ></div>
         <p style="padding: 0 0 10px 7px; margin: 0;font-size: 18px;" class="blue">Styles:</p>
         <table cellspacing="5" style="display: table !important; position: static !important">
             <tr>
                 <?php for ($i = 0; $i < count($designs); $i++) : ?>
                 <?php if ($i % 3 == 0) echo "</tr><tr>" ?>
                 <td style="display: table-cell !important; position: static !important">
-                    <div name="{$designs[$i]}" id='<?php echo trim($designs[$i]['id']) ?>'
+                    <div id='<?php echo trim($designs[$i]['id']) ?>'
                          class="sharexy_design sharexy_settings_icon  <?php if (trim($styleParams['design']) == trim($designs[$i]['id'])) {
                              echo "sharexy_settings_icon_hover";
                          } ?>" style="display: block !important; position: static !important;">
@@ -249,11 +248,6 @@
                 <?php endfor; ?>
             </tr>
         </table>
-        <!--<?php
-            for ($i = 0; $i < count($designs); $i++) {
-            echo "<a class='sharexy_design' id='{$designs[$i]}'>{$designs[$i]}</a><br>";
-        }
-        ?>-->
     </div>
     <a href="http://sharexy.com/gallery" target="_blank" class="orange" style="font-style: italic">Go to the designs
         collection page</a>
