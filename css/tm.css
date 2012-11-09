@@ -1,0 +1,54 @@
+#colorSelector {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	
+	background: url(../js/colorpicker/images/select2.png);
+}
+#colorSelector div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	margin-top:-10px;
+	background: url(../js/colorpicker/images/select2.png) center;
+}
+.appereancesettings{
+	 /*float:left; */
+	 line-height:30px;
+}
+
+#tm_settings{
+	padding-left:15px;
+	position:relative;
+}
+
+#tm_noteblock{
+	width:435px;
+	position:absolute;
+	padding:10px;
+	top:65px;
+	left:450px;
+	border:1px solid #969696;
+}
+
+#tm_settings .tm_option{
+	margin-top:10px;
+}
+
+h3 {margin-top:30px;}
+
+#settings_block *{
+display:inline;
+}
+
+input::-webkit-input-placeholder {
+    color:    #999;
+}
+input:-moz-placeholder {
+    color:    #999;
+}
+input:-ms-input-placeholder {
+    color:    #999;
+}
