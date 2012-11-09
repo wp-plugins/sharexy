@@ -17,7 +17,7 @@ Attract more free traffic, Increase visibility via TrafficMiner for Sharexy, Ear
 
 * Good looking, with buttons' design fitting your blog
 
-* Customizable placement, just the way you want it 
+* Customizable placement, just the way you want it
 
 * Effective performance
 
@@ -26,7 +26,7 @@ Seems like there's nothing else to add to the list? **Well there is!**
 
 
 * It may serve for increasing your content visibility at contextually relevant pages across the web
-* Moreover, such widget may also be the source for targeted contextual traffic from all over the web straight to your blog! 
+* Moreover, such widget may also be the source for targeted contextual traffic from all over the web straight to your blog!
 * ***The last but not the least -you may earn money when using the widget.***
 
 
@@ -65,14 +65,14 @@ Display of a relevant pay per click advertising via the Sharexy widget does not 
 
 It's all in your hands and it's up to you whether you want to earn money advertising with the help of our new widget and TrafficMiner or  just use social sharing features and attract target traffic to your blog.
 
-**There's plenty of combinations – you'll surely find the one which suits you best!**
+**There's plenty of combinations  you'll surely find the one which suits you best!**
 
 *Learn more about [Sharexy](http://sharexy.com/how_it_work) and [TrafficMiner](http://sharexy.com/about_traffic_miner) at [Sharexy.com](http://sharexy.com)*
 
 
 ***Stunning design and easy setup***
 
-Designers and creative contributors from all over the world have already taken care of you by submitting awesome widget styles, one of which is exactly what you’ve been looking for.
+Designers and creative contributors from all over the world have already taken care of you by submitting awesome widget styles, one of which is exactly what you've been looking for.
 Fed up with surfing blogs and forums searching for the right design of sharing buttons? Search no more - customize everything as you want in a blink of an eye with just a few clicks!
 
 
@@ -221,6 +221,6 @@ Expanded the possibilities of a tool by adding TrafficMiner for Sharexy - design
 Bug Fixes.
 
 = 1.2 =
-Expanded the possibilities of a tool by adding TrafficMiner for Sharexy - designed to drive free traffic to your blog. 
+Expanded the possibilities of a tool by adding TrafficMiner for Sharexy - designed to drive free traffic to your blog.
 
 
