@@ -23,7 +23,7 @@
                             <?php echo "<img src='" . $imgPath . "facebook.png'>";?>
                         </td>
                         <td align="center">
-                            <a href="javascript: var uri = encodeURIComponent('http://su.pr/1UMmRl'); var title=encodeURIComponent('Sharexy - powerful social sharing and bookmarking tool'); window.open('http://www.facebook.com/sharer.php?u='+uri+'&t='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
+                            <a href="javascript: var uri = encodeURIComponent('http://su.pr/1UMmRl'); var title=encodeURIComponent('Sharexy - powerful social sharing, bookmarking and blog monetization tool'); window.open('http://www.facebook.com/sharer.php?u='+uri+'&t='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
                                 <?php echo "<img src='" . $imgPath . "like.png'>";?>
                             </a>
                         </td>
@@ -36,7 +36,7 @@
 
                 <div class="sharexy_promo_text">Tweet about Plugin</div>
                 <div style="padding-left: 38px; width: 40px;">
-                    <a href="javascript: var uri = encodeURIComponent('http://su.pr/1UMmRl'); var title=encodeURIComponent('Sharexy - powerful social sharing and bookmarking tool'); window.open('http://twitter.com/share?url='+uri+'&text='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
+                    <a href="javascript: var uri = encodeURIComponent('http://su.pr/1UMmRl'); var title=encodeURIComponent('Sharexy - powerful social sharing, bookmarking and blog monetization tool'); window.open('http://twitter.com/share?url='+uri+'&text='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
                         <?php echo "<img src='" . $imgPath . "tweet.png'>";?>
                     </a>
                 </div>
@@ -80,7 +80,7 @@
 
                         </td>
                         <td valign="top" style="padding-top: 1px;">
-                            <a href="javascript: var uri = encodeURIComponent('http://sharexy.com/'); var title=encodeURIComponent('Sharexy - Sharing widget, Share Button, Social Bookmark, Sharing Plugins.'); window.open('http://www.facebook.com/sharer.php?u='+uri+'&t='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
+                            <a href="javascript: var uri = encodeURIComponent('http://sharexy.com/'); var title=encodeURIComponent('Sharexy - Sharing widget, Share Button, Social Bookmark, Sharing Plugins, Analytics, Blog and website monetization tool.'); window.open('http://www.facebook.com/sharer.php?u='+uri+'&t='+title ,null, 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0, width=850, height=750');void(0);">
                                 <?php echo "<img src='" . $imgPath . "like.png'>";?>
                             </a>
                         </td>
@@ -102,38 +102,55 @@
         <td>
             <!---- Ask a question, leave feedback or share your ideasg-->
             <div class="sharexy_feedback bt">
-<div class="sharexy_promo_text"> Support Sharexy </br></div>
-             <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="LNS9HQCT6GLBG">
-<input type="image"
-src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif"
-border="0" name="submit" alt="PayPal — The safer, easier way to pay
-online.">
-<img alt="" border="0"
-src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1"
-height="1">
-</form>   
+                <a target="_blank" class="sharexy_promo_text" href="http://community.sharexy.com">Ask a question, leave
+                    feedback
+                    or share your ideas</a>
+
             </div>
             <!---end -Ask a question, leave feedback or share your ideas-->
         </td>
+        <!--
         <td>
+            <div class="yepty_banner bt" onclick="window.open('http://yepty.com')">
+            </div>
         </td>
-
+		-->
 
     </tr>
 </table>
 <!--end promo-->
 <div class="sharexy_content">
 <div class="sharexy_content_pd">
-<div style="display: none;">
-
+	<!--
+    <h3 class="sharexy_h3">Sharexy account settings </h3>
+	-->
     <form action='' method='post' id='sharexy_plugin_constructor_form'>
+    	<!--
+        <a class="tips" id="publisher_key">Publisher key</a> <span class="gray">(optional)</span>
         <input type='text' id="user_id" name='user_id'
                value='<?php echo $styleParams['user_id'] ? $styleParams['user_id'] : '';?>'>
+        <br><img style="display: none" src="<?php echo  $imgPath . "publisher_key.png"; ?>" id="publisher_key_img">
+
+        <div id="fail_user_id"
+             style='margin-top: 5px;display:none; background: none repeat scroll 0 0 #FFFFE4;border: 1px solid #FFBC9F;color: #ff0000;font-size: 12px;line-height: 20px;margin-bottom: 20px;padding: 3px 7px;text-align: center;'>
+            Incorrect ID
+        </div>
         
+        <div class="sharexy_desc">
+            If you are not registered at Sharexy yet, take a few seconds to <a class="orange"
+                                                                               href="http://sharexy.com/?registration=1"
+                                                                               target="_blank">register</a> and you will
+            be able to earn money with us, get your earnings every 15 days directly to your Paypal account and get
+            access to the analytics.<br> You can learn more how to earn with Sharexy <a
+                href='http://sharexy.com/how_it_work' class="orange" target="_blank">here</a>.
+        </div>
 
-
+        <br>
+        -->
+        
+        <p><a href="http://eepurl.com/w58Jz" target="_blank"><b><big>Stay tuned. Subscribe to our Newsletter!</big></b></a></p>
+        
+        <!--
         <div id='sharexy_ads_translation_settings' <?php echo $styleParams['user_id'] ? "" : " style='display: none;' ";?> >
             <h3 class="sharexy_h3">Ad broadcasting settings</h3>
             <h4>
@@ -179,7 +196,7 @@ height="1">
                     don't want to make money in the sharexy ad network</label></a>
             </h4>
         </div>
-</div>
+        -->
 </div>
 <div style="padding: 25px 20px 0;">
 
@@ -255,7 +272,8 @@ height="1">
         'bottom' => 'Display buttons in the excerpts(previews) of your posts below the summary',
         'bottom_post' => 'Display buttons at the bottom of full(opened) post',
         'top_post' => 'Display buttons at the top of full(opened) post',
-        'float' => 'Display floating widget'
+        'float' => 'Display floating widget',
+    	'shortcode' => 'Generate shortcode'
     );
     foreach ($placementsParams as $place => $placeData) {
         $params = isset ($placeData['params']) ? $placeData['params'] : array();
@@ -274,409 +292,424 @@ height="1">
     <div id="<?php echo $place; ?>_place_settings_div"
          style=" <?php echo isset($params['display']) && $params['display'] ? '' : 'display : none;' ?> ">
 
-        <?php if ($place !== 'float') { ?>
+    <?php if ($place !== 'float' && $place != 'shortcode') { ?>
+	
+	    <div id="copy_settings_<?php echo $place; ?>">
+	        <span class="blue">Copy settings from:</span>
+	        <select id="select_copy_placement_<?php echo $place; ?>" class="select_copy_placement">
+	            <option value="0" class="option_default">select</option>
+	            <?php
+	                                foreach ($placementsParams as $copyPlace => $copyPlaceData) {
+	            if ($copyPlace !== 'float' && $copyPlace !== $place) {
+	                echo "<option value='" . $copyPlace . "' class='option_{$copyPlace}' ";
+	                echo $copyPlaceData['params']['display'] ? "" : " disabled='true' ";
+	                echo "  >" . $titles[$copyPlace] . "</option>";
+	            }
+	        }
+	            ?>
+	        </select>
+	    </div>
 
-    <div id="copy_settings_<?php echo $place; ?>">
-        <span class="blue">Copy settings from:</span>
-        <select id="select_copy_placement_<?php echo $place; ?>" class="select_copy_placement">
-            <option value="0" class="option_default">select</option>
-            <?php
-                                foreach ($placementsParams as $copyPlace => $copyPlaceData) {
-            if ($copyPlace !== 'float' && $copyPlace !== $place) {
-                echo "<option value='" . $copyPlace . "' class='option_{$copyPlace}' ";
-                echo $copyPlaceData['params']['display'] ? "" : " disabled='true' ";
-                echo "  >" . $titles[$copyPlace] . "</option>";
-            }
-        }
-            ?>
-        </select>
-    </div>
-
-        <?php } ?>
-
-
-
-        <?php if ($place === 'float') { ?>
-
-    <select name="mode_float_<?php echo $place;?>" style="display: none;">
-        <option value="tl"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'tl' ? ' selected="true" ' : ''; ?>
-                >top left
-        </option>
-        <option value="l"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'l' ? ' selected="true" ' : ''; ?>
-                >left
-        </option>
-        <option value="bl"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'bl' ? ' selected="true" ' : ''; ?>
-                >bottom left
-        </option>
-        <option value="tr"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'tr' ? ' selected="true" ' : ''; ?>
-                >top right
-        </option>
-        <option value="r"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'r' ? ' selected="true" ' : ''; ?>
-                >right
-        </option>
-        <option value="br"
-            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'br' ? ' selected="true" ' : ''; ?>
-                >bottom right
-        </option>
-    </select>
-    <table cellspacing="0">
-        <tr>
-            <td>
-                <p class="blue sharexy_choose_size" valign="top">Choose button size:&nbsp;</p>
-            </td>
-            <td valign="top">
-                <div style="position: relative">
-                    <table cellspacing="0" id="size_<?php echo $place;?>">
-                        <tbody>
-                        <tr>
-                            <td valign="middle">
-
-                                <div class="sharexy_size sharexy_size_hover">
-                                    <div style="float:left; position: relative;white-space: nowrap">
-                                        <div class="sharexy_mask"></div>
-                                        <img align="left" class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/<?php echo $style['size_float']; ?>.png">
-                                        <img align="left" class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/<?php echo $style['size_float']; ?>.png">
-                                        <img align="left" class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/<?php echo $style['size_float']; ?>.png">
-                                        <img align="left" class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/<?php echo $style['size_float']; ?>.png">
-                                        <img align="left" class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/<?php echo $style['size_float']; ?>.png">
-                                    </div>
-                                    <?php if ($style['size_float'] == '32') { ?>
-                                    <div style="float: left;padding-top: 20px;">32*32</div><?php } ?>
-                                    <?php if ($style['size_float'] == '55') { ?>
-                                    <div style="float: left;padding-top: 9px;">60*20</div><?php } ?>
-                                    <?php if ($style['size_float'] == '60') { ?>
-                                    <div style="float: left;padding-top: 48px;">60*60</div><?php } ?>
-                                </div>
-
-                            </td>
-                        </tr>
-                        <tr>
-                    </table>
-                    <div class="popup_size" id="popup_size_<?php echo $place;?>">
-                        <div class="popup_size_ar"></div>
-                        <table cellspacing="0" id="size_popup_<?php echo $place;?>">
-                            <tbody>
-                            <tr>
-                                <td class="blue" style="padding-left: 8px;">Size:</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="32"
-                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '32' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float:left; position: relative;white-space: nowrap">
-                                            <div class="sharexy_mask"></div>
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/32.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/32.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/32.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/32.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/32.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 20px;">32*32</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="bottom">
-                                    <div name="55"
-                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '55' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float:left; position: relative;white-space: nowrap">
-                                            <div class="sharexy_mask"></div>
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/55.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/55.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/55.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/55.png">
-                                        </div>
-
-                                        <div style="float: left;padding-top: 9px;">60*20</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="bottom">
-                                    <div name="60"
-                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '60' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float:left; position: relative;white-space: nowrap">
-                                            <div class="sharexy_mask"></div>
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/60.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/60.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/60.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/60.png">
-                                            <img align="left" class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/60.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 45px;">60*60</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <select class="size_float_<?php echo $place; ?>" name="size_float_<?php echo $place; ?>"
-                            style="display: none">
-                        <option value="32"
-                            <?php echo isset($style['size_float']) && $style['size_float'] == 32 ? "selected" : ""; ?>
-                                >32X32
-                        </option>
-                        <option value="55"
-                            <?php echo isset($style['size_float']) && $style['size_float'] == 55 ? "selected" : ""; ?>
-                                >60X20
-                        </option>
-                        <option value="60"
-                            <?php echo isset($style['size_float']) && $style['size_float'] == 60 ? "selected" : ""; ?>
-                                >60X60
-                        </option>
-                    </select></div>
-            </td>
-        </tr>
-    </table>
+    <?php } ?>
 
 
-        <?php } else { ?>
-        <?php if ($place !== 'top_post' && $place !== 'bottom_post') { ?>
-        <table cellspacing="0" style="margin: 15px 0 0"><tr><td>       <span class="niceCheck"><input type="checkbox"
-                                                                                                      name="pages_mode_front_<?php echo $place;?>"
-                                                                                                      id="pages_mode_front_<?php echo $place;?>"
+
+	<?php if ($place === 'float') { ?>
+
+	    <select name="mode_float_<?php echo $place;?>" style="display: none;">
+	        <option value="tl"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'tl' ? ' selected="true" ' : ''; ?>
+	                >top left
+	        </option>
+	        <option value="l"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'l' ? ' selected="true" ' : ''; ?>
+	                >left
+	        </option>
+	        <option value="bl"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'bl' ? ' selected="true" ' : ''; ?>
+	                >bottom left
+	        </option>
+	        <option value="tr"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'tr' ? ' selected="true" ' : ''; ?>
+	                >top right
+	        </option>
+	        <option value="r"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'r' ? ' selected="true" ' : ''; ?>
+	                >right
+	        </option>
+	        <option value="br"
+	            <?php echo isset($style['mode_float']) && $style['mode_float'] === 'br' ? ' selected="true" ' : ''; ?>
+	                >bottom right
+	        </option>
+	    </select>
+	    <table cellspacing="0">
+	        <tr>
+	            <td>
+	                <p class="blue sharexy_choose_size" valign="top">Choose button size:&nbsp;</p>
+	            </td>
+	            <td valign="top">
+	                <div style="position: relative">
+	                    <table cellspacing="0" id="size_<?php echo $place;?>">
+	                        <tbody>
+	                        <tr>
+	                            <td valign="middle">
+	
+	                                <div class="sharexy_size sharexy_size_hover">
+	                                    <div style="float:left; position: relative;white-space: nowrap">
+	                                        <div class="sharexy_mask"></div>
+	                                        <img align="left" class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/<?php echo $style['size_float']; ?>.png">
+	                                        <img align="left" class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/<?php echo $style['size_float']; ?>.png">
+	                                        <img align="left" class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/<?php echo $style['size_float']; ?>.png">
+	                                        <img align="left" class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/<?php echo $style['size_float']; ?>.png">
+	                                        <img align="left" class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/<?php echo $style['size_float']; ?>.png">
+	                                    </div>
+	                                    <?php if ($style['size_float'] == '32') { ?>
+	                                    <div style="float: left;padding-top: 20px;">32*32</div><?php } ?>
+	                                    <?php if ($style['size_float'] == '55') { ?>
+	                                    <div style="float: left;padding-top: 9px;">60*20</div><?php } ?>
+	                                    <?php if ($style['size_float'] == '60') { ?>
+	                                    <div style="float: left;padding-top: 48px;">60*60</div><?php } ?>
+	                                </div>
+	
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                    </table>
+	                    <div class="popup_size" id="popup_size_<?php echo $place;?>">
+	                        <div class="popup_size_ar"></div>
+	                        <table cellspacing="0" id="size_popup_<?php echo $place;?>">
+	                            <tbody>
+	                            <tr>
+	                                <td class="blue" style="padding-left: 8px;">Size:</td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="32"
+	                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '32' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float:left; position: relative;white-space: nowrap">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/32.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/32.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/32.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/32.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/32.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 20px;">32*32</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td valign="bottom">
+	                                    <div name="55"
+	                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '55' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float:left; position: relative;white-space: nowrap">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/55.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/55.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/55.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/55.png">
+	                                        </div>
+	
+	                                        <div style="float: left;padding-top: 9px;">60*20</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td valign="bottom">
+	                                    <div name="60"
+	                                         class="sharexy_size <?php echo isset($style['size_float']) && $style['size_float'] == '60' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float:left; position: relative;white-space: nowrap">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/60.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/60.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/60.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/60.png">
+	                                            <img align="left" class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/60.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 45px;">60*60</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            </tbody>
+	                        </table>
+	                    </div>
+	                    <select class="size_float_<?php echo $place; ?>" name="size_float_<?php echo $place; ?>"
+	                            style="display: none">
+	                        <option value="32"
+	                            <?php echo isset($style['size_float']) && $style['size_float'] == 32 ? "selected" : ""; ?>
+	                                >32X32
+	                        </option>
+	                        <option value="55"
+	                            <?php echo isset($style['size_float']) && $style['size_float'] == 55 ? "selected" : ""; ?>
+	                                >60X20
+	                        </option>
+	                        <option value="60"
+	                            <?php echo isset($style['size_float']) && $style['size_float'] == 60 ? "selected" : ""; ?>
+	                                >60X60
+	                        </option>
+	                    </select></div>
+	            </td>
+	        </tr>
+	    </table>
+
+	<?php } else { ?>
+	
+        <?php if ($place !== 'top_post' && $place !== 'bottom_post' && $place != 'shortcode') { ?>
+        	<table cellspacing="0" style="margin: 15px 0 0">
+        	<tr><td>
+        		<span class="niceCheck"><input type="checkbox"
+            		name="pages_mode_front_<?php echo $place;?>"
+                	id="pages_mode_front_<?php echo $place;?>"
                 <?php echo isset($params['pages_mode']['front']) && $params['pages_mode']['front'] === 1 ? ' checked="true" value="1" ' : ' value="0" '; ?>
                     ></span> <label for="pages_mode_front_<?php echo $place;?>">display for posts at the main page</label>&nbsp;&nbsp;&nbsp;
             </td><td><span class="niceCheck"><input type="checkbox" name="pages_mode_page_<?php echo $place;?>"
                                                     id="pages_mode_page_<?php echo $place;?>1"
                 <?php echo isset($params['pages_mode']['page']) && $params['pages_mode']['page'] === 1 ? ' checked="true" value="1" ' : ' value="0" '; ?>
                     ></span> <label for="pages_mode_page_<?php echo $place;?>1">display for posts at all other pages</label>
-            <?php } ?></td></tr></table>
-
-    <br>
-    <table cellspacing="0" style="margin-bottom: 15px;">
-        <tr>
-            <td class="blue"><a class="tips" original-title="In accordance with the width of the text">Buttons
-                position:</a></td>
-            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_left" style="color: #9d9a9a"><input
-                    type="radio" class="niceRadio"
-                    name="align_<?php echo $place;?>"
-                    id="align_<?php echo $place;?>_left"
-                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'left' ? ' checked="true" ' : ''; ?>
-                    value="left"> Left</label>
-            </td>
-            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_center" style="color: #9d9a9a"><input
-                    type="radio"
-                    class="niceRadio"
-                    name="align_<?php echo $place;?>"
-                    id="align_<?php echo $place;?>_center"
-                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'center' ? ' checked="true" ' : ''; ?>
-                    value="center">
-                Center</label></td>
-            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_right" style="color: #9d9a9a"><input
-                    type="radio"
-                    class="niceRadio"
-                    name="align_<?php echo $place;?>"
-                    id="align_<?php echo $place;?>_right"
-                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'right' ? ' checked="true" ' : ''; ?>
-                    value="right"> Right</label>
-            </td>
-        </tr>
-    </table>
-    <table cellspacing="0" cellpadding="0">
-        <tr>
-            <td valign="top"><p class="blue sharexy_choose_size">Choose button size:&nbsp;</p></td>
-            <td valign="top">
-                <div style="position: relative">
-                    <table cellspacing="0" id="size_<?php echo $place;?>" width="100%">
-                        <tbody>
-                        <tr>
-                            <td>
-
-                                <div class="sharexy_size sharexy_size_hover">
-                                    <div style="float: left; position: relative; white-space: nowrap;">
-                                        <div class="sharexy_mask"></div>
-                                        <?php if ($style['size_static'] !== 'sh') { ?>
-                                        <img class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/<?php echo $style['size_static']; ?>.png"
-                                             align="left">
-                                        <img class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/<?php echo $style['size_static']; ?>.png"
-                                             align="left">
-                                        <img class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/<?php echo $style['size_static']; ?>.png"
-                                             align="left">
-                                        <img class='sharexy_icon'
-                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/<?php echo $style['size_static']; ?>.png"
-                                             align="left">
-                                        <?php } ?><img class='sharexy_icon'
-                                                       src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/<?php echo $style['size_static']; ?>.png"
-                                                       align="left">
-                                    </div>
-
-                                    <?php if ($style['size_static'] == 'sh') { ?>
-                                    <div style="float: left;padding-top: 9px;">60*20 single button</div><?php } ?>
-                                    <?php if ($style['size_static'] == '16') { ?>
-                                    <div style="float: left;padding-top: 6px;">16*16</div><?php } ?>
-                                    <?php if ($style['size_static'] == '32') { ?>
-                                    <div style="float: left;padding-top: 20px;">32*32</div><?php } ?>
-                                    <?php if ($style['size_static'] == '55') { ?>
-                                    <div style="float: left;padding-top: 9px;">60*20</div><?php } ?>
-                                    <?php if ($style['size_static'] == '60') { ?>
-                                    <div style="float: left;padding-top: 45px;">60*60</div><?php } ?>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div class="popup_size" id="popup_size_<?php echo $place;?>">
-                        <div class="popup_size_ar"></div>
-                        <table cellspacing="0" id="size_<?php echo $place;?>" id="size_popup_<?php echo $place;?>">
-                            <tbody>
-                            <tr>
-                                <td class="blue" style="padding-left: 8px;">Size:</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="sh"
-                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == 'sh' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float: left; position: relative;">
-                                            <div class="sharexy_mask"></div>
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/sh.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 9px;">60*20 single button
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="16"
-                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '16' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float: left; position: relative;">
-                                            <div class="sharexy_mask"></div>
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/16.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/16.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/16.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/16.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/16.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 6px;">16*16</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="32"
-                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '32' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float: left; position: relative;">
-                                            <div class="sharexy_mask"></div>
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/32.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/32.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/32.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/32.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/32.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 23px;">32*32</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="55"
-                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '55' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float: left; position: relative;">
-                                            <div class="sharexy_mask"></div>
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/55.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/55.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/55.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/55.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 9px;">60*20</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div name="60"
-                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '60' ? "sharexy_size_hover" : ""; ?>">
-                                        <div style="float: left; position: relative;">
-                                            <div class="sharexy_mask"></div>
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/60.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/60.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/60.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/60.png">
-                                            <img class='sharexy_icon'
-                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/60.png">
-                                        </div>
-                                        <div style="float: left;padding-top: 45px;">60*60</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <select style="display: none" class="size_static_<?php echo $place; ?>"
-                            name="size_static_<?php echo $place; ?>">
-                        <option value="sh"
-                            <?php echo isset($style['size_static']) && $style['size_static'] == 'sh' ? "selected" : ""; ?>
-                                >button&nbsp;
-                        </option>
-                        <option value="16"
-                            <?php echo isset($style['size_static']) && $style['size_static'] == 16 ? "selected" : ""; ?>
-                                >16X16&nbsp;
-                        </option>
-                        <option value="32"
-                            <?php echo isset($style['size_static']) && $style['size_static'] == 32 ? "selected" : ""; ?>
-                                >32X32&nbsp;
-                        </option>
-                        <option value="55"
-                            <?php echo isset($style['size_static']) && $style['size_static'] == 55 ? "selected" : ""; ?>
-                                >60X20&nbsp;
-                        </option>
-                        <option value="60"
-                            <?php echo isset($style['size_static']) && $style['size_static'] == 60 ? "selected" : ""; ?>
-                                >60X60&nbsp;
-                        </option>
-                    </select>
-            </td>
-        </tr>
-    </table>
+            </td></tr>
+            </table>
         <?php } ?>
+
+	    <br>
+        <?php if ($place != 'shortcode') { ?>
+		    <table cellspacing="0" style="margin-bottom: 15px;">
+		        <tr>
+		            <td class="blue"><a class="tips" original-title="In accordance with the width of the text">Buttons
+		                position:</a></td>
+		            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_left" style="color: #9d9a9a"><input
+		                    type="radio" class="niceRadio"
+		                    name="align_<?php echo $place;?>"
+		                    id="align_<?php echo $place;?>_left"
+		                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'left' ? ' checked="true" ' : ''; ?>
+		                    value="left"> Left</label>
+		            </td>
+		            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_center" style="color: #9d9a9a"><input
+		                    type="radio"
+		                    class="niceRadio"
+		                    name="align_<?php echo $place;?>"
+		                    id="align_<?php echo $place;?>_center"
+		                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'center' ? ' checked="true" ' : ''; ?>
+		                    value="center">
+		                Center</label></td>
+		            <td style="padding: 4px;"><label for="align_<?php echo $place;?>_right" style="color: #9d9a9a"><input
+		                    type="radio"
+		                    class="niceRadio"
+		                    name="align_<?php echo $place;?>"
+		                    id="align_<?php echo $place;?>_right"
+		                    style="display: none" <?php echo isset($params['align']) && $params['align'] === 'right' ? ' checked="true" ' : ''; ?>
+		                    value="right"> Right</label>
+		            </td>
+		        </tr>
+		    </table>
+	    <?php } else { ?>
+		    <table cellspacing="0" style="margin-bottom: 15px;">
+		        <tr>
+		            <td class="blue"><a class="tips" original-title="The buttons will appear wherever you place this shortcode.">Shortcode:</a></td>
+		            <td style="padding: 4px;"><input type="text" size="20" value="[sharexy]" /></td>
+		        </tr>
+		    </table>
+	    <?php } ?>
+	    
+	    <table cellspacing="0" cellpadding="0">
+	        <tr>
+	            <td valign="top"><p class="blue sharexy_choose_size">Choose button size:&nbsp;</p></td>
+	            <td valign="top">
+	                <div style="position: relative">
+	                    <table cellspacing="0" id="size_<?php echo $place;?>" width="100%">
+	                        <tbody>
+	                        <tr>
+	                            <td>
+	
+	                                <div class="sharexy_size sharexy_size_hover">
+	                                    <div style="float: left; position: relative; white-space: nowrap;">
+	                                        <div class="sharexy_mask"></div>
+	                                        <?php if ($style['size_static'] !== 'sh') { ?>
+	                                        <img class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/<?php echo $style['size_static']; ?>.png"
+	                                             align="left">
+	                                        <img class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/<?php echo $style['size_static']; ?>.png"
+	                                             align="left">
+	                                        <img class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/<?php echo $style['size_static']; ?>.png"
+	                                             align="left">
+	                                        <img class='sharexy_icon'
+	                                             src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/<?php echo $style['size_static']; ?>.png"
+	                                             align="left">
+	                                        <?php } ?><img class='sharexy_icon'
+	                                                       src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/<?php echo $style['size_static']; ?>.png"
+	                                                       align="left">
+	                                    </div>
+	
+	                                    <?php if ($style['size_static'] == 'sh') { ?>
+	                                    <div style="float: left;padding-top: 9px;">60*20 single button</div><?php } ?>
+	                                    <?php if ($style['size_static'] == '16') { ?>
+	                                    <div style="float: left;padding-top: 6px;">16*16</div><?php } ?>
+	                                    <?php if ($style['size_static'] == '32') { ?>
+	                                    <div style="float: left;padding-top: 20px;">32*32</div><?php } ?>
+	                                    <?php if ($style['size_static'] == '55') { ?>
+	                                    <div style="float: left;padding-top: 9px;">60*20</div><?php } ?>
+	                                    <?php if ($style['size_static'] == '60') { ?>
+	                                    <div style="float: left;padding-top: 45px;">60*60</div><?php } ?>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                    <div class="popup_size" id="popup_size_<?php echo $place;?>">
+	                        <div class="popup_size_ar"></div>
+	                        <table cellspacing="0" id="size_<?php echo $place;?>" id="size_popup_<?php echo $place;?>">
+	                            <tbody>
+	                            <tr>
+	                                <td class="blue" style="padding-left: 8px;">Size:</td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="sh"
+	                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == 'sh' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float: left; position: relative;">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/sh.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 9px;">60*20 single button
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="16"
+	                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '16' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float: left; position: relative;">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/16.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/16.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/16.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/16.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/16.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 6px;">16*16</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="32"
+	                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '32' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float: left; position: relative;">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/32.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/32.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/32.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/32.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/32.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 23px;">32*32</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="55"
+	                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '55' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float: left; position: relative;">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/55.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/55.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/55.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/55.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 9px;">60*20</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div name="60"
+	                                         class="sharexy_size <?php echo isset($style['size_static']) && $style['size_static'] == '60' ? "sharexy_size_hover" : ""; ?>">
+	                                        <div style="float: left; position: relative;">
+	                                            <div class="sharexy_mask"></div>
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/facebook/60.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/twitter/60.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/stumbleupon/60.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/linkedin/60.png">
+	                                            <img class='sharexy_icon'
+	                                                 src="<?php echo $scriptPath . 'design/' . $styleParams['design']; ?>/sharexy/60.png">
+	                                        </div>
+	                                        <div style="float: left;padding-top: 45px;">60*60</div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            </tbody>
+	                        </table>
+	                    </div>
+	
+	                    <select style="display: none" class="size_static_<?php echo $place; ?>"
+	                            name="size_static_<?php echo $place; ?>">
+	                        <option value="sh"
+	                            <?php echo isset($style['size_static']) && $style['size_static'] == 'sh' ? "selected" : ""; ?>
+	                                >button&nbsp;
+	                        </option>
+	                        <option value="16"
+	                            <?php echo isset($style['size_static']) && $style['size_static'] == 16 ? "selected" : ""; ?>
+	                                >16X16&nbsp;
+	                        </option>
+	                        <option value="32"
+	                            <?php echo isset($style['size_static']) && $style['size_static'] == 32 ? "selected" : ""; ?>
+	                                >32X32&nbsp;
+	                        </option>
+	                        <option value="55"
+	                            <?php echo isset($style['size_static']) && $style['size_static'] == 55 ? "selected" : ""; ?>
+	                                >60X20&nbsp;
+	                        </option>
+	                        <option value="60"
+	                            <?php echo isset($style['size_static']) && $style['size_static'] == 60 ? "selected" : ""; ?>
+	                                >60X60&nbsp;
+	                        </option>
+	                    </select>
+	            </td>
+	        </tr>
+	    </table>
+	<?php } ?>
+	
     <p style="margin: 30px 0 10px;" class="sharexy_h3">Preview</p>
 
     <div class="services_container_<?php echo $place;?>"
@@ -772,9 +805,9 @@ height="1">
         </table>
         <div class="clear" style="height: 1px"></div>
     </div>
-        <?php if ($place !== "float") { ?>
-    <a id="try_buzz_<?php echo $place;?>" class="preview_a">Try Buzz</a>
-        <?php } ?>
+    <?php if ($place !== "float") { ?>
+    	<a id="try_buzz_<?php echo $place;?>" class="preview_a">Try Buzz</a>
+    <?php } ?>
     <br><br><br><br>
 
     <div class="services_container_<?php echo $place;?>"
@@ -877,6 +910,7 @@ height="1">
                     </table>
                 </div><?php } ?>
             </td>
+            <!--
             <td valign="top">
                 <div id="div_show_ads_<?php echo $place; ?>" class="div_show_ads_settings" style="
                             <?php echo isset($styleParams['user_id'])
@@ -896,8 +930,10 @@ height="1">
                 ></span> <label for="show_ads_<?php echo $place; ?>">Show ads</label>&nbsp;&nbsp;&nbsp;
                 </div>
             </td>
+            -->
             <?php if ($place === 'float') { ?>
 
+            <!--
             <td valign="top" style="min-width: 111px">
 
                 <div id='show_counters_div_<?php echo $place; ?>' style="
@@ -914,6 +950,7 @@ height="1">
 
                 </div>
             </td>
+            -->
             <td valign="top" style="min-width: 120px">
 <span class="niceCheck"><input type="checkbox" class="bg_float_<?php echo $place; ?>"
                                id="bg_float_<?php echo $place; ?>"
@@ -937,6 +974,7 @@ height="1">
                             original-title="when the block with buttons is in the visible area of the browser, it starts trembling for a couple of seconds, attracting attention of the visitor">Enable
                 buzz</a>&nbsp;&nbsp;&nbsp; </td>
             <td valign="top" width="180">
+            	<!--
                 <div id='show_counters_div_<?php echo $place; ?>' style="
                             <?php echo isset($style['size_static']) && ($style['size_static'] != 16 && $style['size_static'] != 60) ? "" : "display : none;"; ?>
                         ">
@@ -979,6 +1017,7 @@ height="1">
                         </table>
                     </div>
                 </div>
+                -->
             </td>
             <?php } ?>
         </tr>
@@ -998,7 +1037,6 @@ height="1">
         </table>
     </div>
     <br></div>
-
     <hr>
 
         <?php
@@ -1011,37 +1049,13 @@ height="1">
 <input type='submit' value='Save settings' id='sharexy_plugin_constructor_form_submit_button'>
 </form>
 </div>
-
-<div id="pp_bottom" align="center">
-<h3 class="sharexy_h3 text_sh">Help keep this plugin Free and actively developed by making a donation!</h3>
-</br>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="927T9WE46ZB4C">
-<input type="image"
-src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif"
-border="0" name="submit" alt="PayPal — The safer, easier way to pay
-online.">
-<img alt="" border="0"
-src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1"
-height="1">
-</form>
-</div>
-<div id="counter_not_working_message">
-
-<p class="blue" style="margin: 0; padding: 5px 0 "> Please note: Counters temporary doesn't work due to sharexy service reconstruction.</p>
-
-</div>
-<div id="picker">
-
-</div>
-
 </div>
 <input type="hidden" id="SharexyImgPath" value="<?php echo $imgPath; ?>">
 <input type="hidden" id="ScriptPathImg" value="<?php echo $scriptPath . 'design/'; ?>">
 
+<div id="picker">
 
-
+</div>
 
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL . '/sharexy/js/nicecheckbox.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo WP_PLUGIN_URL . '/sharexy/js/niceradio.js' ?>"></script>

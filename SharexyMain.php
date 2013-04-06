@@ -56,7 +56,13 @@ class SharexyMain {
                 'pages_mode' => array('front' => 1, "page" => 1, "post" => 1 ),
                 'align' => 'right',
                 'show_ads' => 1
-            )
+            ),
+            'shortcode' => array(
+                "display" => 0,
+                'pages_mode' => array('front' => 1, "page" => 1, "post" => 1),
+                'align' => '',
+                'show_ads' => 1
+            ),
         );
         $this->defaultPlacementsStyleParams = array(
             'bottom' => array(
@@ -73,7 +79,8 @@ class SharexyMain {
             'float' => array(
                 'type' => 'f',
                 'mode_float' => 'l'
-            )
+            ),
+        	'shortcode' => array(),
         );
         $this->defaultWidgetParams = array(
             'user_id' => '0',

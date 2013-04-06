@@ -8,7 +8,7 @@ class SharexyAdmin extends SharexyMain {
         $this->adminMenu = array(
             array(
                 'top' => array(
-                    "parent_slug" => "options-general.php" ,
+                    "parent_slug" => "sharexy-menu" ,
                     "page_title" => "Sharexy Settings",
                     "menu_title" => "Sharexy",
                     "capability" => "manage_options",
@@ -29,6 +29,9 @@ class SharexyAdmin extends SharexyMain {
         if (!is_array($this->adminMenu) || !(count($this->adminMenu) > 0)) {
             return;
         }
+        
+        add_menu_page('Sharexy', 'Sharexy', 'manage_options', 'sharexy-menu', array(&$this, 'buttonsSettings'), plugin_dir_url(__FILE__).'img/favicon.png');
+        
         $menuPagesCount = count($this->adminMenu);
         for ($i = 0; $i < $menuPagesCount; $i++) {
             $topMenu = isset($this->adminMenu[$i]['top']) ? $this->adminMenu[$i]['top'] : false;

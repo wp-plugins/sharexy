@@ -1,4 +1,4 @@
-(function (window) {
+ï»¿(function (window) {
     if (!window.jQuery) {
         console.log('jQuery undefined');
         return;
@@ -235,7 +235,7 @@
     }
 
     function placementsSettings() {
-        var placements = ['top', 'bottom', 'float', 'top_post','bottom_post'],
+        var placements = ['top', 'bottom', 'float', 'top_post','bottom_post', 'shortcode'],
                 i, count = placements.length;
         for (i = 0; i < count; i++) {
             servicesSettings(placements[i]);
@@ -287,7 +287,7 @@
             for (i = 0; i < servicesList.length; i++) {
                 isSet = servicesList[i] === service ? true : isSet;
             }
-            if (isSet) { //âûêëþ÷èòü
+            if (isSet) { //Ð²Ñ‹ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ
                 jQuery(this).attr('class', classes.replace('includeService', 'unIncludeService'));
                 jQuery('#li_' + place + '_' + service).remove();
                 //float widget
@@ -300,7 +300,7 @@
                 }
                 //save selected services (with savr order)
                 jQuery('#boxes_' + place).mouseup();
-            } else { //âêëþ÷èòü
+            } else { //Ð²ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ
                 jQuery(this).attr('class', classes.replace('unIncludeService', 'includeService'));
                 //preview
                 var li = document.createElement("li");

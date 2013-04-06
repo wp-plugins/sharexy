@@ -2,10 +2,10 @@
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
-Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin
+Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin,shortcode placement, shortcode
 Requires at least: 2.8
-Tested up to: 3.5
-Stable tag: 2.2
+Tested up to: 3.5.1
+Stable tag: 2.3
 
 Widget placement customizing (floating and static), Continual updated design collection.
 
@@ -50,7 +50,7 @@ With Sharexy you can customize the look of your widget with sharing and bookmark
 
 Choose for yourself! You can pick a floating widget, a static widget or both of them at once. The ball is in your court!
 
-Besides, you can place the floating widget in any page corner.
+Besides, you can place the floating widget in any page corner. Shortcode placement option for static widget also available.
 
 
 
@@ -161,9 +161,13 @@ PHP 5.3 is preferred; PHP 4 is supported.
 
 Preparation to the sharexy reconstruction
 
+= 2.3 =
+
+* Sharing tool bug fixes
+* Added shortcode placement option
+
 
 == Upgrade Notice ==
-
 = 1.0.1 =
 
 Added support for php versions 4.7.7- 5.3. Bug Fixes.
@@ -191,6 +195,12 @@ Bug Fixes.
 = 1.2 =
 Expanded the possibilities of a tool by adding TrafficMiner for Sharexy - designed to drive free traffic to your blog.
 Preparation to the sharexy reconstruction
+
 = 2.1 =
 
 Preparation to the sharexy reconstruction
+
+= 2.2 =
+
+Bug Fixes.
+Shortcode placement option added.

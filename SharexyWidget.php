@@ -21,6 +21,10 @@ class SharexyWidget extends SharexyMain {
     function loadWidget() {
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
+        
+        //add_shortcode('sharexy', array(&$this, 'displayShortcode'));
+        add_filter('the_content', array(&$this, 'displayShortcode'), $this->priority);
+        
         add_action('wp_footer', array(&$this, 'displayFloatWidget'), $this->priority);
 
         add_action('wp_footer', array(&$this, 'dataScriptsLoader'), $this->priority + 1);
@@ -71,6 +75,21 @@ class SharexyWidget extends SharexyMain {
         return $pageHTML;
     }
 
+    function displayShortcode($content) {
+    	$offset = 0;
+    	$out = '';
+    	while (($ps = mb_strpos($content, '[sharexy]', $offset, 'utf-8')) !== false) {
+    		$out .= mb_substr($content, $offset, $ps - $offset, 'utf-8');
+	    	$placements = $this->getPlacements();
+	    	$mainStyle = $this->getStyle();
+	    	$widget = $this->getPlaceCode('shortcode', $placements, $mainStyle);
+	    	$out .= $widget;
+	    	$offset = $ps + 9;
+    	}
+    	$out .= mb_substr($content, $offset, mb_strlen($content, 'utf-8'), 'utf-8');
+    	return $out;
+    }
+    
     function displayFloatWidget() {
         $placements = $this->getPlacements();
         $mainStyle = $this->getStyle();
@@ -126,7 +145,11 @@ class SharexyWidget extends SharexyMain {
         global $post;
         $key = isset($post) && $post && isset($post->ID) ? md5($place . $post->ID) : md5($place);
         $debugInfo = isset($post) && $post && isset($post->ID) ? $place . " " . $post->ID : $place;
-        $this->placeIds[$key] = isset($this->placeIds[$key]) ? $this->placeIds[$key] : rand(999999, 99999999);
+        if ($place == 'shortcode') {
+        	$this->placeIds[$key] = rand(999999, 99999999);
+        } else {
+        	$this->placeIds[$key] = isset($this->placeIds[$key]) ? $this->placeIds[$key] : rand(999999, 99999999);
+        }
         $code_id = $this->placeIds[$key];
 
         $this->codeType['lite'] = isset($styleParams['user_id']) && $this->validateWebmasterId($styleParams['user_id'])? false : true;
@@ -135,6 +158,7 @@ class SharexyWidget extends SharexyMain {
         $styleParams['publisher_key'] = isset($styleParams['user_id']) ? $this->validateWebmasterId($styleParams['user_id']) : 0;
         $styleParams['code_id'] = $code_id;
         $styleParams['d'] = $debugInfo;
+        $styleParams['popup_bot_a'] = 1;
         $align = isset($placeParams['align']) ? $placeParams['align'] : "";
 
         $this->dataScripts[$code_id] = $styleParams;
@@ -154,6 +178,7 @@ class SharexyWidget extends SharexyMain {
                         }
 EOF;
             foreach ($this->dataScripts as $id => $styleParams) {
+            	$styleParams['mailScript'] = plugin_dir_url(__FILE__).'sharexymail.php';
                 if (function_exists('json_encode')) {
                     $params = json_encode($styleParams);
                 } else {
@@ -181,7 +206,7 @@ EOF;
                         var jQuery = w.jQuery;
                         jQuery('.{$this->noindexClassName}').each(function (n, element) {
                             var content = jQuery(element).html();
-                            jQuery(element).html('<noindex>' + content + '</noindex>');
+                            jQuery(element).html(content);
                         });
                     })(window);
                  /* ]]> */</script>
