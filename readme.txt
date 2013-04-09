@@ -5,7 +5,7 @@ Donate link: http://sharexy.com
 Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin,shortcode placement, shortcode
 Requires at least: 2.8
 Tested up to: 3.5.1
-Stable tag: 2.3
+Stable tag: 2.4
 
 Widget placement customizing (floating and static), Continual updated design collection.
 
@@ -166,6 +166,10 @@ Preparation to the sharexy reconstruction
 * Sharing tool bug fixes
 * Added shortcode placement option
 
+= 2.4 =
+
+* Bug Fixes.
+
 
 == Upgrade Notice ==
 = 1.0.1 =
@@ -204,3 +208,7 @@ Preparation to the sharexy reconstruction
 
 Bug Fixes.
 Shortcode placement option added.
+
+= 2.3 =
+
+Bug Fixes.

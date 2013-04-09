@@ -78,15 +78,27 @@ class SharexyWidget extends SharexyMain {
     function displayShortcode($content) {
     	$offset = 0;
     	$out = '';
-    	while (($ps = mb_strpos($content, '[sharexy]', $offset, 'utf-8')) !== false) {
-    		$out .= mb_substr($content, $offset, $ps - $offset, 'utf-8');
-	    	$placements = $this->getPlacements();
-	    	$mainStyle = $this->getStyle();
-	    	$widget = $this->getPlaceCode('shortcode', $placements, $mainStyle);
-	    	$out .= $widget;
-	    	$offset = $ps + 9;
+    	if (function_exists('mb_strpos')) {
+	    	while (($ps = mb_strpos($content, '[sharexy]', $offset, 'utf-8')) !== false) {
+	    		$out .= mb_substr($content, $offset, $ps - $offset, 'utf-8');
+		    	$placements = $this->getPlacements();
+		    	$mainStyle = $this->getStyle();
+		    	$widget = $this->getPlaceCode('shortcode', $placements, $mainStyle);
+		    	$out .= $widget;
+		    	$offset = $ps + 9;
+	    	}
+	    	$out .= mb_substr($content, $offset, mb_strlen($content, 'utf-8'), 'utf-8');
+    	} else {
+    		while (($ps = strpos($content, '[sharexy]', $offset)) !== false) {
+    			$out .= substr($content, $offset, $ps - $offset);
+    			$placements = $this->getPlacements();
+    			$mainStyle = $this->getStyle();
+    			$widget = $this->getPlaceCode('shortcode', $placements, $mainStyle);
+    			$out .= $widget;
+    			$offset = $ps + 9;
+    		}
+    		$out .= substr($content, $offset, strlen($content));
     	}
-    	$out .= mb_substr($content, $offset, mb_strlen($content, 'utf-8'), 'utf-8');
     	return $out;
     }
     
