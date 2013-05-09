@@ -22,7 +22,6 @@ class SharexyWidget extends SharexyMain {
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
         
-        //add_shortcode('sharexy', array(&$this, 'displayShortcode'));
         add_filter('the_content', array(&$this, 'displayShortcode'), $this->priority);
         
         add_action('wp_footer', array(&$this, 'displayFloatWidget'), $this->priority);

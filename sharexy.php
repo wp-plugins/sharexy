@@ -4,7 +4,7 @@
     Plugin URI: http://wordpress.org/extend/plugins/sharexy/
     Description: Sharexy social buttons.
     Author: Sharexy.com
-    Version: 2.4
+    Version: 3.0
     Author URI: http://sharexy.com/
     License: GPLv2 or later
 */
@@ -49,6 +49,7 @@ if (class_exists("SharexyErrorReporter") || class_exists("SharexyMain") || class
     require_once "SharexyAdmin.php";
     require_once "SharexyView.php";
     require_once "SharexyJson.php";
+    require_once "libs/bitly.php";
     $sharexy = new SharexyView(new SharexyWidget(), new SharexyAdmin(), new SharexyErrorReporter());
     $sharexy->initWidget();
     $sharexy->initAdmin();
