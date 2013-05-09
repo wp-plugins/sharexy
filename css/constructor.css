@@ -1,0 +1,658 @@
+#wpcontent {
+    font-family: sans-serif;
+    min-width: 1473px;
+    background: #91a1c2 url('../img/bg.png') repeat-x 0 28px
+}
+
+#wpwrap {
+    background: #91a1c2 url('../img/bg.png') repeat-x 0 28px
+}
+#wpbody { position: static; }
+
+#sharexy_hello {
+    position: relative;
+    z-index: 100000;
+    float: right;
+    top: -4px;
+    left: -50px;
+}
+
+.includeService, .unIncludeService {
+    padding: 5px 5px 5px 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+#wpcontent img {
+    border: none;
+}
+
+.sharexy_content {
+    margin: 3px 5px;
+    min-width: 	1443px;
+    background: #fff url('../img/ar.png') no-repeat top right;
+    padding: 20px 0;
+	overflow: hidden;
+}
+.sharexy_content label { white-space: nowrap; }
+.sharexy_content h4 label {
+    font-size: 14px;
+}
+
+.sharexy_content_pd {
+    padding: 0 20px;
+}
+
+.sel_design {
+    padding: 3px 20px 15px;
+    background: #f0f3f9;
+    box-shadow: 0px 2px 2px #ccd3df;
+}
+
+.includeService div {
+/*color: #55dd33;*/
+    color: #555555;
+    text-shadow: 1px 1px #FFFFFF;
+    background: none repeat scroll 0 0 #F0F3F9;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #B1BDD6;
+    padding: 4px;
+}
+
+.unIncludeService div {
+    color: #555555;
+    text-shadow: 1px 1px #FFFFFF;
+    padding: 4px; /*color: #ffa0a0;*/
+}
+.unIncludeService div:hover {
+    color: #555555;
+    text-shadow: 1px 1px #FFFFFF;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #B1BDD6;
+    padding: 4px;
+}
+
+.sharexy_bg {
+    background: #bac4d9;
+}
+
+.sharexy_h2 {
+    height: 51px;
+    margin: 20px 0;
+}
+
+.sharexy_h3, h5 {
+    color: #C7531F;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.orange {
+    color: #C7531F;
+}
+
+.blue {
+    color: #56688f;
+}
+
+.gray {
+    color: #a8a8a8;
+}
+
+.text_sh {
+    text-shadow: 1px 1px #fff;
+}
+
+.sharexy_promo_text {
+    padding: 4px 0;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.sharexy_promo .bt {
+    background: #fff;
+    box-shadow: 2px 2px 2px #62769e;
+    height: 60px;
+    overflow: visible;
+}
+
+.sharexy_facebook_like {
+    width: 154px;
+}
+
+.sharexy_facebook_like .sharexy_promo_text {
+    color: #3b5998;
+}
+
+#design_name_preview {
+    text-transform: capitalize;
+}
+
+.sharexy_facebook_like img {
+    margin: 0px 10px 0px 15px;
+}
+
+.sharexy_twitter_like {
+    width: 131px;
+}
+
+.sharexy_twitter_like .sharexy_promo_text {
+    color: #0199d1;
+    padding-bottom: 8px;
+}
+
+.sharexy_fan {
+    width: auto;
+}
+
+.sharexy_fan  .sharexy_promo_text {
+    color: #d84100;
+    padding: 4px 0 5px 0px;
+}
+
+.sharexy_rating {
+    width: 151px;
+}
+
+.sharexy_rating  .sharexy_promo_text {
+    padding-bottom: 7px;
+    color: #555;
+
+}
+
+.sharexy_rating .rating {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    background: #ea5717;
+    line-height: 20px;
+    margin: 0 25px;
+}
+
+.sharexy_yepty {
+    width: 180px;
+    height: 60px;
+
+}
+
+.sharexy_yepty .sharexy_promo_text {
+    padding: 13px 0 0;
+    color: #6e6e6f;
+}
+
+.sharexy_yepty .sharexy_promo_text a, .sharexy_yepty .sharexy_promo_text a:hover {
+    text-decoration: none;
+    color: #0a88f3;
+}
+
+.sharexy_promo .sharexy_feedback {
+    width: 150px;
+    background: #fff url('../img/question.png') no-repeat bottom right;
+}
+
+.sharexy_feedback .sharexy_promo_text {
+    color: #586d99;
+    padding: 4px 0;
+}
+.yepty_banner {
+    width: 278px;
+    height: 40px !important;
+    background: #fff url('../img/yepty.png') no-repeat 0 0 !important;
+    color: #202020;
+    font-size: 12px;
+    text-shadow: 1px 0px 0px #fff;
+    padding: 20px 5px 0 135px;
+    cursor: pointer;
+}
+
+#user_id {
+    background: #ffffe4;
+    border: 1px solid #ffbc9f;
+    padding: 3px 7px;
+    width: 190px;
+}
+
+.sharexy_desc {
+    color: #555;
+    font-style: italic;
+    font-size: 15px;
+    padding: 10px 0 0;
+}
+
+#sharexy_plugin_constructor_form_submit_button {
+    cursor: pointer;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px #798fba;
+    background: #C7531F;
+    background-image: -o-linear-gradient(#df5d24, #DF5D24, #CB5420);
+    background-image: linear-gradient(19% 75% 90deg, #CB5420, #DF5D24, #df5d24 100%);
+    background-image: -moz-linear-gradient(19% 75% 90deg, #CB5420, #DF5D24, #df5d24 100%);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CB5420), to(#DF5D24), color-stop(.6, #df5d24));
+    border: none;
+    box-shadow: 1px 1px 2px #717e99;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0px;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+#sharexy_plugin_constructor_form_submit_button:hover {
+    opacity: 0.95;
+    filter: alpha(opacity = 95);
+    text-decoration: none;
+}
+
+#sharexy_plugin_constructor_form {
+    color: #7B818D;
+    line-height: 20px;
+    font-size: 13px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #cfd6e2;
+}
+
+.sharexy_small_preview {
+    margin: 7px 0 5px;
+    width: 263px;
+    height: 42px;
+    background: #fff no-repeat center center;
+    box-shadow: 1px 1px 2px 0px #b3bdcf;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.sharexy_settings_icon {
+    box-shadow: 1px 1px 2px #fff;
+    padding: 10px;
+    border: 1px solid #F0F3F9;
+    cursor: pointer;
+}
+
+.sharexy_settings_icon p {
+    padding: 0 0 5px;
+    margin: 0;
+}
+
+.sharexy_settings_icon:hover {
+}
+
+.sharexy_settings_icon_hover {
+    background: none repeat scroll 0 0 #F0F3F9;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 2px #B1BDD6;
+    cursor: pointer;
+}
+
+.tips,.tips:hover  {
+    text-decoration: none;
+    line-height: 18px;
+    font-style: normal;
+    border-bottom: 1px dotted #21759B;
+}
+.tips label, .tips:hover {  border-bottom: 1px dotted transparent;}
+.tips .labelChecked { border-bottom: 1px dotted #C7531F;}
+
+
+#popup_design_settings {
+    position: absolute;
+    top: 150px;
+    left: 25%;
+    width: 952px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 2px 2px #CCCCCC; z-index: 1000;
+}
+
+.sharexy_span {
+    color: #C85320;
+    text-shadow: 1px 1px #FFFFFF
+}
+
+.design_by_sharexy {
+    text-decoration: none;
+    font-size: 13px;
+    color: #56688f;
+    text-shadow: 1px 1px #ffffff;
+    height: 24px;
+    line-height: 24px;
+    padding: 5px 10px 0 0;
+    display: block;
+}
+
+.design_by_sharexy span {
+    text-decoration: underline;
+}
+
+.design_by_sharexy span:hover {
+    text-decoration: none;
+}
+
+#call_popup_designs {
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dashed #2798ef;
+    color: #2798ef;
+}
+
+.boxes {
+    margin: 0 0 0px;
+    float: left;
+}
+
+.boxes li {
+    float: left;
+    cursor: move;
+    position: relative;
+    margin: 0;
+}
+.boxes li * { cursor: move;}
+#boxes_float_float li, #boxes_float_float li * { cursor: auto;}
+
+.sharexy_content h4 {
+    font-size: 16px;
+    margin: 1.33em 0;
+    font-weight: 100;
+    color: #6378a2;
+}
+
+.sharexy h4 input {
+    position: relative;
+    top: -3px;
+}
+
+.sharexy_monitor {
+    padding-top: 4px;
+    width: 104px;
+    padding-left: 8px;
+    height: 61px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.sharexy_monitor_float {
+    padding-top: 9px;
+    width: 154px;
+    padding-left: 8px;
+    height: 128px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.sharexy_monitor table td, .sharexy_monitor_float table td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CFD6E2;
+    box-shadow: 1px 1px 2px #CFD6E2;
+    cursor: pointer;
+    height: 26px;
+    width: 23px;
+    padding: 0;
+}
+
+.sharexy_monitor table td.hover, .sharexy_monitor_float table td.hover {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.sharexy_monitor_float td.no_hover {
+    width: 67px;
+    cursor: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+#design_preview {
+    cursor: pointer;
+}
+
+.sharexy_size {
+    padding: 7px 5px 3px;
+    float: left;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sharexy_size img {
+    margin: 0px 3px 0px;
+    cursor: pointer;
+}
+
+.sharexy_size:hover, .sharexy_size_hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 1px 1px 2px 0 #B3BDCF;
+}
+
+.sharexy_drag {
+    font-style: italic;
+    line-height: 22px;
+    font-style: italic;
+    color: #b0afaf;
+    font-size: 11px;
+}
+
+.niceRadio {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background: url('../img/radio.png') no-repeat 0 -18px;
+    width: 18px;
+    height: 18px;
+}
+
+.niceRadio input {
+    margin-left: -30px;
+}
+
+.radioChecked {
+    background: url('../img/radio.png') no-repeat 0 0;
+    width: 18px;
+    height: 18px;
+}
+
+label {
+    height: 18px;
+}
+
+/************checkbox************************/
+.niceCheck {
+    width: 17px;
+    height: 17px;
+    display: block;
+    float: left;
+    margin: -1px 3px 0 0;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+
+    background: url('../img/checkbox.png') no-repeat bottom;
+}
+
+.niceCheck input {
+    display: none;
+}
+
+.disabledCheck {
+    background: url('../img/checkbox.png') 0 0px !important;
+}
+
+.labelChecked {
+    color: #C7531F
+}
+
+.shr_label {
+    color: #6D7C9E;
+    text-align: center;
+    font-size: 11px;
+    display: block;
+}
+#preview_float_float { padding: 2px;}
+#preview_float_float .boxes li {
+    margin: 0;
+}
+
+.cnt {
+    display: none;
+    background: none no-repeat 0 0;
+    float: none;
+    text-align: center;
+    font-size: 11px;
+    color: #617296;
+}
+
+.cnt_top {
+    margin: 2px 0;
+    position: relative;
+}
+
+.sharexy_icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    cursor: pointer;
+}
+.sharexy_icon:hover { opacity: 0.9; filter: alpha(opacity=90);}
+.popup_size .sharexy_icon {float: left; }
+
+.shr_label {
+    line-height: 20px;
+}
+
+#preview_float_float {
+    overflow: hidden;
+}
+
+#preview_float_float table td {
+    padding: 0;
+}
+
+.sharexy_size {
+    color: #B0AFAF;
+    font-style: italic;
+    font-size: 9px;
+}
+
+#color {
+    width: 50px;
+}
+
+.preview_a {
+    text-decoration: none;
+    border-bottom: 1px dashed #21759B
+}
+
+.preview_a:hover {
+    border-bottom: none;
+}
+
+.popup_size {
+    display: none;
+    width: 370px;
+    position: absolute;
+    z-index: 102;
+    padding: 5px;
+    margin-top: 14px;
+    box-shadow: 1px 1px 2px #B1BDD6;
+    background: #F0F3F9;
+}
+.popup_size_ar { width: 36px; height: 14px;
+background: url('../img/blue_ar.png') no-repeat; position: relative; top: -14px; left: 50px;
+}
+.popup_size .sharexy_mask {
+    display: none;
+}
+
+.sharexy_mask {
+    background: transparent url('../img/mask.png') no-repeat top right;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+#publisher_key_img { display: none; position: absolute; z-index: 100;}
+.sharexy_choose_size { margin-bottom: 5px; line-height: 16px;}
+#sharexy_fuzz { position: fixed; background: #000; display: none; top: 0; left: 0; z-index: 999; opacity: 0.8; filter: alpha(opacity=80);}
+.sharexy_content_pd  {color: #9d9a9a;}
+
+.fb-like span {
+        display: block;
+        height: 22px;
+        overflow: hidden;
+        position: relative;
+        width: 47px /* set this to fit your needs when support international sites */;
+    }
+
+    .fb-like iframe {
+        height: 20px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 47px;
+    }
+
+.fb_edge_comment_widget  iframe {display: none !important;}
+
+#NewsContainer { padding: 0 20px; padding-right: 530px; }
+#HubSelector { float: right; margin-top: 25px; font: 12px "Georgia"; color: #56688f; }
+#NewsContainer .clr { overflow: hidden; }
+#HubLoader { text-align: center; margin-top: 20px; }
+#NewsContainer #HubLoader { margin-top: 100px; }
+
+#News { display: none; margin-top: -23px; }
+#News .item { margin-bottom: 50px; }
+#News .item H2 { margin: 0; line-height: 1.1em; }
+#News .item H2, #News .item H2 A { font-weight: normal; font-size: 28px; }
+#News .item P { line-height: 160%; font-size: 14px; color: #333; }
+#News .item P.date { margin-bottom: 8px; font-size: 12px; font-style: italic; }
+
+#SharexyCommunityRight { float: right; width: 324px; margin-right: 170px; margin-top: 25px; }
+#SharexyPromo { height: 405px; background: url(../img/promo.png) no-repeat; }
+#SharexyPromoInner { padding: 14px 15px 0 15px; }
+.promo-title { font: 26px "Georgia"; font-weight: bold; color: #c85320; }
+.promo-text1 { font: 14px "Georgia"; color: #232323; margin-bottom: 18px; margin-top: 5px; }
+.promo-text2 { background: url(../img/promo-bullet.png) no-repeat; padding-left: 10px; margin-bottom: 19px; font: 13px "Arial"; color: #343434; }
+.promo-text2 SPAN { color: #df5c23; }
+.promo-text2 SMALL { font-size: 10px; color: #aaaaaa; }
+
+#SharexyCommunityInfo { font: 12px "Georgia"; color: #99aacd; padding-left: 35px; padding-top: 6px; line-height: 120%; background: url(../img/community-info.png) no-repeat; margin-top: 12px; }
+
+.tabs { height: 67px; float: left; margin-left: 5px; position: relative; bottom: -10px; }
+.tab { width: 131px; height: 67px; float: left; text-align: center; line-height: 67px; font: 15px "Verdana"; }
+.tab A { color: #fdff4f; font: 15px "Verdana"; line-height: 67px; font-weight: bold; }
+.tab.active { background: url(../img/tab-bg.png) no-repeat; font: 15px "Verdana"; color: #e15d24; font-weight: bold; line-height: 67px; }
+.sharexy_promo { margin-left: 380px; }
+
+#PromoTop { overflow: hidden; }
+#PromoTop .left { font: 16px "Georgia"; color: #232323; float: left; }
+#PromoTop .left SPAN { font-size: 22px; font-weight: bold; color: #c85320; }
+#PromoTop .right { float: right; width: 324px; margin-right: 170px; }
+#PromoTop .right A { display: block; width: 322px; height: 33px; background: url(../img/promotop-button.png) no-repeat; }
