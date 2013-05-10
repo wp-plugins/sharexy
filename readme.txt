@@ -1,4 +1,4 @@
-=== Sharexy - Powerful Social Sharing and Bookmarking Tool (with floating widget) & Network Buzz Monitoring Tool.===
+=== Sharexy - Powerful Social Sharing and Bookmarking Tool (with floating widget) & Network Buzz Monitoring ===
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
