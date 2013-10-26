@@ -1,25 +1,16 @@
-=== Sharexy - Powerful Social Sharing and Bookmarking Tool (with floating widget) & Network Buzz Monitoring ===
+=== Sharexy - powerful social sharing and bookmarking tool (with floating widget)===
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
-Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin,shortcode placement, shortcode, content, traffic, free traffic, get free traffic, blog promoting, blog traffic, distribute content, blog promotion, social network, content network, bloggers network, free advertising,
+Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin,shortcode placement, shortcode
 Requires at least: 2.8
-Tested up to: 3.5.1
-Stable tag: 3.0
-License: GPLv2
+Tested up to: 3.7
+Stable tag: 3.1
 
-Sharing Widget placement customizing (floating and static). Continual updated design collection. Network buzz monitoring tool.
+Widget placement customizing (floating and static), Continual updated design collection.
 
 
 == Description ==
-
-[Sharexy.com](http://sharexy.com/) is a social content distribution network where you can publish news, articles, reviews and your blog updates announcements and put them in front of eyes of thousands Bloggers and Readers Easy and totally Free. *[Click here to learn more](http://sharexy.com/page/About-Sharexy/)*
-
-
-*Sharexy plugin includes two useful tool that will help you get more free traffic to your blog and make it considerably more popular - **Highly Customizable Sharing Tool** and **Network Buzz Monitoring Tool.***
-
-
-**About Sharing Tool**
 
 ***What is the ideal sharing and bookmark widget like?***
 
@@ -93,11 +84,6 @@ Using Buzz, you'll be able to unobtrusively get many more visitors attention to 
 * Yahoo bookmarks
 
 *Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.*
-
-
-**About Network Buzz Monitoring Tool**
-
-This tool allows you to see what other bloggers are posting in the categories of your interest and to be updated with the latest news and  trends.
 
 
 == Frequently Asked Questions ==
@@ -187,9 +173,14 @@ Preparation to the sharexy reconstruction
 = 3.0 =
 
 * Bug Fixes.
-* Network Buzz Monitoring Tool added
+
+= 3.1 =
+
+* Bug Fixes.
+
 
 == Upgrade Notice ==
+
 = 1.0.1 =
 
 Added support for php versions 4.7.7- 5.3. Bug Fixes.
@@ -233,5 +224,8 @@ Bug Fixes.
 
 = 2.4 =
 
-*Bug Fixes.
-*Expanded the possibilities of the plugin by adding network buzz monitoring tool. This tool allows you to see what other bloggers are posting in the categories of your interest and to be updated with the latest news and  trends.
+Bug Fixes.
+
+= 3.0 =
+
+Bug Fixes.

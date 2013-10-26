@@ -5,17 +5,11 @@
 
 <!--logo+text-->
 <h2 class="sharexy_h2" align="center">
-    <?php echo $logoSRC ? "<a href='http://sharexy.com/' target='_blank'><img src='" . $logoSRC . "'></a>" : ''; ?>
+    <?php echo $logoSRC ? "<img src='" . $logoSRC . "'>" : ''; ?>
 </h2>
 <!--end logo+text-->
 
 <div id="sharexy_fuzz"></div>
-
-<!-- Tabs -->
-<div class="tabs">
-	<div class="tab active">Sharing tool</div>
-	<div class="tab"><a href="?page=sharexy-menu-community">Network Buzz</a></div>
-</div>
 
 <!--promo-->
 <table cellspacing="5" border="0" class="sharexy_promo">
@@ -154,11 +148,7 @@
         <br>
         -->
         
-        <p>
-        	<a href="http://eepurl.com/w58Jz" target="_blank"><b><big>Stay tuned. Subscribe to our Newsletter!</big></b></a>
-        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        	<a href="http://sharexy.com/?utm_source=soc_b_plugin_link" class="orange" target="_blank"><b><big>Visit Sharexy Website.</big></b></a>
-        </p>
+        <p><a href="http://eepurl.com/w58Jz" target="_blank"><b><big>Stay tuned. Subscribe to our Newsletter!</big></b></a></p>
         
         <!--
         <div id='sharexy_ads_translation_settings' <?php echo $styleParams['user_id'] ? "" : " style='display: none;' ";?> >
@@ -268,6 +258,8 @@
             </tr>
         </table>
     </div>
+    <a href="http://sharexy.com/gallery" target="_blank" class="orange" style="font-style: italic">Go to the designs
+        collection page</a>
 </div>
 <br>
 
@@ -1084,5 +1076,3 @@
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/sharexy/css/tipsy.css'?>" media="screen"/>
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/sharexy/css/constructor.css'?>"
       media="screen"/>
-
-<script type="text/javascript" src="http://stat.trafficgate.org/social_buttons_plugin.html"></script>

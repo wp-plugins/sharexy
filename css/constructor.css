@@ -40,7 +40,7 @@ a:hover {
     min-width: 	1443px;
     background: #fff url('../img/ar.png') no-repeat top right;
     padding: 20px 0;
-	overflow: hidden;
+
 }
 .sharexy_content label { white-space: nowrap; }
 .sharexy_content h4 label {
@@ -620,39 +620,3 @@ background: url('../img/blue_ar.png') no-repeat; position: relative; top: -14px;
     }
 
 .fb_edge_comment_widget  iframe {display: none !important;}
-
-#NewsContainer { padding: 0 20px; padding-right: 530px; }
-#HubSelector { float: right; margin-top: 25px; font: 12px "Georgia"; color: #56688f; }
-#NewsContainer .clr { overflow: hidden; }
-#HubLoader { text-align: center; margin-top: 20px; }
-#NewsContainer #HubLoader { margin-top: 100px; }
-
-#News { display: none; margin-top: -23px; }
-#News .item { margin-bottom: 50px; }
-#News .item H2 { margin: 0; line-height: 1.1em; }
-#News .item H2, #News .item H2 A { font-weight: normal; font-size: 28px; }
-#News .item P { line-height: 160%; font-size: 14px; color: #333; }
-#News .item P.date { margin-bottom: 8px; font-size: 12px; font-style: italic; }
-
-#SharexyCommunityRight { float: right; width: 324px; margin-right: 170px; margin-top: 25px; }
-#SharexyPromo { height: 405px; background: url(../img/promo.png) no-repeat; }
-#SharexyPromoInner { padding: 14px 15px 0 15px; }
-.promo-title { font: 26px "Georgia"; font-weight: bold; color: #c85320; }
-.promo-text1 { font: 14px "Georgia"; color: #232323; margin-bottom: 18px; margin-top: 5px; }
-.promo-text2 { background: url(../img/promo-bullet.png) no-repeat; padding-left: 10px; margin-bottom: 19px; font: 13px "Arial"; color: #343434; }
-.promo-text2 SPAN { color: #df5c23; }
-.promo-text2 SMALL { font-size: 10px; color: #aaaaaa; }
-
-#SharexyCommunityInfo { font: 12px "Georgia"; color: #99aacd; padding-left: 35px; padding-top: 6px; line-height: 120%; background: url(../img/community-info.png) no-repeat; margin-top: 12px; }
-
-.tabs { height: 67px; float: left; margin-left: 5px; position: relative; bottom: -10px; }
-.tab { width: 131px; height: 67px; float: left; text-align: center; line-height: 67px; font: 15px "Verdana"; }
-.tab A { color: #fdff4f; font: 15px "Verdana"; line-height: 67px; font-weight: bold; }
-.tab.active { background: url(../img/tab-bg.png) no-repeat; font: 15px "Verdana"; color: #e15d24; font-weight: bold; line-height: 67px; }
-.sharexy_promo { margin-left: 380px; }
-
-#PromoTop { overflow: hidden; }
-#PromoTop .left { font: 16px "Georgia"; color: #232323; float: left; }
-#PromoTop .left SPAN { font-size: 22px; font-weight: bold; color: #c85320; }
-#PromoTop .right { float: right; width: 324px; margin-right: 170px; }
-#PromoTop .right A { display: block; width: 322px; height: 33px; background: url(../img/promotop-button.png) no-repeat; }

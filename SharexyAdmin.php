@@ -2,180 +2,75 @@
 class SharexyAdmin extends SharexyMain {
     var $adminMenu;
     var $errorReporter = null;
-    var $textNoNews = 'Hey! Seems no one posted here yet and you have a great chance to attract maximum attention to your topic. So, what are you waiting for? <a href="http://sharexy.com" target="_blank">Go to Sharexy</a> and create your post Right Now!';
-    var $rss = array(
-    	0 => array('url' => 'http://sharexy.com/rss', 'title' => 'All Hubs'),
-    	1 => array('url' => 'http://sharexy.com/rss/blog/Advertising/', 'title' => 'Advertising'),
-        2 => array('url' => 'http://sharexy.com/rss/blog/art/', 'title' => 'Art'),
-        3 => array('url' => 'http://sharexy.com/rss/blog/automotive/', 'title' => 'Automotive'),
-        4 => array('url' => 'http://sharexy.com/rss/blog/beauty-and-style/', 'title' => 'Beauty & Style'),
-        5 => array('url' => 'http://sharexy.com/rss/blog/blogging/', 'title' => 'Blogging'),
-        6 => array('url' => 'http://sharexy.com/rss/blog/Books-and-Magazines/', 'title' => 'Books & Magazines'),
-        7 => array('url' => 'http://sharexy.com/rss/blog/business/', 'title' => 'Business'),
-        8 => array('url' => 'http://sharexy.com/rss/blog/celebrities/', 'title' => 'Celebrities'),
-        9 => array('url' => 'http://sharexy.com/rss/blog/coding-and-development/', 'title' => 'Coding & Development'),
-        10 => array('url' => 'http://sharexy.com/rss/blog/computers/', 'title' => 'Computers'),
-        11 => array('url' => 'http://sharexy.com/rss/blog/cooking-food-recipes/', 'title' => 'Cooking, Food & Recipes'),
-        12 => array('url' => 'http://sharexy.com/rss/blog/ecommerce/', 'title' => 'eCommerce'),
-        13 => array('url' => 'http://sharexy.com/rss/blog/education/', 'title' => 'Education'),
-        14 => array('url' => 'http://sharexy.com/rss/blog/employment-and-Jobs/', 'title' => 'Employment & Jobs'),
-        15 => array('url' => 'http://sharexy.com/rss/blog/fashion-and-style/', 'title' => 'Fashion'),
-        16 => array('url' => 'http://sharexy.com/rss/blog/finance/', 'title' => 'Finance'),
-        17 => array('url' => 'http://sharexy.com/rss/blog/firearms/', 'title' => 'Firearms'),
-        18 => array('url' => 'http://sharexy.com/rss/blog/freelance/', 'title' => 'Freelance'),
-        19 => array('url' => 'http://sharexy.com/rss/blog/fun-and-humor/', 'title' => 'Fun & Humor'),
-        20 => array('url' => 'http://sharexy.com/rss/blog/gadgets/', 'title' => 'Gadgets'),
-        21 => array('url' => 'http://sharexy.com/rss/blog/games/', 'title' => 'Games'),
-        22 => array('url' => 'http://sharexy.com/rss/blog/health-and-fitness/', 'title' => 'Health & Fitness'),
-        23 => array('url' => 'http://sharexy.com/rss/blog/history/', 'title' => 'History'),
-        24 => array('url' => 'http://sharexy.com/rss/blog/home-and-garden/', 'title' => 'Home and Garden'),
-        25 => array('url' => 'http://sharexy.com/rss/blog/hosting-Servers-administration/', 'title' => 'Hosting, Servers & Administration'),
-        26 => array('url' => 'http://sharexy.com/rss/blog/industrial-sector/', 'title' => 'Industrial Sector'),
-        27 => array('url' => 'http://sharexy.com/rss/blog/insurance/', 'title' => 'Insurance'),
-        28 => array('url' => 'http://sharexy.com/rss/blog/interior-design/', 'title' => 'Interior Design'),
-        29 => array('url' => 'http://sharexy.com/rss/blog/kids-and-parenting/', 'title' => 'Kids & Parenting'),
-        30 => array('url' => 'http://sharexy.com/rss/blog/law/', 'title' => 'Law'),
-        31 => array('url' => 'http://sharexy.com/rss/blog/lifestyle/', 'title' => 'Lifestyle'),
-        32 => array('url' => 'http://sharexy.com/rss/blog/literature-poems-poetry/', 'title' => 'Literature, Poems & Poetry'),
-        33 => array('url' => 'http://sharexy.com/rss/blog/make-money/', 'title' => 'Make Money'),
-        34 => array('url' => 'http://sharexy.com/rss/blog/marketing/', 'title' => 'Marketing'),
-        35 => array('url' => 'http://sharexy.com/rss/blog/medicine/', 'title' => 'Medicine'),
-        36 => array('url' => 'http://sharexy.com/rss/blog/mobile/', 'title' => 'Mobile'),
-        37 => array('url' => 'http://sharexy.com/rss/blog/movies/', 'title' => 'Movies'),
-        38 => array('url' => 'http://sharexy.com/rss/blog/music/', 'title' => 'Music'),
-        39 => array('url' => 'http://sharexy.com/rss/blog/pets/', 'title' => 'Pets'),
-        40 => array('url' => 'http://sharexy.com/rss/blog/photography/', 'title' => 'Photography'),
-        41 => array('url' => 'http://sharexy.com/rss/blog/politics/', 'title' => 'Politics'),
-        42 => array('url' => 'http://sharexy.com/rss/blog/quotes/', 'title' => 'Quotes'),
-        43 => array('url' => 'http://sharexy.com/rss/blog/real-estate/', 'title' => 'Real Estate'),
-        44 => array('url' => 'http://sharexy.com/rss/blog/religion/', 'title' => 'Religion'),
-        45 => array('url' => 'http://sharexy.com/rss/blog/science/', 'title' => 'Science'),
-        46 => array('url' => 'http://sharexy.com/rss/blog/sci-fi/', 'title' => 'Sci-fi'),
-        47 => array('url' => 'http://sharexy.com/rss/blog/search-engines/', 'title' => 'Search Engines'),
-        48 => array('url' => 'http://sharexy.com/rss/blog/security/', 'title' => 'Security'),
-        49 => array('url' => 'http://sharexy.com/rss/blog/self-improvement/', 'title' => 'Self Improvement'),
-        50 => array('url' => 'http://sharexy.com/rss/blog/shopping/', 'title' => 'Shopping'),
-        51 => array('url' => 'http://sharexy.com/rss/blog/social-media/', 'title' => 'Social Media'),
-        52 => array('url' => 'http://sharexy.com/rss/blog/sport/', 'title' => 'Sport'),
-        53 => array('url' => 'http://sharexy.com/rss/blog/startups/', 'title' => 'Startups'),
-        54 => array('url' => 'http://sharexy.com/rss/blog/technology/', 'title' => 'Technology'),
-        55 => array('url' => 'http://sharexy.com/rss/blog/television/', 'title' => 'Television'),
-        56 => array('url' => 'http://sharexy.com/rss/blog/travel/', 'title' => 'Travel'),
-        57 => array('url' => 'http://sharexy.com/rss/blog/web-analytics/', 'title' => 'Web Analytics'),
-        58 => array('url' => 'http://sharexy.com/rss/blog/web-design/', 'title' => 'Web Design'),
-		59 => array('url' => 'http://sharexy.com/rss/blog/weddings/', 'title' => 'Weddings'),
-		60 => array('url' => 'http://sharexy.com/rss/blog/writing/', 'title' => 'Writing'),
-		61 => array('url' => 'http://sharexy.com/rss/blog/diy/', 'title' => 'DIY'),
-		62 => array('url' => 'http://sharexy.com/rss/blog/love-and-relationships/', 'title' => 'Love & Relationships'),
-    );
 
     function SharexyAdmin() {
         $this->parentInit();
         $this->adminMenu = array(
-			array(
-				"parent_slug" => "sharexy-menu" ,
-				"page_title" => "Sharing Tool",
-				"menu_title" => "Sharing Tool",
-				"capability" => "manage_options",
-				"menu_slug" => "sharexy-menu",
-				"function" => array(&$this, 'buttonsSettings'),
-				"icon_url" => $this->params['logo']['small_img'] ? $this->params['logo']['path'] . $this->params['logo']['small_img'] : '',
-				"position" => NULL
-			),
-			array(
-				"parent_slug" => "sharexy-menu" ,
-				"page_title" => "Network Buzz",
-				"menu_title" => "Network Buzz",
-				"capability" => "manage_options",
-				"menu_slug" => "sharexy-menu-community",
-				"function" => array(&$this, 'buttonsCommunity'),
-				"icon_url" => $this->params['logo']['small_img'] ? $this->params['logo']['path'] . $this->params['logo']['small_img'] : '',
-				"position" => NULL
-			),
+            array(
+                'top' => array(
+                    "parent_slug" => "sharexy-menu" ,
+                    "page_title" => "Sharexy Settings",
+                    "menu_title" => "Sharexy",
+                    "capability" => "manage_options",
+                    "menu_slug" => "sharexy-menu",
+                    "function" => array(&$this, 'buttonsSettings'),
+                    "icon_url" => $this->params['logo']['small_img'] ? $this->params['logo']['path'] . $this->params['logo']['small_img'] : '',
+                    "position" => NULL
+                )
+            )
         );
     }
 
     function setErrorObject($errorReporter) {
         $this->errorReporter = $errorReporter;
     }
-    
-    function initAjax() {
-		if (!empty($_POST['ajax'])) {
-	    	if (isset($_POST['rss'])) {
-	    		$rss = $_POST['rss'];
-	    		update_option('sharexy_news_rss', $rss);
-	    		update_option('sharexy_news_new_'.$rss, 0);
-	    		$news = $this->getNews();
-	    		$textNoNews = $this->textNoNews;
-		    	
-	    		ob_start();
-		    	include "templates/ajax-news.phtml";
-		    	$out = ob_get_contents();
-		    	ob_end_clean();
-		    	echo $out;
-		    	exit;
-			}
-		   	if (isset($_POST['rsswidget'])) {
-	    		$rss = $_POST['rsswidget'];
-	    		update_option('sharexy_news_rss', $rss);
-		   		
-	    		$lastts = get_option('sharexy_news_last_update_'.get_option('sharexy_news_rss'));
-				if (empty($lastts) || ($lastts + 3600 * 24) < time()) {
-					$news = $this->getNews();
-				} else {
-					$news = get_option('sharexy_news_'.get_option('sharexy_news_rss'));
-				}
-	    		$textNoNews = $this->textNoNews;
-		    	
-	    		ob_start();
-		    	include "templates/ajax-newswidget.phtml";
-		    	$out = ob_get_contents();
-		    	ob_end_clean();
-		    	echo $out;
-		    	exit;
-			}
-		}
-    }
-    
-    function initNews() {
-		$rssId = get_option('sharexy_news_rss');
-    	if (empty($rssId) || !in_array($rssId, array_keys($this->rss))) {
-    		$rssId = 0;
-    		update_option('sharexy_news_rss', $rssId);
-    	}
-    	$lastts = get_option('sharexy_news_last_update_'.$rssId);
-		if (empty($lastts) || ($lastts + 3600 * 24) < time()) {
-			$news = $this->getNews();
-		}
-    }
-    
+
     function composeMenuBar() {
         if (!is_array($this->adminMenu) || !(count($this->adminMenu) > 0)) {
             return;
         }
         
-        $menuTitle = 'Sharexy';
-        $cnt = get_option('sharexy_news_new_'.get_option('sharexy_news_rss'));
-        $cnt = intval($cnt);
-        if ($cnt > 0) $menuTitle .= ' <span class="update-plugins count-1"><span class="update-count">'.$cnt.'</span></span>';
-        add_menu_page('Sharexy', $menuTitle, 'manage_options', 'sharexy-menu', array(&$this, 'buttonsSettings'), plugin_dir_url(__FILE__).'img/favicon.png');
+        add_menu_page('Sharexy', 'Sharexy', 'manage_options', 'sharexy-menu', array(&$this, 'buttonsSettings'), plugin_dir_url(__FILE__).'img/favicon.png');
         
         $menuPagesCount = count($this->adminMenu);
         for ($i = 0; $i < $menuPagesCount; $i++) {
-        	$subMenu = $this->adminMenu[$i];
-			$parent_slug = isset($subMenu['parent_slug']) ? $subMenu['parent_slug'] : '';
-			$page_title = isset($subMenu['page_title']) ? $subMenu['page_title'] : '';
-			$menu_title = isset($subMenu['menu_title']) ? $subMenu['menu_title'] : '';
-			$capability = isset($subMenu['capability']) ? $subMenu['capability'] : '';
-			$menu_slug = isset($subMenu['menu_slug']) ? $subMenu['menu_slug'] : '';
-			$function = isset($subMenu['function']) ? $subMenu['function'] : '';
-        	if ($menu_slug == 'sharexy-menu-community' && $cnt > 0) {
-				$menu_title .= ' <span class="update-plugins count-1"><span class="update-count">'.$cnt.'</span></span>';
-			}
-			add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function);
+            $topMenu = isset($this->adminMenu[$i]['top']) ? $this->adminMenu[$i]['top'] : false;
+            if (!is_array($topMenu) || !(count($topMenu) > 0)) {
+                continue;
+            }
+            $page_title = isset($topMenu['page_title']) ? $topMenu['page_title'] : '';
+            $menu_title = isset($topMenu['menu_title']) ? $topMenu['menu_title'] : '';
+            $capability = isset($topMenu['capability']) ? $topMenu['capability'] : '';
+            $menu_slug = isset($topMenu['menu_slug']) ? $topMenu['menu_slug'] : '';
+            $function = isset($topMenu['function']) ? $topMenu['function'] : '';
+            $icon_url = isset($topMenu['icon_url']) ? $topMenu['icon_url'] : '';
+            $position = isset($topMenu['position']) ? $topMenu['position'] : NULL;
+            $parent_slug = isset($topMenu['parent_slug']) ? $topMenu['parent_slug'] : false;
+            if ($parent_slug) {
+                add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function);
+            } else {
+                add_menu_page($page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position);
+            }
+            $subMenu = isset($this->adminMenu[$i]['sub']) ? $this->adminMenu[$i]['sub'] : false;
+            if (!is_array($subMenu) || !(count($subMenu) > 0)) {
+                continue;
+            }
+            $menuSubPagesCount = count($subMenu);
+            for ($j = 0; $j < $menuSubPagesCount; $j++) {
+                if (!is_array($subMenu[$j]) || !(count($subMenu[$j]) > 0)) {
+                    continue;
+                }
+                $parent_slug = isset($subMenu[$j]['parent_slug']) ? $subMenu[$j]['parent_slug'] : '';
+                $page_title = isset($subMenu[$j]['page_title']) ? $subMenu[$j]['page_title'] : '';
+                $menu_title = isset($subMenu[$j]['menu_title']) ? $subMenu[$j]['menu_title'] : '';
+                $capability = isset($subMenu[$j]['capability']) ? $subMenu[$j]['capability'] : '';
+                $menu_slug = isset($subMenu[$j]['menu_slug']) ? $subMenu[$j]['menu_slug'] : '';
+                $function = isset($subMenu[$j]['function']) ? $subMenu[$j]['function'] : '';
+                add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function);
+            }
         }
     }
-    
+
     function initMenu() {
         add_action('admin_menu', array(&$this, 'composeMenuBar'), 1);
     }
@@ -197,15 +92,7 @@ class SharexyAdmin extends SharexyMain {
             $this->constructorMainTpl();
         }
     }
-    
-    function buttonsCommunity() {
-    	if (!is_user_logged_in() || !is_admin() ) {
-    		wp_die('hacking??');
-    		return;
-    	}
-   		$this->constructorCommunityTpl();
-    }
-    
+
     function validateServicesList($list) {
         $servicesArr = array();
         if (strlen( trim( $list ) ) > 0) {
@@ -325,18 +212,7 @@ class SharexyAdmin extends SharexyMain {
         $scriptPath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] .'/'.$this->params['server']['scriptPath'];
         include "templates/constructor.phtml";
     }
-    
-    function constructorCommunityTpl() {
-    	$logoSRC = $this->params['logo']['big_img'] ? $this->params['logo']['path'] . $this->params['logo']['big_img'] : '';
-    	$imgPath = $this->params['server']['imgPath'];
-    	$scriptPath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] .'/'.$this->params['server']['scriptPath'];
-    	
-    	$rssarr = $this->rss;
-    	$rssId = get_option('sharexy_news_rss');
-    	
-    	include "templates/community.phtml";
-    }
-    
+
     function getSocialSourcesNames() {
         $sources = array();
         $response = wp_remote_get( $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT']  );
@@ -379,149 +255,4 @@ class SharexyAdmin extends SharexyMain {
         }
         return $designs;
     }
-
-    /* Notices */
-    
-    function showNotices() {
-    	if (!get_option('sharexy_notice1_hide')) {
-    		$uri = $_SERVER['REQUEST_URI'];
-    		if (strpos($uri, '?') === false) {
-    			$uri .= '?sharexy_notice1_hide=1';
-    		} else {
-    			$uri .= '&sharexy_notice1_hide=1';
-    		}
-	    	echo '<div class="updated">
-	    	<p>
-	    		<span style="float: right; margin-left: 40px;"><a href="'.$uri.'">hide</a></span>
-	    		<b>Woohoo!</b> We have created a new cosy plase for bloggers just Like You! Want to make yourself and your blog more popular and have something interesting to share? <a href="http://sharexy.com/?utm_source=plugin_notice" target="_blank"><b>Join the Sharexy today, we have cookies!</b></a><br />
-	    		Also we have added new tool - <a href="admin.php?page=sharexy-menu-community">Network Buzz Monitoring</a>, which allows you to see what other bloggers are posting in the categories of your interest and to be updated with the latest news and trends.
-	    	</p>
-	    	</div>';
-    	}
-    }
-    
-    function hideNotices() {
-    	if (isset($_GET['sharexy_notice1_hide']) && $_GET['sharexy_notice1_hide'] == 1) {
-    		update_option('sharexy_notice1_hide', 1);
-    	}
-    }
-    
-    function initNotices() {
-    	add_action('admin_notices', array(&$this, 'showNotices'));
-    	add_action('admin_init', array(&$this, 'hideNotices'));
-    }
-    
-    /* RSS News */
-    
-    function getNewsFromCache() {
-    	return get_option('sharexy_news_'.get_option('sharexy_news_rss'), array());
-    }
-    
-    function getNewsFromRss() {
-    	$rssId = get_option('sharexy_news_rss');
-    	$rss = $this->rss[$rssId]['url'];
-    	update_option('sharexy_news_last_update_'.$rssId, time());
-    	if (function_exists('curl_init') && function_exists('simplexml_load_string')) {
-    		$ch = curl_init($rss);
-    		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    		$data = curl_exec($ch);
-    		curl_close($ch);
-    		$data = simplexml_load_string($data, null, LIBXML_NOCDATA);
-    		$news = array();
-    		foreach ($data->channel->item as $item) {
-    			$item = get_object_vars($item);
-    			$bl = bitly_v3_shorten($item['link']);
-    			$item['link'] = $bl['url'];
-    			$news[] = $item;
-    		}
-    		return $news;
-    	} elseif (function_exists('file_get_contents') && function_exists('simplexml_load_string')) {
-    		$data = file_get_contents($rss);
-    		$data = simplexml_load_string($data, null, LIBXML_NOCDATA);
-    		$news = array();
-    		foreach ($data->channel->item as $item) {
-    			$item = get_object_vars($item);
-    			$bl = bitly_v3_shorten($item['link']);
-    			$item['link'] = $bl['url'];
-    			$news[] = $item;
-    		}
-    		return $news;
-    	} else {
-    		return 'You need SimpleXML and cURL or file_get_contents enabled on the server.';
-    	}
-    }
-    
-	function getNews() {
-		$newsRss = $this->getNewsFromRss();
-		if (is_array($newsRss)) {
-			$newsCache = $this->getNewsFromCache();
-			$cntNew = 0;
-			if (!empty($newsCache)) {
-				$lastts = strtotime($newsCache[0]['pubDate']);
-				$news = array();
-				foreach ($newsRss as $item) {
-					if (strtotime($item['pubDate']) > $lastts) {
-						$news[] = $item;
-						$cntNew++;
-					}
-				}
-				foreach ($newsCache as $item) $news[] = $item;
-			} else {
-				$news = $newsRss;
-				$cntNew = count($newsRss);
-			}
-			$news = array_slice($news, 0, 10);
-			if ($cntNew > 10) $cntNew = 10;
-			update_option('sharexy_news_'.get_option('sharexy_news_rss'), $news);
-			update_option('sharexy_news_new_'.get_option('sharexy_news_rss'), $cntNew);
-			return $news;
-		} else {
-			return $newsRss;
-		}
-	}
-	
-	function showDashboardWidget() {
-		$rssId = get_option('sharexy_news_rss');
-		echo '<div class="rss-widget">';
-		echo "
-			<script type='text/javascript'>
-			function loadNews() {
-				jQuery('#NewsWidget').hide();
-				jQuery('#HubLoader').show();
-				var rss = jQuery('#SelectHub').val();
-				jQuery.post('".$_SERVER['REQUEST_URI']."', {'rsswidget': rss, 'ajax': 1},
-					function(data) {
-						jQuery('#NewsWidget').html(data);
-						jQuery('#HubLoader').hide();
-						jQuery('#NewsWidget').show();
-					},
-					'html');
-			}
-			jQuery(document).ready(function() { loadNews(); });
-			</script>
-		";
-		echo '<p style="float: right; margin-left: 10px; margin-top: 0; font-size: 10px;">';
-		echo 'Choose a Hub: ';
-		echo '<select id="SelectHub" onchange="loadNews();" style="width: 120px;">';
-		foreach ($this->rss as $id => $val) {
-			echo '<option value="'.$id.'" '.($id == $rssId ? 'selected="selected"' : '').'>'.$val['title'].'</option>';
-		}
-		echo '</select>';
-		echo '</p>';
-		echo '<p>
-			<b>Have something interesting to share? Put your link here.</b><br />
-			<b><a href="http://sharexy.com/?utm_source=dashboard_plugin_link" target="_blank" style="color: #C7531F; text-decoration: underline;">Join Sharexy Today and Create Your Post!</a></b></p>';
-		echo '<div id="HubLoader" style="text-align: center;"><img src="'.$this->params['server']['imgPath'].'loading.gif" /></div>';
-		echo '<div id="NewsWidget"></div>';
-		echo '</div>';
-	}
-	
-	function addDashboardWidget() {
-		wp_add_dashboard_widget('dashboard_widget', 'Sharexy Network Buzz', array(&$this, 'showDashboardWidget'));
-	}
-	
-	function initDashboardWidget() {
-		add_action('wp_dashboard_setup', array(&$this, 'addDashboardWidget'));
-	}
-    
 }
