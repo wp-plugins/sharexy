@@ -1,7 +1,8 @@
 <?php
 class SharexyAdmin extends SharexyMain {
     var $adminMenu;
-    var $errorReporter = null;
+    var $errorReporter     = null;
+    var $adminMessageText  = ""; 
 
     function SharexyAdmin() {
         $this->parentInit();
@@ -116,15 +117,24 @@ class SharexyAdmin extends SharexyMain {
         if (!$newParams['user_id']) {
             $newParams['allways_show_ads'] = 0;
             $newParams['show_ads_sharing'] = 0;
-            $newParams['show_ads_cursor'] = 0;
+            $newParams['show_ads_cursor']  = 0;
         } else {
             $newParams['allways_show_ads'] = isset($data['allways_show_ads']) ? intval($data['allways_show_ads']) : 0;
             $newParams['show_ads_sharing'] = isset($data['show_ads_sharing']) ? intval($data['show_ads_sharing']) : 0;
             $newParams['show_ads_cursor'] = isset($data['show_ads_cursor']) ? intval($data['show_ads_cursor']) : 0;
         }
-        $newParams['popup_bot_a'] = isset($data['popup_bot_a']) ? intval($data['popup_bot_a']) : 0;
-        $newParams['design'] = isset($data['design']) && $data['design'] ? trim($data['design']) : $newParams['design'];
+        $newParams['popup_bot_a']           = isset($data['popup_bot_a']) ? intval($data['popup_bot_a']) : 0;
+        $newParams['title_text']            = isset($data['title_text']) ? $data['title_text'] : '';
+        $newParams['title_color']           = isset($data['label_color_float']) ? $data['label_color_float'] : '#6d7c9e';
+        $newParams['design']                = isset($data['design']) && $data['design'] ? trim($data['design']) : $newParams['design'];
+        $newParams['hide_on_mobile_float']  = isset($data['hide_on_mobile_float']) ? intval($data['hide_on_mobile_float']) : 0;
+        $newParams['shorten_links']         = isset($data['shorten_links']) ? intval($data['shorten_links']) : 0;
+        $newParams['bitly_not']             = isset($data['bitly_not']) ? intval($data['bitly_not']) : 0;
+        $newParams['bitly_access']          = isset($data['bitly_access']) ? $data['bitly_access'] : '';
         update_option($this->adminOptionsName, serialize($newParams));
+        if (strlen($newParams['bitly_access'])) {
+            add_option("SharexyBitly_".$newParams['bitly_access']);
+        }
 
         $placements = $this->getPlacements();
         $placementsParams = array();
@@ -144,6 +154,9 @@ class SharexyAdmin extends SharexyMain {
             if (isset( $data['align_' . $place] ) && in_array(trim($data['align_' . $place]), array('left', 'right', 'center'))) {
                 $placementsParams[$place]['align'] = trim($data['align_' . $place]);
             }
+            if (isset( $data['counters_align_' . $place] ) && in_array(trim($data['counters_align_' . $place]), array('none', 'top', 'right', 'bundle'))) {
+                $placementsParams[$place]['counters_align'] = trim($data['counters_align_' . $place]);
+            }            
             if (isset( $data['show_ads_' . $place] )) {
                 $placementsParams[$place]['show_ads'] = intval($data['show_ads_' . $place]) > 0 && (
                     $newParams['allways_show_ads'] ||
@@ -185,9 +198,12 @@ class SharexyAdmin extends SharexyMain {
             if (isset( $data['bg_color_' . $place] )) {
                 $currentPlaceStyleParams['bg_color'] = $data['bg_color_' . $place];
             }
+            if (isset( $data['hide_on_mobile_float_' . $place] )) {
+                $currentPlaceStyleParams['hide_on_mobile_float'] = $data['hide_on_mobile_float_' . $place];
+            }
             if (isset( $data['mode_float_' . $place] )) {
                 $currentPlaceStyleParams['mode_float'] = $data['mode_float_' . $place];
-            }
+            }           
 
             update_option($this->adminOptionsName . '_placement_' . $place . '_style', serialize($currentPlaceStyleParams));
         }
@@ -209,13 +225,20 @@ class SharexyAdmin extends SharexyMain {
         }
         $logoSRC = $this->params['logo']['big_img'] ? $this->params['logo']['path'] . $this->params['logo']['big_img'] : '';
         $imgPath = $this->params['server']['imgPath'];
-        $scriptPath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] .'/'.$this->params['server']['scriptPath'];
+        $localImgPath = plugin_dir_url(__FILE__);
+        if ($styleParams['design'] == 'custom') {
+            $scriptPath = plugin_dir_url(__FILE__);            
+        } else {
+            $scriptPath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] .'/'.$this->params['server']['scriptPath'];    
+        }
+        
         include "templates/constructor.phtml";
     }
 
     function getSocialSourcesNames() {
         $sources = array();
-        $response = wp_remote_get( $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT']  );
+        $testpath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT'];
+        $response = wp_remote_get( $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT']  );        
         if ( !is_wp_error( $response ) ) {
             $responseStr = isset($response['body']) ? $response['body'] : '';
             if (!$responseStr) {
@@ -231,7 +254,53 @@ class SharexyAdmin extends SharexyMain {
         return $sources;
     }
 
+    function getMessage() {
+        $message = null;
+        $response = wp_remote_get( $this->params['sh_server']['protocol'] . "//" . $this->params['sh_server']['host'] . $this->params['sh_server']['port'] . "/" . $this->params['sh_server']['messagesSource']  );        
+        if ( !is_wp_error( $response ) ) {
+            $responseStr = isset($response['body']) ? $response['body'] : '';
+            if (!$responseStr) {
+                return $message;
+            }
+            if (function_exists('json_decode')) {
+                $message = json_decode($responseStr);
+            } else {
+                $json = new SharexyJson();
+                $message = $json->decode($responseStr);
+            }
+        }
+        return $message;        
+    }
+
+    function initMessage() {
+        $message = $this->getMessage();
+        if ($message != null && $this->checkNotify($message->guid)) {
+            $this->adminMessageText  = "<script src='".plugin_dir_url(__FILE__)."js/notify.js'>";
+            $this->adminMessageText .= "</script>";
+            $this->adminMessageText .= "<div id='sharexy_notice' style='background: #fff; box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); padding: 1px 12px; position: relative; z-index: 99999; margin: 10px 10px 0px 0px; box-shadow: 1px 1px 4px rgba(0, 0, 0, .6) !important;'>";
+            $this->adminMessageText .= $message->html;
+            $this->adminMessageText .= "<div align='right'><button guid='".$message->guid."' onclick='sharexyHideNotifyDialog(this, \"".plugin_dir_url(__FILE__)."ajaxresponder.php\")' style='cursor: pointer;background: #e14d43;border: 0px !important;border-color: #d02a21;color: #fff;min-width: 100px;line-height: 25px;'>Hide</></div>";
+            $this->adminMessageText .= "</div>";
+            add_action('admin_notices', array(&$this, 'showNotify'));
+        }
+    } 
+
+    function showNotify() {
+        echo $this->adminMessageText;
+    }
+
+    function checkNotify($guid) {
+        $notifys = get_option("SharexyPlugin_notify");
+        if (!$notifys) {
+            add_option("SharexyPlugin_notify");
+            $notifys = get_option("SharexyPlugin_notify");      
+        }
+        $notifys = @unserialize($notifys);
+        return (!isset($notifys[$guid]) || $notifys[$guid] < 1);
+    }
+
     function getDesignNames() {
+        $scriptPath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] .'/'.$this->params['server']['scriptPath'];
         $designs = array();
         $response = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['stylesTXT'];
         $initInfo  = file_get_contents($response);
@@ -249,10 +318,16 @@ class SharexyAdmin extends SharexyMain {
               $designs[$iteration] = array(
                 'id' => $entry,
                 'name' => ucwords($entry),
-                'url' => $init->url
+                'url' => $init->url,
+                'scriptPath' => $scriptPath
             );
             $iteration++;
         }
+        $customTheme['id']          = 'custom';
+        $customTheme['name']        = 'Custom Theme';
+        $customTheme['url']         = '';
+        $customTheme['scriptPath']  = plugin_dir_url(__FILE__);
+        array_unshift($designs, $customTheme);        
         return $designs;
     }
 }

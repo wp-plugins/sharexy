@@ -1,13 +1,12 @@
 ﻿jQuery(document).ready(function() {
+
     jQuery("span.niceCheck").unbind("click").click(function(){
         changeCheck(jQuery(this));
     });
     
     jQuery("span.niceCheck").each(function() {
-            defineCheck(jQuery(this));
-        });
-
-
+        defineCheck(jQuery(this));
+    });
 });
 
 function changeCheck(el) {

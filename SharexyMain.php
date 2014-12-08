@@ -24,6 +24,12 @@ class SharexyMain {
                 'path' => WP_PLUGIN_URL . '/sharexy/img/',
                 'big_img' => 'logo.png',
                 'small_img' => 'favicon.png'
+            ),
+            'sh_server' => array(
+                'host' => 'sharexy.com',
+                'port' => '',
+                'protocol' => 'http:',
+                'messagesSource' => 'sharexyroot/message.json',
             )
         );
         $this->defaultPlacements = array(
@@ -31,36 +37,42 @@ class SharexyMain {
                 "display" => 0,
                 'pages_mode' => array('front' => 0, "page" => 0, "post" => 1 ),
                 'align' => 'right',
+                'counters_align' => 'none',
                 'show_ads' => 1
             ),
             'bottom_post' => array(
                 "display" => 1,
                 'pages_mode' => array('front' => 0, "page" => 0, "post" => 1 ),
                 'align' => 'right',
+                'counters_align' => 'none',                
                 'show_ads' => 1
             ),
             'top' => array(
                 "display" => 0,
                 'pages_mode' => array('front' => 1, "page" => 1, "post" => 0 ),
                 'align' => 'right',
+                'counters_align' => 'none',                
                 'show_ads' => 1
             ),
             'bottom' => array(
                 "display" => 1,
                 'pages_mode' => array('front' => 1, "page" => 1, "post" => 0 ),
                 'align' => 'right',
+                'counters_align' => 'none',                
                 'show_ads' => 1
             ),
             'float' => array(
                 "display" => 0,
                 'pages_mode' => array('front' => 1, "page" => 1, "post" => 1 ),
                 'align' => 'right',
+                'counters_align' => 'none',                
                 'show_ads' => 1
             ),
             'shortcode' => array(
                 "display" => 0,
                 'pages_mode' => array('front' => 1, "page" => 1, "post" => 1),
                 'align' => '',
+                'counters_align' => 'none',                
                 'show_ads' => 1
             ),
         );
@@ -102,7 +114,13 @@ class SharexyMain {
             'counters' => '0',
             'counters_float' => '0',
             'retweet@username' => 'retweetmeme',
-            'popup_bot_a' => '0'
+            'popup_bot_a' => '0',
+            'title_text' => 'Share',
+            'title_color' => '#6d7c9e',
+            'shorten_links' => 0,
+            'bitly_access' => '',
+            'bitly_not' => 0,
+            'hide_on_mobile_float' => 0
         );
     }
 
@@ -116,7 +134,7 @@ class SharexyMain {
         }
 
         $resultPlacements = array();
-        foreach ($defaultPlacements as $place => $params) {
+        foreach ($defaultPlacements as $place => $params) {            
             $resultPlacements[$place] = array();
             if (empty($params)) {
                 continue;
@@ -124,7 +142,7 @@ class SharexyMain {
             foreach ($params as $key => $value) {
                 $resultPlacements[$place][$key] = isset($placements[$place][$key]) ? $placements[$place][$key] : $value;
             }
-        }
+        }        
         return $resultPlacements;
     }
 

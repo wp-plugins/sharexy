@@ -1,13 +1,14 @@
-=== Sharexy - powerful social sharing and bookmarking tool (with floating widget)===
+=== Powerful social sharing and bookmarking plugin with floating widget and premium features ===
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
-Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark,nbookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, messenger, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, contextual advertising, pay per click advertising, website advertising, blog advertising, blog monetization, advertising, style, ppc, ad, ads, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin,shortcode placement, shortcode
+Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark, bookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, style, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin, shortcode placement, shortcode, bit.ly, bitly, design customization, upload icons, xing, buffer, livejournal, premium icons, premium design, sharing buttons, social media icons, facebook share button, share button, share buttons, social media sharing, social buttons, social media widget, social share, social sharing, twitter share button, pocket, delicious, blogger, google +1, floating sharing buttons, linkedin, linkedin button, pinit, share links, share this, Shareaholic, addthis, sharethis, sidebar, sociable, social marketing, social tools, twitter button, twitter share, yahoo, addtoany, add to any, bookmark button, facebook share, counter, counters, premium sharing buttons, premium social buttons, social media
 Requires at least: 2.8
-Tested up to: 3.7
-Stable tag: 3.1
+Tested up to: 4.0.1
+Stable tag: 4.0
+License: GPLv2
 
-Widget placement customizing (floating and static), Continual updated design collection.
+Sharing widget placement customizing (floating and static), Premium designs, Bit.ly support, Design customizing (you can upload your own icons) ...
 
 
 == Description ==
@@ -39,7 +40,7 @@ You don't have to go on surfing blogs and forums looking for the right design of
 
 Just a few seconds and a few clicks, and it's all set to your taste!
 
-Chose the buttons design to perfectly go with your website from the constantly updated design gallery.
+Chose the buttons design to perfectly go with your website from the constantly updated design gallery or upload and use your own design.
 
 
 ***Placement***
@@ -71,17 +72,16 @@ Using Buzz, you'll be able to unobtrusively get many more visitors attention to 
 * MySpace
 * Delicious
 * Digg
-* Orkut
 * Vkontakte
 * Reddit
-* Retweet
 * Google +1
-* Live Messenger
-* Google bookmarks
 * Blogger
-* Donetshoutout
 * Tumblr
 * Yahoo bookmarks
+* Xing
+* Livejournal
+* Buffer
+* Pocket
 
 *Your visitors can also print a page, add it to their bookmarks or forward the link via email with our buttons.*
 
@@ -115,10 +115,12 @@ To upload the plugin through WordPress, instead of FTP:
 
 1. Plugin page overview.
 2. Chose the buttons design to perfectly go with your website from the constantly updated design gallery.
-3. Various button sizes available.
-4. Static widget customization section.
-5. Floating widget customization section.
-6. Previewing how your options look.
+3. You can upload any icons you want.
+4. Various button sizes available.
+5. Static widget customization section.
+6. Floating widget customization section.
+7. Pinterest dialog box.
+7. Previewing how your options look.
 
 == PHP Version ==
 
@@ -178,6 +180,9 @@ Preparation to the sharexy reconstruction
 
 * Bug Fixes.
 
+= 4.0 =
+
+* 4.0 version release.
 
 == Upgrade Notice ==
 
@@ -229,3 +234,7 @@ Bug Fixes.
 = 3.0 =
 
 Bug Fixes.
+
+= 3.1 =
+
+New version release.

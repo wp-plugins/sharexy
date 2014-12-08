@@ -18,5 +18,6 @@ class SharexyView extends SharexyMain {
         $this->admin->initMenu();
         $this->admin->registerAdminScripts();
         $this->admin->registerAdminCSS();
+        $this->admin->initMessage();
     }
 }

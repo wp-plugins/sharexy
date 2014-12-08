@@ -171,8 +171,9 @@ class SharexyWidget extends SharexyMain {
         $styleParams['code_id'] = $code_id;
         $styleParams['d'] = $debugInfo;
         $styleParams['popup_bot_a'] = 1;
-        $align = isset($placeParams['align']) ? $placeParams['align'] : "";
-
+        $align        = isset($placeParams['align']) ? $placeParams['align'] : "";
+        $styleParams['counters_align']  = isset($placeParams['counters_align']) ? $placeParams['counters_align'] : "none";
+        
         $this->dataScripts[$code_id] = $styleParams;
 
         return '<div align="' . $align . '"><div class="' . $this->noindexClassName . '"><div id="shr_' . $code_id . '"></div></div></div>';
@@ -190,13 +191,19 @@ class SharexyWidget extends SharexyMain {
                         }
 EOF;
             foreach ($this->dataScripts as $id => $styleParams) {
-            	$styleParams['mailScript'] = plugin_dir_url(__FILE__).'sharexymail.php';
+                $styleParams['localImg']       = plugin_dir_url(__FILE__).'design';
+            	$styleParams['mailScript']     = plugin_dir_url(__FILE__).'sharexymail.php';
+                $styleParams['ajaxResponder']  = plugin_dir_url(__FILE__).'ajaxresponder.php';
+                $styleParams['local_counters'] = '1';
+                unset($styleParams['bitly_access']);
+                unset($styleParams['bitly_not']);
                 if (function_exists('json_encode')) {
                     $params = json_encode($styleParams);
                 } else {
                     $json = new SharexyJson();
                     $params = $json->encode($styleParams);
                 }
+
                 $script .= "w.SharexyWidget.Params['shr_{$id}'] = {$params};\n";
             }
             $script .= "})(window);
