@@ -1,4 +1,4 @@
-=== Powerful social sharing and bookmarking plugin with floating widget and premium features ===
+=== Powerful social sharing and bookmarking plugin with floating widget & premium features ===
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
