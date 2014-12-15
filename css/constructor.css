@@ -351,6 +351,12 @@ hr {
     width: 155px;
 }
 
+.placements_textarea {
+    margin-top: 5px;
+    line-height: 20px;
+    width: 400px;
+}
+
 #popup_design_settings, #popup_design_edit {
     background-position: #f3f3f3;
     position: absolute;

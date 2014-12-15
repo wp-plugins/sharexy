@@ -120,7 +120,8 @@ class SharexyMain {
             'shorten_links' => 0,
             'bitly_access' => '',
             'bitly_not' => 0,
-            'hide_on_mobile_float' => 0
+            'hide_on_mobile_float' => 0, 
+            'hide_on_urls' => ''
         );
     }
 

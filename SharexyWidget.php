@@ -16,9 +16,32 @@ class SharexyWidget extends SharexyMain {
 
     function setErrorObject($errorReporter) {
         $this->errorReporter = $errorReporter;
-    }
+    }    
 
     function loadWidget() {
+        $stlPrms = $this->getStyle();        
+        $currUrl = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];        
+        $currUrl = mb_strtoupper(trim($currUrl));
+        $urls = isset($stlPrms['hide_on_urls'])?trim($stlPrms['hide_on_urls']):'';
+        if (strlen($urls) > 0) {
+            $urls = explode ( ',' , $urls);
+            foreach ($urls as $url) {
+                $mask =  mb_strtoupper(trim($url));
+                $mask =  str_replace("HTTP://" , "", $mask);
+                $mask =  str_replace("HTTPS://" , "", $mask);
+                $mask =  str_replace("*" , ".*", $mask);
+                $mask =  str_replace("/" , "\/", $mask);
+                $mask = "/^".$mask."$/"; 
+                /*echo "<br>";    
+                echo "<br>".$currUrl;
+                echo "<br>".$mask;*/
+                if (preg_match($mask, $currUrl) > 0) {
+                    return;
+                }
+            }
+        }
+        
+        
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
         

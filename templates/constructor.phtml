@@ -244,10 +244,20 @@
         ></span> 
         <label for="bitly_not">Use Sharexy Bit.ly access token</label>&nbsp;&nbsp;&nbsp;        
     </h4>
+
+    <h4 style="margin-bottom: 0px;">
+        <label class="section_check">Don't show Sharexy buttons on URLs specified below:</label>
+    </h4>
+    <h4 class="hide_on_urls_container" style="margin: 0px;">
+        <textarea rows="5" class="placements_textarea" name="hide_on_urls" id="hide_on_urls"><?php echo $styleParams['hide_on_urls']; ?></textarea>
+        <br>
+    </h4>    
+    <span class="gray text_sh">Pages to Ignore (page URLs) - seperate URLs with commas i.e. 1,2,3<br>
+You can use regexp (*blog*, */contacts/, *?id=*)</span>    
 </div>
 
 <div class="sel_design">
-    <h3 class="sharexy_h3 text_sh">Choose design of your buttons.</h3>
+    <h3 class="sharexy_h3 text_sh">Choose design of your buttons</h3>
 
     <input type='hidden' name='design' id='design_name' value='<?php echo $styleParams['design'];?>'>
     <span class="gray text_sh">Selected design:</span> <strong class="blue text_sh"
@@ -1036,7 +1046,6 @@
             <tr>
                 <td valign="top"><span class="shr_label"> <?php echo $styleParams['title_text']; ?></span>
                     <ul class="boxes" id="boxes_float_float">
-
                         <?php if (!empty($socSources)) {
                         $count = 0;
                         foreach ($socSources as $id => $values) {

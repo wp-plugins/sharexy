@@ -85,7 +85,7 @@
             var submitBtn = jQuery('#sharexy_plugin_constructor_form_submit_button'),
                     submitText = submitBtn.val(),
                     styleData = {"sel" : "sharexy_save_style_data"};
-            jQuery('.sharexy_content input,select').each(function (n, element) {
+            jQuery('.sharexy_content input,select, textarea').each(function (n, element) {
                 var name = jQuery(element).attr('name'), val = jQuery(element).attr("value");
                 if (jQuery(element).attr('type') === 'radio') {
                     if (name && typeof val !== 'undefined' && jQuery(element).attr('checked')) {

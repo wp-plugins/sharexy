@@ -131,6 +131,7 @@ class SharexyAdmin extends SharexyMain {
         $newParams['shorten_links']         = isset($data['shorten_links']) ? intval($data['shorten_links']) : 0;
         $newParams['bitly_not']             = isset($data['bitly_not']) ? intval($data['bitly_not']) : 0;
         $newParams['bitly_access']          = isset($data['bitly_access']) ? $data['bitly_access'] : '';
+        $newParams['hide_on_urls']          = isset($data['hide_on_urls']) ? $data['hide_on_urls'] : '';
         update_option($this->adminOptionsName, serialize($newParams));
         if (strlen($newParams['bitly_access'])) {
             add_option("SharexyBitly_".$newParams['bitly_access']);
@@ -236,10 +237,9 @@ class SharexyAdmin extends SharexyMain {
     }
 
     function getSocialSourcesNames() {
-        $sources = array();
-        $testpath = $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT'];
+        $sources = array();                        
         $response = wp_remote_get( $this->params['server']['protocol'] . "//" . $this->params['server']['host'] . $this->params['server']['port'] . "/" . $this->params['server']['socialSourcesTXT']  );        
-        if ( !is_wp_error( $response ) ) {
+        if ( !is_wp_error( $response ) ) {            
             $responseStr = isset($response['body']) ? $response['body'] : '';
             if (!$responseStr) {
                 return $sources;
@@ -251,7 +251,7 @@ class SharexyAdmin extends SharexyMain {
                 $sources = $json->decode($responseStr);
             }
         }
-        return $sources;
+        return $sources;        
     }
 
     function getMessage() {
