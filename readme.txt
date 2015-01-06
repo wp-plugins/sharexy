@@ -1,14 +1,14 @@
-=== Powerful social sharing and bookmarking plugin with floating widget & premium features ===
+=== Powerful Social Sharing Buttons Plugin with Floating Widget & FREE Premium Features ===
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
-Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark, bookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, style, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin, shortcode placement, shortcode, bit.ly, bitly, design customization, upload icons, xing, buffer, livejournal, premium icons, premium design, sharing buttons, social media icons, facebook share button, share button, share buttons, social media sharing, social buttons, social media widget, social share, social sharing, twitter share button, pocket, delicious, blogger, google +1, floating sharing buttons, linkedin, linkedin button, pinit, share links, share this, Shareaholic, addthis, sharethis, sidebar, sociable, social marketing, social tools, twitter button, twitter share, yahoo, addtoany, add to any, bookmark button, facebook share, counter, counters, premium sharing buttons, premium social buttons, social media
+Tags: bookmarking, del.icio.us, Digg, Facebook, Share, sharing, social bookmarking, social bookmarks, social icons, stumbleupon, tumblr, twitter, facebook, +1, bookmark, bookmarking, bookmarks, buzz, facebook like, google, google plus, google plus one, icon, icons, image, images, links, myspace, page, pages, plugin, plus 1, plus one, Post, posts, Reddit, Share, sharing, social, statistics, stats, tweet, widget, style, socialize, floating buttons, floating widget, floating social buttons, pinterest, pin it, pin it button, pinterest button, pin, shortcode placement, shortcode, bit.ly, bitly, design customization, upload icons, xing, buffer, livejournal, premium icons, premium design, sharing buttons, social media icons, facebook share button, share button, share buttons, social media sharing, social buttons, social media widget, social share, social sharing, twitter share button, pocket, delicious, blogger, google +1, floating sharing buttons, linkedin, linkedin button, pinit, share links, share this, Shareaholic, addthis, sharethis, sidebar, sociable, social marketing, social tools, twitter button, twitter share, yahoo, addtoany, add to any, bookmark button, facebook share, counter, counters, premium sharing buttons, premium social buttons, social media, jumbo counter
 Requires at least: 2.8
-Tested up to: 4.0.1
-Stable tag: 4.1
+Tested up to: 4.1
+Stable tag: 4.2
 License: GPLv2
 
-Sharing widget placement customizing (floating and static), Premium designs, Bit.ly support, Design customizing (you can upload your own icons) ...
+Sharing widget placement customizing (floating and static), Premium designs, Bit.ly support, Buttons design customizing, Four types of counters available (top, right, badge, jumbo) and more ...
 
 
 == Description ==
@@ -188,6 +188,11 @@ Preparation to the sharexy reconstruction
 
 * 4.1 version release.
 
+= 4.2 =
+
+* Bug fixes
+* Added jumbo counter type
+
 == Upgrade Notice ==
 
 = 1.0.1 =
@@ -246,3 +251,7 @@ New version release.
 = 4.0 =
 
 Bug fixes. Page filter added. 
+
+= 4.1 =
+
+Bug fixes. Jumbo counter added. 

@@ -1,4 +1,5 @@
 <link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&subset=latin,cyrillic,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL . '/sharexy/js/spectrum.js' ?>"></script>
 <!--rabbit "hello"-->
 <img src="<?php echo  $imgPath . "hello.png"; ?>" id="sharexy_hello">
 <!--end rabbit "hello"-->
@@ -107,6 +108,7 @@
             <td>
                 <!---- Ask a question, leave feedback or share your ideasg-->
                 <div class="sharexy_feedback bt">
+                    <a target="_blank" class="sharexy_promo_text_span" href="http://community.sharexy.com">You can make this plugin better!</a>                    
                     <a target="_blank" class="sharexy_promo_text" href="http://community.sharexy.com">Ask a question, leave
                         feedback
                         or share your ideas</a>
@@ -555,8 +557,9 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                     <p class="blue sharexy_choose_size" valign="top">Label color:&nbsp;</p>
                 </td>
                 <td valign="top">
-                    <input type="text" id="label_color" name="label_color_float" value="<?php echo $styleParams['title_color']; ?>" style="background-color: <?php echo $styleParams['title_color']; ?>; color: <?php echo $styleParams['title_color']; ?>;" class="placements_input">
-                </td>                
+                    <input class="placements_input color_picker" type="color" name="label_color_float" id="label_color" value="<?php echo isset($styleParams['title_color'])?$styleParams['title_color']:'#ffffff'; ?>"/>                    
+                </td>
+
             </tr>            
 	    </table>
 
@@ -835,7 +838,7 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
             <table cellspacing="0" style="margin-top: 15px;">
                 <tr>
                     <td class="blue">
-                        <a id="label_counters_align_<?php echo $place;?>" data-size="<?php echo $size_tpl;?>" class="tips" original-title="Choose what kind of counters you want to use">Counters position:</a>
+                        <a id="label_counters_align_<?php echo $place;?>" data-size="<?php echo $size_tpl;?>" class="tips" original-title="Choose what kind of counters you want to use">Counters type:</a>
                     </td>
                     <td id="container_counters_align_<?php echo $place;?>_none" 
                         style="padding: 4px;">  
@@ -849,7 +852,7 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                             name="counters_align_<?php echo $place;?>"
                             id="counters_align_<?php echo $place;?>_none"
                             style="display: none" <?php echo !isset($params['counters_align']) || $params['counters_align'] === 'none' ? ' checked="true" ' : ''; ?>
-                            value="none"> Hide</label>
+                            value="none"> Hide counter</label>
                     </td>
                     <td id="container_counters_align_<?php echo $place;?>_top" 
                         style="padding: 4px; <?php if ($size_tpl == '16' | $size_tpl == '60') echo 'display: none;'; ?>">
@@ -894,8 +897,39 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                             id="counters_align_<?php echo $place;?>_bundle"
                             style="display: none" <?php echo isset($params['counters_align']) && $params['counters_align'] === 'bundle' ? ' checked="true" ' : ''; ?>
                             value="bundle">Badge</label>
-                    </td>                    
+                    </td>
+                    <td id="container_counters_align_<?php echo $place;?>_jumbo" 
+                        style="padding: 4px;">
+                        <label  
+                        class="<?php echo isset($params['counters_align']) && $params['counters_align'] === 'jumbo' ? ' checkedLabel ' : ''; ?>"
+                        grp="counters_align_<?php echo $place;?>" 
+                        for="counters_align_<?php echo $place;?>_jumbo" 
+                        style="color: #9d9a9a"><input
+                            type="radio"
+                            class="niceRadio"
+                            name="counters_align_<?php echo $place;?>"
+                            id="counters_align_<?php echo $place;?>_jumbo"
+                            style="display: none" <?php echo isset($params['counters_align']) && $params['counters_align'] === 'jumbo' ? ' checked="true" ' : ''; ?>
+                            value="jumbo">Jumbo</label>
+                    </td>
                 </tr>
+                <tr class="jumbo_item_preview_<?php echo $place;?> jumbo_item" style="<?php if ($params['counters_align'] !== 'jumbo') echo 'display: none;'; ?>">
+                    <td>
+                        <p class="blue sharexy_choose_size" valign="top">Counter label:&nbsp;</p>
+                    </td>
+                    <td valign="top" colspan="4">
+                        <input class="placements_input" type="text" name="jumbo_text_<?php echo $place;?>" id="jumbo_text_preview_<?php echo $place;?>" value="<?php echo isset($style['jumbo_text'])?$style['jumbo_text']:'Shares'; ?>" data-place="<?php echo $place;?>" data-jumbo="text"/>
+                    </td>                
+                </tr>
+                <tr class="jumbo_item_preview_<?php echo $place;?> jumbo_item" style="<?php if ($params['counters_align'] !== 'jumbo') echo 'display: none;'; ?>">
+                    <td>
+                        <p class="blue sharexy_choose_size" valign="top">Counter color:&nbsp;</p>
+                    </td>
+                    <td valign="top">
+                        <input class="placements_input color_picker" type="color" name="jumbo_color_<?php echo $place;?>" id="jumbo_color_preview_<?php echo $place;?>" value="<?php echo isset($style['jumbo_color'])?$style['jumbo_color']:'#cccccc'; ?>" data-place="<?php echo $place;?>" data-jumbo="color"/>
+                    </td>                
+                </tr>                
+
             </table>
 	
     <p style="margin: 30px 0 10px;" class="sharexy_h3">Preview</p>
@@ -935,7 +969,16 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                     }
                         ?>
                     </ul>
-
+                    <?php
+                        if (isset($params['counters_align']) && $params['counters_align'] == 'jumbo'){
+                            $jumboText  = isset($style['jumbo_text'])?$style['jumbo_text']:'Shares';
+                            $jumboColor = $style['jumbo_color'];
+                            echo "<div style='color:".$jumboColor."; border-right-color: ".$jumboColor." ;' class='jumbo_counter jumbo_counter". $size_tpl ."'>";
+                            echo "<div class='jumbo_value'>".rand(0, 1000)."</div>";
+                            echo "<div class='jumbo_text'>".$jumboText."</div>";
+                            echo "</div>";
+                        }                 
+                    ?>
                     <ul id="boxes_<?php echo $place;?>" class="boxes"
                         style=" white-space: nowrap; display: table;<?php if ($size_tpl == 'sh') echo "display: none"; ?>">
                         <?php if (!empty($socSources)) {
@@ -1003,7 +1046,7 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                                 echo "</div>";
                              } 
                         ?>                              
-                    </div>                   
+                    </div>   
                 </td>
             </tr>
         </table>
@@ -1045,6 +1088,16 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
         <table cellspacing="0">
             <tr>
                 <td valign="top"><span class="shr_label"> <?php echo $styleParams['title_text']; ?></span>
+                    <?php
+                        if (isset($params['counters_align']) &&  $params['counters_align'] == 'jumbo' && (isset($style['mode_float']) && ($style['mode_float'] !== 'l' && $style['mode_float'] !== 'r'))) {
+                            $jumboText  = $jumboText  = isset($style['jumbo_text'])?$style['jumbo_text']:'Shares';
+                            $jumboColor = $style['jumbo_color'];
+                            echo "<div style='color:".$jumboColor.";border-right-color: ".$jumboColor.";' class='jumbo_counter jumbo_counter". $size_tpl ." jumbo_float_".$style['mode_float']."'>";
+                            echo "<div class='jumbo_value'>".rand(0, 1000)."</div>";
+                            echo "<div class='jumbo_text'>".$jumboText."</div>";
+                            echo "</div>";
+                        }                 
+                    ?>                    
                     <ul class="boxes" id="boxes_float_float">
                         <?php if (!empty($socSources)) {
                         $count = 0;
@@ -1086,7 +1139,7 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                         }
                     }
                         ?>
-                    </ul>
+                    </ul>                                      
                     <div id="shrxbtn" style='padding: 3px; float: left;'>              
                         <?php if (isset($params['counters_align']) && $params['counters_align'] == 'top' && $size_tpl != '60') {
                             echo "<div class='top_counter top_counter". $size_tpl ."'>";
@@ -1106,7 +1159,17 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                             echo rand(0, 1000);
                             echo "</div>";
                         } ?>                         
-                    </div>
+                    </div>                                                            
+                    <?php
+                        if (isset($params['counters_align']) &&  $params['counters_align'] == 'jumbo' && (isset($style['mode_float']) && ($style['mode_float'] === 'l' || $style['mode_float'] === 'l'))) {
+                            $jumboText  = $jumboText  = isset($style['jumbo_text'])?$style['jumbo_text']:'Shares';
+                            $jumboColor = $style['jumbo_color'];
+                            echo "<div style='color:".$jumboColor."; border-top-color: ".$jumboColor." ;' class='jumbo_counter jumbo_counter". $size_tpl ." jumbo_float_".$style['mode_float']."'>";
+                            echo "<div class='jumbo_value'>".rand(0, 1000)."</div>";
+                            echo "<div class='jumbo_text'>".$jumboText."</div>";
+                            echo "</div>";
+                        }                 
+                    ?>                    
                 </td>
             </tr>
         </table>
@@ -1194,8 +1257,7 @@ You can use regexp (*blog*, */contacts/, *?id=*)</span>
                     <div id="div_bg_color_<?php echo $place; ?>" style="
                                 <?php echo isset($style['bg_float']) && $style['bg_float'] == '1' ? "padding-left: 22px;" : " display:none; "; ?>
                             ">
-                        Background color: <input type="text" id="color" name="bg_color_<?php echo $place; ?>"
-                                                 value="<?php echo isset($style['bg_color']) ? $style['bg_color'] : '' ?>">
+                        Background color: <input class="placements_input color_picker" type="color" name="bg_color_<?php echo $place; ?>" id="color" value="<?php echo isset($style['bg_color']) ? $style['bg_color'] : '' ?>"/>                    
                     </div>                    
                 </div>
                 <div>

@@ -5,7 +5,7 @@
 		echo json_encode($data);	
 		return;
 	}
-	if ($_POST['request_type'] == 'customdesign') {
+	if (isset($_POST['request_type']) && $_POST['request_type'] == 'customdesign') {
 		$uploaddir = 'design/custom/'.$_POST['folder'].'/';
 		foreach($_FILES as $file) {
 			if(move_uploaded_file($file['tmp_name'], $uploaddir .$_POST['resolution'].".png" ))
@@ -18,7 +18,7 @@
 			}		
 		}
 		$data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
-	} else if ($_POST['request_type'] == 'shorten_link' && isset($_POST['long_url'])) {
+	} else if (isset($_POST['request_type']) && $_POST['request_type'] == 'shorten_link' && isset($_POST['long_url'])) {
 		$data['code']     = 100;
 		$data['url']      = $_POST['long_url'];
 		$data['message']  = 'Get request';
@@ -50,7 +50,7 @@
 			}
 			
 		}		
-	} else if ($_POST['request_type'] == 'social_click' && isset($_POST['url']) && isset($_POST['socialid'])) {
+	} else if (isset($_POST['request_type']) && $_POST['request_type'] == 'social_click' && isset($_POST['url']) && isset($_POST['socialid'])) {
 		$data['code']     = 100;
 		$data['message']  = 'Get request';
 		$optionName = "SharexyPlugin_".$_POST['socialid'];
@@ -70,7 +70,7 @@
 			$data['message']			  = "Set counter to 1";
 		}
 		update_option($optionName, serialize($savedCounters));
-	} else if ($_GET['request_type'] == 'getcounters' && isset($_GET['url']) && isset($_GET['callback'])) {				
+	} else if (isset($_GET['request_type']) && $_GET['request_type'] == 'getcounters' && isset($_GET['url']) && isset($_GET['callback'])) {				
 		$localSocials = array("myspace", "delicious", "digg", "reddit", "add_to_favorites", "send_to_email", "print_page", "blogger", "tumblr", "buffer", "xing", "pocket", "live_journal");		
 		foreach ($localSocials as $socialId) {
 			$optionName = "SharexyPlugin_".$socialId;
@@ -89,7 +89,7 @@
 		$result = json_encode($data);
 		echo $_GET['callback']."(".$result.");";
 		return;
-	} else if ($_GET['request_type'] == 'google_plus' && isset($_GET['url']) && isset($_GET['callback'])) {
+	} else if (isset($_GET['request_type']) && $_GET['request_type'] == 'google_plus' && isset($_GET['url']) && isset($_GET['callback'])) {
 		$data['counter'] = 0;
 		$data['url']     = $_GET['url'];
 	    $contents = file_get_contents( 'https://plusone.google.com/_/+1/fastbutton?url='.$_GET['url']);
@@ -100,7 +100,7 @@
 		$result = json_encode($data);
 		echo $_GET['callback']."(".$result.");";	        
 	    return;		
-	} else if ($_GET['request_type'] == 'vkontakte' && isset($_GET['url']) && isset($_GET['callback'])) {
+	} else if (isset($_GET['request_type']) && $_GET['request_type'] == 'vkontakte' && isset($_GET['url']) && isset($_GET['callback'])) {
 		$data['counter'] = 0;
 		$data['url']     = $_GET['url'];
 	    $contents = file_get_contents( 'http://vkontakte.ru/share.php?act=count&index=0&url='.$_GET['url']);
@@ -110,7 +110,7 @@
 		$result   = json_encode($data);
 		echo $_GET['callback']."(".$result.");";	        
 	    return;		
-	} else if ($_GET['request_type'] == 'stumbleupon' && isset($_GET['url']) && isset($_GET['callback'])) {
+	} else if (isset($_GET['request_type']) && $_GET['request_type'] == 'stumbleupon' && isset($_GET['url']) && isset($_GET['callback'])) {
 		$data['counter'] = 0;
 		$data['url']     = $_GET['url']; 
 	    $contents = file_get_contents("http://www.stumbleupon.com/services/1.01/badge.getinfo?url=".$_GET['url']."&format=json");
@@ -121,7 +121,7 @@
 		$result   		 = json_encode($data);
 		echo $_GET['callback']."(".$result.");";	        
 	    return;		
-	} else if ($_POST['request_type'] == 'hide_notify' && isset($_POST['guid'])) {
+	} else if (isset($_GET['request_type']) && $_POST['request_type'] == 'hide_notify' && isset($_POST['guid'])) {
 		$notifys = get_option("SharexyPlugin_notify");
 		if (!$notifys) {
 			add_option("SharexyPlugin_notify");

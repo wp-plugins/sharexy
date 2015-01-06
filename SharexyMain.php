@@ -82,6 +82,8 @@ class SharexyMain {
                 'type' => 'st',
                 'size_static' => '32',
                 'buzz' => '1',
+                'jumbo_text' => 'Shares',
+                'jumbo_color' => '#cccccc',
                 'labels' => '',
                 'counters' => ''
             ),
@@ -103,6 +105,8 @@ class SharexyMain {
             'size_float' => '32',
             'size_static' => '32',
             'buzz' => '0',
+            'jumbo_text' => 'Shares',
+            'jumbo_color' => '#cccccc',
             'services' => array('facebook', 'twitter', 'stumbleupon', 'linkedin'),
             'url' => 'current',
             'allways_show_ads' => '1',
@@ -167,15 +171,16 @@ class SharexyMain {
     function getPlacementsStyleParams($place) {
         $defaultStyleParams = isset($this->defaultPlacementsStyleParams[$place]) ? $this->defaultPlacementsStyleParams[$place] : array();
         $placeStyleParams = get_option( $this->adminOptionsName . '_placement_' . $place . '_style' );
+
         if ($placeStyleParams && is_string($placeStyleParams)) {
             $placeStyleParams = @unserialize( $placeStyleParams );
         } elseif (!$placeStyleParams || !is_array($placeStyleParams) || empty($placeStyleParams)) {
             return $defaultStyleParams;
-        }
+        }        
         foreach ($defaultStyleParams as $key => $value) {
             $placeStyleParams[$key] = isset($placeStyleParams[$key]) ? $placeStyleParams[$key] : $value;
         }
-        return $placeStyleParams;
+        return $placeStyleParams;        
     }
 
     function mixMainPlaceStyleParams($mainParams, $placeParams) {

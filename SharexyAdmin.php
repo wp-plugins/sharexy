@@ -155,7 +155,7 @@ class SharexyAdmin extends SharexyMain {
             if (isset( $data['align_' . $place] ) && in_array(trim($data['align_' . $place]), array('left', 'right', 'center'))) {
                 $placementsParams[$place]['align'] = trim($data['align_' . $place]);
             }
-            if (isset( $data['counters_align_' . $place] ) && in_array(trim($data['counters_align_' . $place]), array('none', 'top', 'right', 'bundle'))) {
+            if (isset( $data['counters_align_' . $place] ) && in_array(trim($data['counters_align_' . $place]), array('none', 'top', 'right', 'bundle', 'jumbo'))) {
                 $placementsParams[$place]['counters_align'] = trim($data['counters_align_' . $place]);
             }            
             if (isset( $data['show_ads_' . $place] )) {
@@ -204,7 +204,13 @@ class SharexyAdmin extends SharexyMain {
             }
             if (isset( $data['mode_float_' . $place] )) {
                 $currentPlaceStyleParams['mode_float'] = $data['mode_float_' . $place];
-            }           
+            }            
+            if (isset( $data['jumbo_text_' . $place] )) {
+                $currentPlaceStyleParams['jumbo_text'] = $data['jumbo_text_' . $place];
+            } 
+            if (isset( $data['jumbo_color_' . $place] )) {
+                $currentPlaceStyleParams['jumbo_color'] = $data['jumbo_color_' . $place];
+            }                                   
 
             update_option($this->adminOptionsName . '_placement_' . $place . '_style', serialize($currentPlaceStyleParams));
         }
@@ -220,7 +226,7 @@ class SharexyAdmin extends SharexyMain {
         if (!empty( $placements )) {
             foreach ($placements as $place => $params) {
                 $placementsParams[$place]['params'] = $params;
-                $style = $this->getPlacementsStyleParams($place);
+                $style = $this->getPlacementsStyleParams($place);                
                 $placementsParams[$place]['style'] = $this->mixMainPlaceStyleParams($styleParams, $style);
             }
         }

@@ -8,6 +8,7 @@
     jQuery(window.document).ready(function () {
         initShortens();
         initCustomDesign();
+        initJumbo();
         initNiceRadio();
         onFormSubmit();
         onUserIdChange();
@@ -19,7 +20,8 @@
         tipsy();
         PublisherKey();
         //colorpicker
-        initFarbtastic();
+        //initFarbtastic();
+        initSpectrum();
         //preview
         PreviewChoosePosition();
         PreviewChooseSize();
@@ -27,6 +29,22 @@
         boxesDragAndDrop();
         dragsort.makeListSortable(document.getElementById("boxes_shortcode"), function() {});
     });
+    function countersParser(counter) {
+        var returnedVal = '';
+        counter = parseInt(counter);
+        if (counter > 99999) {
+            returnedVal = (Math.floor(counter/1000))+"K";
+        } else if (counter > 1000) { 
+            if (counter%1000 < 100) {
+                returnedVal = Math.floor(counter/1000) + "K";    
+            } else {
+                returnedVal = (counter/1000).toFixed(1) + "K";
+            }
+        } else {
+            returnedVal = counter;
+        }
+        return returnedVal;
+    }
     function editPopupChangeResolution() {
         var resBtn = jQuery(this)
         var res    = resBtn.data('resolution');
@@ -430,7 +448,7 @@
                 if (jQuery(this).css("display") !== "none") {
                     var s = jQuery(this).attr('id').replace('li_' + place + '_', '');
                     services += s + ',';
-                    if (place == 'float') {
+                    if (place === 'float') {
                         var li = document.createElement("li");
                         li.setAttribute("id", 'li_' + place + '_' + place + '_' + s);
                         li.innerHTML = jQuery('#preview_all_services_' + place + ' #li_all_' + place + '_' + s).html();
@@ -439,23 +457,16 @@
                         jQuery('#boxes_float_float').append(jQuery(li));
 
                         var align = jQuery("[name=counters_align_"+place+"]:checked").attr("value");
-                        if (align != 'none') {
-                            jQuery("#boxes_float_"+place).find('li div').each(function() {
-                                jQuery(this).find(".top_counter, .right_counter, .bundle_counter").remove();
-                                createCounterInfo(jQuery(this), align, size);
-                            });            
-                            jQuery("#preview_float_"+place).find("#shrxbtn").each(function() {
-                                jQuery(this).find(".top_counter, .right_counter, .bundle_counter").remove();
-                                createCounterInfo(jQuery(this), align, size);
-                            }); 
-                        } else {
-                            jQuery("#boxes_float_"+place).find('li div').each(function() {
-                                jQuery(this).find(".top_counter, .right_counter, .bundle_counter").remove();
-                            });            
-                            jQuery("#preview_float_"+place).find("#shrxbtn").each(function() {
-                                jQuery(this).find(".top_counter, .right_counter, .bundle_counter").remove();
-                            }); 
-                        }                       
+                        jQuery("#preview_float_"+place).find(".jumbo_counter").remove();
+                        jQuery("#boxes_float_"+place).find('li div').each(function() {
+                            jQuery(this).find(".top_counter, .right_counter, .bundle_counter, .jumbo_counter").remove();
+                            createCounterInfo(jQuery(this), align, size);
+                        });            
+                        jQuery("#preview_float_"+place).find("#shrxbtn").each(function() {
+                            jQuery(this).find(".top_counter, .right_counter, .bundle_counter, .jumbo_counter").remove();
+                            createCounterInfo(jQuery(this), align, size);
+                        }); 
+                                           
                         initFloatWidgetPosition(jQuery(".sharexy_monitor_float td.hover").attr("name"));
                     }
                 }
@@ -831,6 +842,8 @@
             el.addClass("hover");
             el.css("background-image", "url(" + jQuery('#SharexyImgPath').val() + "ok.png)");
             sel.attr("value", el.attr("name"));
+
+            jQuery("#boxes_float").trigger("mouseup");
             initFloatWidgetPosition(el.attr("name"));
             //sel.change();
         });
@@ -850,7 +863,7 @@
 
 
 
-    function initFarbtastic() {
+    /*function initFarbtastic() {
         var picker = jQuery('#picker'), picker2 = jQuery('#picker2'), color = jQuery("#color"), label_color = jQuery("#label_color");
         picker.farbtastic('#color');
         picker2.farbtastic('#label_color').hide();
@@ -874,6 +887,23 @@
                 }
             }
         });       
+    }*/
+
+    function initSpectrum() {
+        jQuery(".color_picker").spectrum({
+            preferredFormat: "hex",
+            showInput: true,
+            showPalette: false
+        });
+        
+        jQuery('#color').change(function() {
+            var pikedColor = jQuery(this).val();
+            jQuery("#preview_float_float").css("background-color", pikedColor);
+        });
+        jQuery('#label_color').change(function() {            
+            var pikedColor = jQuery(this).val();
+            jQuery("#preview_float_float .shr_label").css("color", pikedColor);
+        });        
     }
 
 
@@ -928,6 +958,26 @@
         });
     }
 
+    function initJumbo() {
+        jQuery(".jumbo_item input").change(function() {
+            var place = jQuery(this).data("place");
+            if (jQuery(this).data("jumbo") === 'text') {
+                jQuery("#preview_"+place+" .jumbo_text").html(jQuery(this).val());
+                if (place.indexOf("float") > -1) {
+                    jQuery("#preview_float_float .jumbo_text").html(jQuery(this).val());
+                }
+            } else {
+                jQuery("#preview_"+place+" .jumbo_text, #preview_"+place+" .jumbo_value").css("color", jQuery(this).val());
+                jQuery("#preview_"+place+" .jumbo_counter").css("border-right-color", jQuery(this).val());
+                if (place.indexOf("float") > -1) {
+                    jQuery("#preview_float_float .jumbo_text, #preview_float_float .jumbo_value").css("color", jQuery(this).val());
+                    jQuery("#preview_float_float .jumbo_counter").css("border-right-color", jQuery(this).val());
+                    jQuery("#preview_float_float .jumbo_counter").css("border-top-color"  , jQuery(this).val());
+                }                
+            }
+        });
+    }
+
 
     function initFloatWidgetSize(orient, pos) {
         PreviewChangeCounters();
@@ -964,12 +1014,15 @@
 
         var addWidth  = 0;
         var addHeight = 0;
+
         if (counters === 'right') {
             addWidth += 44;
         } else if (counters === 'top') {
             addHeight += 35;
         } else if (counters === 'bundle') {            
             addHeight += 40;
+        } else if (counters === 'jumbo' && orient === 'h') {
+            add_w += icon_w + 15;
         }
         if (orient == 'h') {
             el.css("width", (icon_w + 6 + addWidth) * icon_count + add_w);
@@ -1244,16 +1297,36 @@
     }
 
     function clearCounters(place) {
-        jQuery('#preview_'+place).find(".top_counter, .right_counter, .bundle_counter").remove();        
+        jQuery('#preview_'+place).find(".top_counter, .right_counter, .bundle_counter, .jumbo_counter").remove();        
     }
 
     function createCounterInfo(rootEl, align, size) {
-        var html = rootEl.html();
-        if (rootEl.find(".top_counter, .right_counter, .bundle_counter").size() == 0) {
+        if (align === "none") return;
+        var html  = rootEl.html();
+        var place = rootEl.closest("table").parent().attr("id");
+        jQuery("tr.jumbo_item_"+place).hide();
+        if (rootEl.find(".top_counter, .right_counter, .bundle_counter, .jumbo_counter").size() == 0) {
+            var cntrs = countersParser(Math.floor((Math.random() * 10000) + 1));
             if ( align === 'right' ) {
-                html += "<div class='"+align+"_counter "+align+"_counter"+size+"'>"+Math.floor((Math.random() * 1000) + 1)+"</div>"
-            } else {
-                html = "<div class='"+align+"_counter "+align+"_counter"+size+"'>"+Math.floor((Math.random() * 100) + 1)+"</div>" + html;
+                html += "<div class='"+align+"_counter "+align+"_counter"+size+"'>"+cntrs+"</div>"
+            } else if ( align !== 'jumbo') {
+                html = "<div class='"+align+"_counter "+align+"_counter"+size+"'>"+cntrs+"</div>" + html;
+            } else if (rootEl.attr("id") === "shrxbtn") {
+                var pos = jQuery(".sharexy_monitor_float td.hover").attr("name"); 
+                var placeMached = (place === "preview_float_float")?"preview_float":place;
+                var jumbo_text  = jQuery("input#jumbo_text_"+placeMached).val();
+                var jumbo_color = jQuery("input#jumbo_color_"+placeMached).val();
+                console.log(placeMached);
+                var jumbo = "<div style='color:"+jumbo_color+"' class='"+align+"_counter "+align+"_counter"+size+" jumbo_float_"+pos+"'>";
+                jumbo += "<div class='jumbo_value'>"+cntrs+"</div>";
+                jumbo += "<div class='jumbo_text'>"+jumbo_text+"</div>";
+                jumbo += "</div>";
+                if ((pos !== "l" && pos !== "r") || place !== "preview_float_float") {
+                    rootEl.parent().find("ul.boxes").before(jumbo);    
+                } else {                    
+                    rootEl.after(jumbo);    
+                }
+                jQuery("tr.jumbo_item_"+place).show();
             }
         }
         rootEl.html(html);
