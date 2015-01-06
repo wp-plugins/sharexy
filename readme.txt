@@ -8,8 +8,7 @@ Tested up to: 4.1
 Stable tag: 4.2
 License: GPLv2
 
-Sharing widget placement customizing (floating and static), Premium designs, Bit.ly support, Buttons design customizing, Four types of counters available (top, right, badge, jumbo) and more ...
-
+Sharing widget placement customizing (floating and static), Premium designs, Bit.ly support, Buttons design customizing, Jumbo counters and more ...
 
 == Description ==
 
