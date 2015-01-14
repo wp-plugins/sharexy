@@ -45,7 +45,7 @@ class SharexyWidget extends SharexyMain {
         add_filter('get_the_excerpt', array(&$this, 'displayWidgetExcerpt'), $this->priority);
         add_filter('the_content', array(&$this, 'displayWidget'), $this->priority);
         
-        //add_shortcode('sharexy', array(&$this, 'displayShortcode'));
+        add_shortcode('sharexy', array(&$this, 'displayPHPShortcode'));
         add_filter('the_content', array(&$this, 'displayShortcode'), $this->priority);
         
         add_action('wp_footer', array(&$this, 'displayFloatWidget'), $this->priority);
@@ -101,7 +101,7 @@ class SharexyWidget extends SharexyMain {
     function displayShortcode($content) {
     	$offset = 0;
     	$out = '';
-    	if (function_exists('mb_strpos')) {
+    	if (function_exists('mb_strpos')) {            
 	    	while (($ps = mb_strpos($content, '[sharexy]', $offset, 'utf-8')) !== false) {
 	    		$out .= mb_substr($content, $offset, $ps - $offset, 'utf-8');
 		    	$placements = $this->getPlacements();
@@ -123,6 +123,13 @@ class SharexyWidget extends SharexyMain {
     		$out .= substr($content, $offset, strlen($content));
     	}
     	return $out;
+    }
+
+    function displayPHPShortcode() {
+            $placements = $this->getPlacements();
+            $mainStyle = $this->getStyle();
+            $widget = $this->getPlaceCode('shortcode', $placements, $mainStyle);
+            return $widget;
     }
     
     function displayFloatWidget() {
