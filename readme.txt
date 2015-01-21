@@ -2,7 +2,7 @@
 
 Contributors: Zettalab
 Donate link: http://sharexy.com
-Tags: bookmarking, Digg, social bookmarking, social icons, stumbleupon, twitter, facebook, google plus one, floating widget, sharing buttons, social media icons, social buttons
+Tags: Digg, social bookmarking, social icons, stumbleupon, twitter, facebook, google plus one, floating widget, sharing buttons, social media icons, social buttons
 Requires at least: 2.8
 Tested up to: 4.1
 Stable tag: 4.2.1
